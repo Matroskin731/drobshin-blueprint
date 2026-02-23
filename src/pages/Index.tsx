@@ -5,15 +5,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { RequestForm } from "@/components/RequestForm";
 import { Calculator } from "@/components/Calculator";
+import { QuoteModal } from "@/components/QuoteModal";
 import { useState } from "react";
 
 const Index = () => {
   const { config, isBlockVisible } = useSiteConfig();
-  const [calcMessage, setCalcMessage] = useState("");
+  const [quoteOpen, setQuoteOpen] = useState(false);
+  const [quoteData, setQuoteData] = useState({ area: 0, thickness: 0, weight: 0 });
 
   const handleCalcQuote = (area: number, thickness: number, weight: number) => {
-    setCalcMessage(`Калькулятор: площадь ${area} м², толщина ${thickness} мм, ≈${weight} кг крошки`);
-    document.getElementById("request-form")?.scrollIntoView({ behavior: "smooth" });
+    setQuoteData({ area, thickness, weight });
+    setQuoteOpen(true);
   };
 
   return (
@@ -188,11 +190,18 @@ const Index = () => {
             <h2 className="text-3xl font-bold text-center mb-10">Рассчитайте и закажите</h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <Calculator onRequestQuote={handleCalcQuote} />
-              <RequestForm source="главная" prefillMessage={calcMessage} />
+              <RequestForm source="главная" />
             </div>
           </div>
         </section>
       )}
+      <QuoteModal
+        open={quoteOpen}
+        onOpenChange={setQuoteOpen}
+        area={quoteData.area}
+        thickness={quoteData.thickness}
+        weight={quoteData.weight}
+      />
     </div>
   );
 };
