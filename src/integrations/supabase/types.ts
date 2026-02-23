@@ -14,7 +14,143 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      articles: {
+        Row: {
+          content: string
+          created_at: string
+          date: string
+          excerpt: string
+          id: string
+          title: string
+          visible: boolean
+        }
+        Insert: {
+          content?: string
+          created_at?: string
+          date?: string
+          excerpt?: string
+          id: string
+          title: string
+          visible?: boolean
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          date?: string
+          excerpt?: string
+          id?: string
+          title?: string
+          visible?: boolean
+        }
+        Relationships: []
+      }
+      product_categories: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          name: string
+          sort_order: number
+          visible: boolean
+        }
+        Insert: {
+          created_at?: string
+          description?: string
+          id: string
+          name: string
+          sort_order?: number
+          visible?: boolean
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          name?: string
+          sort_order?: number
+          visible?: boolean
+        }
+        Relationships: []
+      }
+      product_items: {
+        Row: {
+          category_id: string
+          created_at: string
+          description: string
+          id: string
+          image: string | null
+          name: string
+          price: string | null
+          show_price: boolean
+          sort_order: number
+          visible: boolean
+        }
+        Insert: {
+          category_id: string
+          created_at?: string
+          description?: string
+          id: string
+          image?: string | null
+          name: string
+          price?: string | null
+          show_price?: boolean
+          sort_order?: number
+          visible?: boolean
+        }
+        Update: {
+          category_id?: string
+          created_at?: string
+          description?: string
+          id?: string
+          image?: string | null
+          name?: string
+          price?: string | null
+          show_price?: boolean
+          sort_order?: number
+          visible?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "product_items_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "product_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      site_contacts: {
+        Row: {
+          address: string
+          created_at: string
+          emails: string[]
+          form_email: string
+          id: string
+          phones: Json
+          schedule: string[]
+          updated_at: string
+        }
+        Insert: {
+          address?: string
+          created_at?: string
+          emails?: string[]
+          form_email?: string
+          id?: string
+          phones?: Json
+          schedule?: string[]
+          updated_at?: string
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          emails?: string[]
+          form_email?: string
+          id?: string
+          phones?: Json
+          schedule?: string[]
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
