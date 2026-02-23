@@ -123,13 +123,13 @@ export function ProductCatalogSection() {
 
                           <p className="text-[11px] text-muted-foreground/70">Производство с 2007 года</p>
 
-                          <div className="flex gap-2 pt-1">
-                            <Button size="sm" variant="outline" className="flex-1 text-xs" onClick={() => openCalcForItem(item.name)}>
-                              <CalcIcon className="h-3.5 w-3.5 mr-1" />
-                              Рассчитать объём
+                          <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
+                            <Button size="sm" variant="outline" className="w-full sm:w-1/2 text-xs truncate" onClick={() => openCalcForItem(item.name)}>
+                              <CalcIcon className="h-3.5 w-3.5 mr-1 shrink-0" />
+                              <span className="truncate">Рассчитать объём</span>
                             </Button>
-                            <Button size="sm" className="flex-1 text-xs" onClick={scrollToForm}>
-                              Получить оптовую цену
+                            <Button size="sm" className="w-full sm:w-1/2 text-xs truncate" onClick={scrollToForm}>
+                              Запросить цену
                             </Button>
                           </div>
                         </CardContent>
