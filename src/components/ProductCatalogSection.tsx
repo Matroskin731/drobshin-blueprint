@@ -92,10 +92,29 @@ export function ProductCatalogSection() {
         <div className="section-container">
           {/* B2B intro */}
           <h2 className="text-3xl font-bold text-center mb-4">Наша продукция</h2>
-          <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-10 text-base leading-relaxed">
-            Работаем с подрядчиками, застройщиками, спортивными объектами и муниципальными заказчиками.
-            Предоставляем оптовые цены и быструю отгрузку.
-          </p>
+
+          {/* Micro-offer */}
+          <Card className="max-w-4xl mx-auto mb-10 border-border/50 shadow-sm">
+            <CardContent className="p-6 sm:p-8 space-y-4">
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold leading-snug mb-1">
+                  Подберём фракцию и бесплатно рассчитаем объём под ваш объект
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
+                  Работаем с подрядчиками, застройщиками и муниципальными заказчиками. Поможем выбрать оптимальную толщину и расход.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-sm">
+                {["Расчёт за 10 минут", "Подбор фракции под задачу", "Консультация инженера"].map((t) => (
+                  <span key={t} className="flex items-center gap-1.5 text-muted-foreground">
+                    <CheckCircle className="h-4 w-4 text-primary shrink-0" />
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <Button size="sm" onClick={scrollToForm}>Получить расчёт</Button>
+            </CardContent>
+          </Card>
 
           <div className="space-y-12">
             {config.products.filter((c) => c.visible).map((category) => {
