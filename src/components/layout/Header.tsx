@@ -26,12 +26,16 @@ export function Header() {
           <Link
             key={item.id}
             to={item.path}
+            onClick={() => {
+              if (location.pathname === item.path) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
             className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
             location.pathname === item.path ?
             "bg-primary/10 text-primary" :
             "text-muted-foreground hover:text-foreground hover:bg-muted"}`
             }>
-
               {item.title}
             </Link>
           )}

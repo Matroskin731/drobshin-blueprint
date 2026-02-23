@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { Card, CardContent } from "@/components/ui/card";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, ArrowRight } from "lucide-react";
 
 const Articles = () => {
   const { config } = useSiteConfig();
@@ -24,17 +25,21 @@ const Articles = () => {
           ) : (
             <div className="space-y-6">
               {visibleArticles.map((article) => (
-                <Card key={article.id} className="card-hover">
-                  <CardContent className="pt-6">
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-                      <CalendarDays className="h-3.5 w-3.5" />
-                      {new Date(article.date).toLocaleDateString("ru-RU")}
-                    </div>
-                    <h2 className="text-xl font-bold mb-2">{article.title}</h2>
-                    <p className="text-muted-foreground mb-3">{article.excerpt}</p>
-                    <p className="text-sm text-muted-foreground">{article.content}</p>
-                  </CardContent>
-                </Card>
+                <Link key={article.id} to={`/articles/${article.id}`} className="block">
+                  <Card className="card-hover">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                        <CalendarDays className="h-3.5 w-3.5" />
+                        {new Date(article.date).toLocaleDateString("ru-RU")}
+                      </div>
+                      <h2 className="text-xl font-bold mb-2">{article.title}</h2>
+                      <p className="text-muted-foreground mb-3">{article.excerpt}</p>
+                      <span className="text-sm text-primary font-medium inline-flex items-center gap-1">
+                        Читать далее <ArrowRight className="h-3.5 w-3.5" />
+                      </span>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           )}
