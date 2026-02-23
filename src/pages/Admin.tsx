@@ -8,7 +8,7 @@ import { Switch } from "@/components/ui/switch";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import { Settings, FileText, Package, Eye, Mail, BarChart, Phone, MapPin, Plus, Trash2 } from "lucide-react";
+import { Settings, FileText, Package, Eye, Mail, BarChart, Phone, MapPin, Plus, Trash2, ImageIcon } from "lucide-react";
 import type { Article, ProductItem } from "@/data/siteConfig";
 
 const Admin = () => {
@@ -215,39 +215,85 @@ const Admin = () => {
                         />
                       </div>
                       {category.items.map((item, ii) => (
-                        <div key={item.id} className="flex items-center gap-2 p-2 rounded border">
-                          <div className="flex-1 grid grid-cols-2 gap-2">
-                            <Input
-                              value={item.name}
-                              onChange={(e) => {
+                        <div key={item.id} className="p-3 rounded border space-y-2">
+                          <div className="flex items-center gap-2">
+                            <div className="flex-1 grid grid-cols-2 gap-2">
+                              <Input
+                                value={item.name}
+                                onChange={(e) => {
+                                  const products = [...config.products];
+                                  const items = [...products[ci].items];
+                                  items[ii] = { ...items[ii], name: e.target.value };
+                                  products[ci] = { ...products[ci], items };
+                                  updateConfig({ products });
+                                }}
+                              />
+                              <Input
+                                value={item.description}
+                                onChange={(e) => {
+                                  const products = [...config.products];
+                                  const items = [...products[ci].items];
+                                  items[ii] = { ...items[ii], description: e.target.value };
+                                  products[ci] = { ...products[ci], items };
+                                  updateConfig({ products });
+                                }}
+                              />
+                            </div>
+                            <Switch
+                              checked={item.visible}
+                              onCheckedChange={(checked) => {
                                 const products = [...config.products];
                                 const items = [...products[ci].items];
-                                items[ii] = { ...items[ii], name: e.target.value };
-                                products[ci] = { ...products[ci], items };
-                                updateConfig({ products });
-                              }}
-                            />
-                            <Input
-                              value={item.description}
-                              onChange={(e) => {
-                                const products = [...config.products];
-                                const items = [...products[ci].items];
-                                items[ii] = { ...items[ii], description: e.target.value };
+                                items[ii] = { ...items[ii], visible: checked };
                                 products[ci] = { ...products[ci], items };
                                 updateConfig({ products });
                               }}
                             />
                           </div>
-                          <Switch
-                            checked={item.visible}
-                            onCheckedChange={(checked) => {
-                              const products = [...config.products];
-                              const items = [...products[ci].items];
-                              items[ii] = { ...items[ii], visible: checked };
-                              products[ci] = { ...products[ci], items };
-                              updateConfig({ products });
-                            }}
-                          />
+                          <div className="flex items-center gap-2">
+                            {item.image ? (
+                              <img src={item.image} alt={item.name} className="h-10 w-10 rounded object-cover" />
+                            ) : (
+                              <div className="h-10 w-10 rounded bg-muted flex items-center justify-center">
+                                <ImageIcon className="h-5 w-5 text-muted-foreground" />
+                              </div>
+                            )}
+                            <label className="cursor-pointer text-xs text-primary hover:underline">
+                              {item.image ? "Заменить" : "Загрузить"}
+                              <input
+                                type="file"
+                                accept="image/*"
+                                className="hidden"
+                                onChange={(e) => {
+                                  const file = e.target.files?.[0];
+                                  if (!file) return;
+                                  const reader = new FileReader();
+                                  reader.onload = (ev) => {
+                                    const products = [...config.products];
+                                    const items = [...products[ci].items];
+                                    items[ii] = { ...items[ii], image: ev.target?.result as string };
+                                    products[ci] = { ...products[ci], items };
+                                    updateConfig({ products });
+                                  };
+                                  reader.readAsDataURL(file);
+                                }}
+                              />
+                            </label>
+                            {item.image && (
+                              <button
+                                className="text-xs text-destructive hover:underline"
+                                onClick={() => {
+                                  const products = [...config.products];
+                                  const items = [...products[ci].items];
+                                  items[ii] = { ...items[ii], image: undefined };
+                                  products[ci] = { ...products[ci], items };
+                                  updateConfig({ products });
+                                }}
+                              >
+                                Удалить
+                              </button>
+                            )}
+                          </div>
                         </div>
                       ))}
                       <Button
