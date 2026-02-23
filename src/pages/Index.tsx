@@ -65,7 +65,7 @@ const Index = () => {
                   <Link to="/about">Подробнее о заводе <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
                 {[
                   { icon: Factory, label: "Собственное производство", value: "2 линии" },
                   { icon: Recycle, label: "Переработка шин", value: "5000+ т/год" },
@@ -91,7 +91,7 @@ const Index = () => {
         <section className="section-padding">
           <div className="section-container">
             <h2 className="text-3xl font-bold text-center mb-10">Почему выбирают нас</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
               {[
                 { icon: Factory, title: "Собственное производство", desc: "Полный цикл переработки на своих мощностях" },
                 { icon: Shield, title: "Гарантия качества", desc: "Продукция соответствует ГОСТ и экологическим стандартам" },
@@ -116,7 +116,7 @@ const Index = () => {
         <section className="section-alt section-padding">
           <div className="section-container">
             <h2 className="text-3xl font-bold text-center mb-10">Как мы работаем</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
               {[
                 { step: "01", title: "Заявка", desc: "Оставьте заявку на сайте или позвоните" },
                 { step: "02", title: "Расчёт", desc: "Подберём продукцию и рассчитаем стоимость" },
@@ -161,7 +161,7 @@ const Index = () => {
         <section id="request-form" className="section-alt section-padding">
           <div className="section-container">
             <h2 className="text-3xl font-bold text-center mb-10">Рассчитайте и закажите</h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <Calculator onRequestQuote={handleCalcQuote} />
               <RequestForm source="главная" />
             </div>

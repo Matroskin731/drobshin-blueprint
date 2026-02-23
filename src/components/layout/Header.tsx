@@ -21,7 +21,7 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden xl:flex items-center gap-1">
           {visibleNav.map((item) =>
           <Link
             key={item.id}
@@ -37,7 +37,7 @@ export function Header() {
           )}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-3">
           {mainPhone &&
           <a href={`tel:${mainPhone.number.replace(/[^\d+]/g, "")}`} className="flex items-center gap-1.5 text-sm font-medium text-foreground">
               <Phone className="h-4 w-4 text-primary" />
@@ -55,14 +55,14 @@ export function Header() {
         </div>
 
         {/* Mobile toggle */}
-        <button className="lg:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button className="xl:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen &&
-      <div className="lg:hidden border-t bg-card">
+      <div className="xl:hidden border-t bg-card">
           <nav className="section-container py-4 flex flex-col gap-1">
             {visibleNav.map((item) =>
           <Link
