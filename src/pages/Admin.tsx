@@ -59,27 +59,50 @@ const Admin = () => {
                   <div className="space-y-3">
                     <Label>Телефоны</Label>
                     {config.contacts.phones.map((phone, i) => (
-                      <div key={i} className="grid grid-cols-3 gap-2">
-                        <Input placeholder="Имя" value={phone.name}
-                          onChange={(e) => {
-                            const phones = [...config.contacts.phones];
-                            phones[i] = { ...phones[i], name: e.target.value };
+                      <div key={i} className="flex items-start gap-2">
+                        <div className="flex-1 grid grid-cols-3 gap-2">
+                          <Input placeholder="Имя" value={phone.name}
+                            onChange={(e) => {
+                              const phones = [...config.contacts.phones];
+                              phones[i] = { ...phones[i], name: e.target.value };
+                              updateConfig({ contacts: { ...config.contacts, phones } });
+                            }} />
+                          <Input placeholder="Должность" value={phone.role}
+                            onChange={(e) => {
+                              const phones = [...config.contacts.phones];
+                              phones[i] = { ...phones[i], role: e.target.value };
+                              updateConfig({ contacts: { ...config.contacts, phones } });
+                            }} />
+                          <Input placeholder="Телефон" value={phone.number}
+                            onChange={(e) => {
+                              const phones = [...config.contacts.phones];
+                              phones[i] = { ...phones[i], number: e.target.value };
+                              updateConfig({ contacts: { ...config.contacts, phones } });
+                            }} />
+                        </div>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="shrink-0 mt-0.5"
+                          onClick={() => {
+                            const phones = config.contacts.phones.filter((_, idx) => idx !== i);
                             updateConfig({ contacts: { ...config.contacts, phones } });
-                          }} />
-                        <Input placeholder="Роль" value={phone.role}
-                          onChange={(e) => {
-                            const phones = [...config.contacts.phones];
-                            phones[i] = { ...phones[i], role: e.target.value };
-                            updateConfig({ contacts: { ...config.contacts, phones } });
-                          }} />
-                        <Input placeholder="Номер" value={phone.number}
-                          onChange={(e) => {
-                            const phones = [...config.contacts.phones];
-                            phones[i] = { ...phones[i], number: e.target.value };
-                            updateConfig({ contacts: { ...config.contacts, phones } });
-                          }} />
+                          }}
+                        >
+                          <Trash2 className="h-4 w-4 text-destructive" />
+                        </Button>
                       </div>
                     ))}
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        const phones = [...config.contacts.phones, { name: "", role: "", number: "" }];
+                        updateConfig({ contacts: { ...config.contacts, phones } });
+                      }}
+                    >
+                      <Plus className="h-4 w-4 mr-1" /> Добавить контакт
+                    </Button>
                   </div>
 
                   <div className="space-y-2">
