@@ -23,26 +23,51 @@ const Index = () => {
     <div>
       {/* Hero */}
       {isBlockVisible("hero") && (
-        <section className="hero-gradient section-padding">
-          <div className="section-container text-center">
-            <span className="badge-primary mb-4 inline-block border border-primary/30 bg-primary/20 text-primary-foreground">
-              С 2007 года
-            </span>
-            <h1 className="text-[2.25rem] md:text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.25] md:leading-tight">
-              Переработка шин.
-              <br />
-              <span className="text-primary" style={{ color: "hsl(152, 55%, 50%)" }}>Резиновая крошка и покрытия.</span>
-            </h1>
-            <p className="text-lg md:text-xl opacity-80 max-w-2xl mx-auto mb-8">
-              Производим резиновую крошку, плитку и бесшовные покрытия из переработанных шин. Оптом по всей России.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button size="lg" asChild className="text-base">
-                <Link to="/wholesale">Продукция и цены</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="text-base border-primary-foreground/30 text-primary-foreground/80 bg-primary-foreground/5 hover:bg-primary-foreground/15 hover:text-primary-foreground">
-                <a href="#request-form">Оставить заявку</a>
-              </Button>
+        <section className="hero-gradient section-padding overflow-hidden">
+          <div className="section-container flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            {/* Text content */}
+            <div className="flex-1 text-center md:text-left">
+              <span
+                className="badge-primary mb-4 inline-block border border-primary/30 bg-primary/20 text-primary-foreground animate-fade-in"
+              >
+                С 2007 года
+              </span>
+              <h1
+                className="text-[2.25rem] md:text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.25] md:leading-tight animate-fade-in"
+              >
+                Переработка шин.
+                <br />
+                <span className="text-primary" style={{ color: "hsl(152, 55%, 50%)" }}>Резиновая крошка и покрытия.</span>
+              </h1>
+              <p
+                className="text-lg md:text-xl opacity-80 max-w-2xl mb-8 animate-fade-in"
+                style={{ animationDelay: "0.2s", animationFillMode: "both" }}
+              >
+                Производим резиновую крошку, плитку и бесшовные покрытия из переработанных шин. Оптом по всей России.
+              </p>
+              <div
+                className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start animate-fade-in"
+                style={{ animationDelay: "0.3s", animationFillMode: "both" }}
+              >
+                <Button size="lg" asChild className="text-base">
+                  <Link to="/wholesale">Продукция и цены</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="text-base border-primary-foreground/30 text-primary-foreground/80 bg-primary-foreground/5 hover:bg-primary-foreground/15 hover:text-primary-foreground">
+                  <a href="#request-form">Оставить заявку</a>
+                </Button>
+              </div>
+            </div>
+
+            {/* Industrial 3D visual */}
+            <div className="hidden md:flex flex-shrink-0 items-center justify-center w-[280px] lg:w-[340px] h-[280px] lg:h-[340px] relative">
+              <div className="hero-cube" aria-hidden="true">
+                <div className="hero-cube__face hero-cube__face--front" />
+                <div className="hero-cube__face hero-cube__face--back" />
+                <div className="hero-cube__face hero-cube__face--left" />
+                <div className="hero-cube__face hero-cube__face--right" />
+                <div className="hero-cube__face hero-cube__face--top" />
+                <div className="hero-cube__face hero-cube__face--bottom" />
+              </div>
             </div>
           </div>
         </section>
