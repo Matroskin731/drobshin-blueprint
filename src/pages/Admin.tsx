@@ -294,6 +294,33 @@ const Admin = () => {
                               </button>
                             )}
                           </div>
+                          <div className="flex items-center gap-2">
+                            <Input
+                              placeholder="Цена (напр. 1 500 ₽/м²)"
+                              value={item.price || ""}
+                              className="max-w-[200px]"
+                              onChange={(e) => {
+                                const products = [...config.products];
+                                const items = [...products[ci].items];
+                                items[ii] = { ...items[ii], price: e.target.value };
+                                products[ci] = { ...products[ci], items };
+                                updateConfig({ products });
+                              }}
+                            />
+                            <div className="flex items-center gap-1.5">
+                              <span className="text-xs text-muted-foreground whitespace-nowrap">Показать цену</span>
+                              <Switch
+                                checked={item.showPrice ?? false}
+                                onCheckedChange={(checked) => {
+                                  const products = [...config.products];
+                                  const items = [...products[ci].items];
+                                  items[ii] = { ...items[ii], showPrice: checked };
+                                  products[ci] = { ...products[ci], items };
+                                  updateConfig({ products });
+                                }}
+                              />
+                            </div>
+                          </div>
                         </div>
                       ))}
                       <Button
