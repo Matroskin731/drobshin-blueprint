@@ -272,7 +272,11 @@ const Admin = () => {
                 {user?.email} — {roleLabel(role as AppRole)}
               </p>
             </div>
-            <Button variant="outline" size="sm" onClick={signOut}>
+            <Button
+              size="sm"
+              onClick={signOut}
+              className="bg-[hsl(25,95%,53%)] text-white hover:bg-[hsl(25,95%,40%)] hover:text-white"
+            >
               <LogOut className="h-4 w-4 mr-1" /> Выйти
             </Button>
           </div>
