@@ -95,3 +95,19 @@
     color: hsl(var(--primary));
   }
 }
+
+/* Global responsive safeguards */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Minimum touch target for buttons */
+button, a[role="button"], .btn, [class*="Button"] {
+  min-height: 44px;
+}
+
+/* Prevent text overflow globally */
+* {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
