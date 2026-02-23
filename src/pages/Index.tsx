@@ -89,11 +89,16 @@ const Index = () => {
                   { icon: Truck, label: "Доставка", value: "По всей РФ" },
                   { icon: Award, label: "Опыт работы", value: "17+ лет" },
                 ].map((item, i) => (
-                  <Card key={i} className="card-hover text-center p-4">
-                    <item.icon className="h-8 w-8 mx-auto mb-2 text-primary" />
-                    <p className="font-bold text-lg">{item.value}</p>
-                    <p className="text-xs text-muted-foreground">{item.label}</p>
-                  </Card>
+                  <div
+                    key={i}
+                    className="industrial-card text-center p-5 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:border-primary/60"
+                  >
+                    <div className="mx-auto mb-3 h-11 w-11 rounded-md bg-primary/15 flex items-center justify-center industrial-icon-glow">
+                      <item.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <p className="font-bold text-lg text-white">{item.value}</p>
+                    <p className="text-xs text-white/60">{item.label}</p>
+                  </div>
                 ))}
               </div>
             </div>
