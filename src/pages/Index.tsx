@@ -28,7 +28,7 @@ const Index = () => {
             <span className="badge-primary mb-4 inline-block border border-primary/30 bg-primary/20 text-primary-foreground">
               С 2007 года
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+            <h1 className="text-[2.25rem] md:text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.25] md:leading-tight">
               Переработка шин.
               <br />
               <span className="text-primary" style={{ color: "hsl(152, 55%, 50%)" }}>Резиновая крошка и покрытия.</span>
@@ -40,7 +40,7 @@ const Index = () => {
               <Button size="lg" asChild className="text-base">
                 <Link to="/wholesale">Продукция и цены</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-base border-primary-foreground/50 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20">
+              <Button size="lg" variant="outline" asChild className="text-base border-primary-foreground/30 text-primary-foreground/80 bg-primary-foreground/5 hover:bg-primary-foreground/15 hover:text-primary-foreground">
                 <a href="#request-form">Оставить заявку</a>
               </Button>
             </div>
