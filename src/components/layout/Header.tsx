@@ -16,8 +16,8 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="section-container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-bold text-xl tracking-tight">
-          <span className="text-primary">Дроб</span>
-          <span className="text-foreground mx-0">Шин</span>
+          <span className="text-primary bg-transparent">ДробШин</span>
+          <span className="text-foreground mx-0">​</span>
         </Link>
 
         {/* Desktop nav */}
@@ -26,16 +26,12 @@ export function Header() {
           <Link
             key={item.id}
             to={item.path}
-            onClick={() => {
-              if (location.pathname === item.path) {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }
-            }}
             className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
             location.pathname === item.path ?
             "bg-primary/10 text-primary" :
             "text-muted-foreground hover:text-foreground hover:bg-muted"}`
             }>
+
               {item.title}
             </Link>
           )}
