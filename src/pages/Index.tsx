@@ -69,11 +69,11 @@ const Index = () => {
       {isBlockVisible("about-preview") && (
         <section className="section-padding">
           <div className="section-container">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
               <div>
                 <h2 className="text-3xl font-bold mb-4">О заводе «ДробШин»</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  ООО «Нижегородский завод по переработке РТИ» — одно из ведущих предприятий по переработке автомобильных шин и резинотехнических изделий в Нижегородской области.
+                  Современное производство с полным циклом переработки и строгим контролем качества.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   С 2007 года мы превращаем отходы в качественную продукцию: резиновую крошку различных фракций, плитку и бесшовные покрытия для спортивных и детских площадок.
@@ -82,12 +82,12 @@ const Index = () => {
                   <Link to="/about">Подробнее о заводе <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
                   { icon: Factory, label: "Собственное производство", value: "2 линии" },
                   { icon: Recycle, label: "Переработка шин", value: "5000+ т/год" },
-                  { icon: Truck, label: "Доставка", value: "По всей РФ" },
-                  { icon: Award, label: "Опыт работы", value: "17+ лет" },
+                  { icon: Shield, label: "Качество продукции", value: "ГОСТ Р 59228-2020" },
+                  { icon: Users, label: "Постоянных клиентов", value: "500+" },
                 ].map((item, i) => (
                   <div
                     key={i}
