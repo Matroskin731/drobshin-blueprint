@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Recycle, Shield, Truck, CheckCircle, Factory, Award, FileCheck, Users } from "lucide-react";
+import { ArrowRight, Recycle, Shield, Truck, Factory, Award, FileCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { RequestForm } from "@/components/RequestForm";
 import { Calculator } from "@/components/Calculator";
 import { QuoteModal } from "@/components/QuoteModal";
+import { ProductCatalogSection } from "@/components/ProductCatalogSection";
 import { useState } from "react";
 
 const Index = () => {
@@ -83,35 +84,7 @@ const Index = () => {
         </section>
       )}
 
-      {/* Products */}
-      {isBlockVisible("products") && (
-        <section className="section-alt section-padding">
-          <div className="section-container">
-            <h2 className="text-3xl font-bold text-center mb-10">Наша продукция</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {config.products.filter((p) => p.visible).map((category) => (
-                <Card key={category.id} className="card-hover">
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-2">{category.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-4">{category.description}</p>
-                    <ul className="space-y-1.5">
-                      {category.items.filter((i) => i.visible).map((item) => (
-                        <li key={item.id} className="flex items-center gap-2 text-sm">
-                          <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />
-                          {item.name}
-                        </li>
-                      ))}
-                    </ul>
-                    <Button variant="outline" size="sm" className="mt-4 w-full" asChild>
-                      <Link to="/wholesale">Подробнее</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {isBlockVisible("products") && <ProductCatalogSection />}
 
       {/* Why us */}
       {isBlockVisible("why-us") && (
