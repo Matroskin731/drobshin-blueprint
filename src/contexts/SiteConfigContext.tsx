@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { SiteConfig, defaultConfig, ProductCategory, ProductItem, Article } from "@/data/siteConfig";
 import { supabase } from "@/integrations/supabase/client";
 
