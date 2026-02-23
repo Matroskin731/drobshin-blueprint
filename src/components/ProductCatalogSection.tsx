@@ -15,6 +15,37 @@ const FRACTION_FILTERS = [
   { label: "2–4 мм", value: "2-4" },
 ];
 
+const CRUMB_SPECS: Record<string, string[]> = {
+  "crumb-063": [
+    "Бесшовные покрытия, наполнители",
+    "Толщина слоя: 10–20 мм",
+    "Расход: 7–14 кг/м²",
+    "Высокая плотность, гладкая текстура",
+    "Отгрузка от 1 тонны",
+  ],
+  "crumb-1-2": [
+    "Плитка, покрытия, спортзалы",
+    "Толщина слоя: 15–30 мм",
+    "Расход: 10–20 кг/м²",
+    "Баланс амортизации и дренажа",
+    "Отгрузка от 1 тонны",
+  ],
+  "crumb-2-4": [
+    "Детские и спортивные площадки",
+    "Толщина слоя: 20–40 мм",
+    "Расход: 14–28 кг/м²",
+    "Максимальная амортизация",
+    "Отгрузка от 1 тонны",
+  ],
+  "crumb-color": [
+    "Декоративные зоны, дорожки",
+    "Толщина слоя: 10–20 мм",
+    "Расход: 7–14 кг/м²",
+    "Яркие цвета, UV-стойкость",
+    "Отгрузка от 500 кг",
+  ],
+};
+
 function matchesFraction(itemName: string, filter: string): boolean {
   if (filter === "all") return true;
   const name = itemName.toLowerCase();
@@ -106,6 +137,18 @@ export function ProductCatalogSection() {
                           </div>
 
                           <p className="text-sm text-muted-foreground">{item.description}</p>
+
+                          {/* Crumb specs bullets */}
+                          {isCrumb && CRUMB_SPECS[item.id] && (
+                            <ul className="space-y-0.5">
+                              {CRUMB_SPECS[item.id].map((spec, idx) => (
+                                <li key={idx} className="flex items-start gap-1.5 text-[11px] text-muted-foreground leading-snug">
+                                  <CheckCircle className="h-3 w-3 mt-0.5 shrink-0 text-primary/60" />
+                                  <span>{spec}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
 
                           <div className="flex items-center gap-1.5 text-xs text-primary">
                             <CheckCircle className="h-3.5 w-3.5" />
