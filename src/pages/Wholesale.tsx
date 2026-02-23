@@ -1,5 +1,7 @@
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { RequestForm } from "@/components/RequestForm";
 import { Calculator } from "@/components/Calculator";
@@ -8,6 +10,10 @@ import { useState } from "react";
 const Wholesale = () => {
   const { config } = useSiteConfig();
   const [calcMessage, setCalcMessage] = useState("");
+
+  const scrollToForm = () => {
+    document.getElementById("wholesale-form")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div>
@@ -45,6 +51,15 @@ const Wholesale = () => {
                             <CheckCircle className="h-3.5 w-3.5" />
                             В наличии
                           </div>
+                          {item.price && item.showPrice ? (
+                            <Badge variant="secondary" className="mt-3 text-sm font-semibold pointer-events-none">
+                              {item.price}
+                            </Badge>
+                          ) : (
+                            <Button variant="outline" size="sm" className="mt-3" onClick={scrollToForm}>
+                              Узнать цену
+                            </Button>
+                          )}
                         </div>
                       </CardContent>
                     </Card>
