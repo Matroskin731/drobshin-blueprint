@@ -45,7 +45,12 @@ export function Header() {
             </a>
           )}
           <Button asChild size="sm">
-            <Link to="/#request-form">Оставить заявку</Link>
+            <a href="/#request-form" onClick={(e) => {
+              if (window.location.pathname === '/') {
+                e.preventDefault();
+                document.getElementById('request-form')?.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>Оставить заявку</a>
           </Button>
         </div>
 
@@ -81,7 +86,13 @@ export function Header() {
                 </a>
               )}
               <Button asChild size="sm" className="w-full">
-                <Link to="/#request-form" onClick={() => setMobileOpen(false)}>Оставить заявку</Link>
+                <a href="/#request-form" onClick={(e) => {
+                  setMobileOpen(false);
+                  if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    document.getElementById('request-form')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}>Оставить заявку</a>
               </Button>
             </div>
           </nav>
