@@ -24,9 +24,8 @@ const Admin = () => {
   const saveProducts = async () => {
     setSaving(true);
     try {
-      // Update categories
       for (const cat of config.products) {
-        await supabase
+        const { error: catErr } = await supabase
           .from("product_categories")
           .upsert({
             id: cat.id,
@@ -34,10 +33,10 @@ const Admin = () => {
             description: cat.description,
             visible: cat.visible,
           });
+        if (catErr) throw catErr;
 
-        // Update items
         for (const item of cat.items) {
-          await supabase
+          const { error: itemErr } = await supabase
             .from("product_items")
             .upsert({
               id: item.id,
@@ -49,13 +48,17 @@ const Admin = () => {
               show_price: item.showPrice ?? false,
               visible: item.visible,
             });
+          if (itemErr) throw itemErr;
         }
       }
       await refetchFromDB();
       toast({ title: "Продукция сохранена в базу данных" });
-    } catch (e) {
-      console.error(e);
-      toast({ title: "Ошибка сохранения", variant: "destructive" });
+    } catch (e: any) {
+      console.error("saveProducts error:", e);
+      const msg = e?.message?.includes("row-level security")
+        ? "Нет прав. Войдите в систему для сохранения."
+        : `Ошибка: ${e?.message || "неизвестная"}`;
+      toast({ title: msg, variant: "destructive" });
     } finally {
       setSaving(false);
     }
