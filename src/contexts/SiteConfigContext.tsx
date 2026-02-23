@@ -8,6 +8,7 @@ interface SiteConfigContextType {
   resetConfig: () => void;
   isBlockVisible: (blockId: string) => boolean;
   loading: boolean;
+  refetchFromDB: () => Promise<void>;
 }
 
 const SiteConfigContext = createContext<SiteConfigContextType | undefined>(undefined);
@@ -87,13 +88,20 @@ export function SiteConfigProvider({ children }: { children: ReactNode }) {
   const [config, setConfig] = useState<SiteConfig>(defaultConfig);
   const [loading, setLoading] = useState(true);
 
+  const refetchFromDB = async () => {
+    setLoading(true);
+    try {
+      const dbConfig = await fetchConfigFromDB();
+      setConfig((prev) => ({ ...prev, ...dbConfig }));
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    fetchConfigFromDB()
-      .then((dbConfig) => {
-        setConfig((prev) => ({ ...prev, ...dbConfig }));
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
+    refetchFromDB();
   }, []);
 
   const updateConfig = (newConfig: Partial<SiteConfig>) => {
@@ -110,7 +118,7 @@ export function SiteConfigProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <SiteConfigContext.Provider value={{ config, updateConfig, resetConfig, isBlockVisible, loading }}>
+    <SiteConfigContext.Provider value={{ config, updateConfig, resetConfig, isBlockVisible, loading, refetchFromDB }}>
       {children}
     </SiteConfigContext.Provider>
   );

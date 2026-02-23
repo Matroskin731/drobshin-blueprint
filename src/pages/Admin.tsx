@@ -10,13 +10,122 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import { Settings, FileText, Package, Eye, Mail, BarChart, Phone, MapPin, Plus, Trash2, ImageIcon } from "lucide-react";
 import type { Article, ProductItem } from "@/data/siteConfig";
+import { supabase } from "@/integrations/supabase/client";
 
 const Admin = () => {
-  const { config, updateConfig, resetConfig } = useSiteConfig();
+  const { config, updateConfig, resetConfig, refetchFromDB } = useSiteConfig();
   const { toast } = useToast();
+  const [saving, setSaving] = useState(false);
 
   const save = (msg: string = "Сохранено") => {
     toast({ title: msg });
+  };
+
+  const saveProducts = async () => {
+    setSaving(true);
+    try {
+      // Update categories
+      for (const cat of config.products) {
+        await supabase
+          .from("product_categories")
+          .upsert({
+            id: cat.id,
+            name: cat.name,
+            description: cat.description,
+            visible: cat.visible,
+          });
+
+        // Update items
+        for (const item of cat.items) {
+          await supabase
+            .from("product_items")
+            .upsert({
+              id: item.id,
+              category_id: cat.id,
+              name: item.name,
+              description: item.description,
+              image: item.image || null,
+              price: item.price || null,
+              show_price: item.showPrice ?? false,
+              visible: item.visible,
+            });
+        }
+      }
+      await refetchFromDB();
+      toast({ title: "Продукция сохранена в базу данных" });
+    } catch (e) {
+      console.error(e);
+      toast({ title: "Ошибка сохранения", variant: "destructive" });
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const saveContacts = async () => {
+    setSaving(true);
+    try {
+      const { data: existing } = await supabase.from("site_contacts").select("id").limit(1);
+      if (existing && existing.length > 0) {
+        await supabase.from("site_contacts").update({
+          address: config.contacts.address,
+          phones: config.contacts.phones as any,
+          emails: config.contacts.emails,
+          schedule: config.contacts.schedule,
+          form_email: config.formEmail,
+        }).eq("id", existing[0].id);
+      } else {
+        await supabase.from("site_contacts").insert({
+          address: config.contacts.address,
+          phones: config.contacts.phones as any,
+          emails: config.contacts.emails,
+          schedule: config.contacts.schedule,
+          form_email: config.formEmail,
+        });
+      }
+      await refetchFromDB();
+      toast({ title: "Контакты сохранены в базу данных" });
+    } catch (e) {
+      console.error(e);
+      toast({ title: "Ошибка сохранения", variant: "destructive" });
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const saveArticles = async () => {
+    setSaving(true);
+    try {
+      // Get existing article IDs
+      const { data: existingArticles } = await supabase.from("articles").select("id");
+      const existingIds = new Set((existingArticles || []).map(a => a.id));
+      const currentIds = new Set(config.articles.map(a => a.id));
+
+      // Delete removed articles
+      for (const id of existingIds) {
+        if (!currentIds.has(id)) {
+          await supabase.from("articles").delete().eq("id", id);
+        }
+      }
+
+      // Upsert current articles
+      for (const article of config.articles) {
+        await supabase.from("articles").upsert({
+          id: article.id,
+          title: article.title,
+          excerpt: article.excerpt,
+          content: article.content,
+          date: article.date,
+          visible: article.visible,
+        });
+      }
+      await refetchFromDB();
+      toast({ title: "Статьи сохранены в базу данных" });
+    } catch (e) {
+      console.error(e);
+      toast({ title: "Ошибка сохранения", variant: "destructive" });
+    } finally {
+      setSaving(false);
+    }
   };
 
   return (
@@ -123,7 +232,7 @@ const Admin = () => {
                     />
                   </div>
 
-                  <Button onClick={() => save("Контакты обновлены")}>Сохранить</Button>
+                  <Button onClick={saveContacts} disabled={saving}>{saving ? "Сохранение..." : "Сохранить"}</Button>
                 </CardContent>
               </Card>
             </TabsContent>
@@ -343,7 +452,7 @@ const Admin = () => {
                     </CardContent>
                   </Card>
                 ))}
-                <Button onClick={() => save("Продукция обновлена")}>Сохранить всё</Button>
+                <Button onClick={saveProducts} disabled={saving}>{saving ? "Сохранение..." : "Сохранить всё"}</Button>
               </div>
             </TabsContent>
 
@@ -425,7 +534,7 @@ const Admin = () => {
                       />
                     </div>
                   ))}
-                  <Button onClick={() => save("Статьи обновлены")}>Сохранить</Button>
+                  <Button onClick={saveArticles} disabled={saving}>{saving ? "Сохранение..." : "Сохранить"}</Button>
                 </CardContent>
               </Card>
             </TabsContent>
