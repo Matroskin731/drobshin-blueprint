@@ -101,7 +101,7 @@ export function ProductCatalogSection() {
                   Подберём фракцию и бесплатно рассчитаем объём под ваш объект
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                  Работаем с подрядчиками, застройщиками и муниципальными заказчиками. Поможем выбрать оптимальную толщину и расход.
+                  Подготовим расчёт и коммерческое предложение в день обращения. Поможем выбрать оптимальную толщину и расход.
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-sm">
@@ -112,7 +112,7 @@ export function ProductCatalogSection() {
                   </span>
                 ))}
               </div>
-              <Button size="sm" onClick={scrollToForm}>Получить расчёт</Button>
+              <Button size="sm" onClick={scrollToForm}>Получить бесплатный расчёт</Button>
             </CardContent>
           </Card>
 
@@ -150,9 +150,16 @@ export function ProductCatalogSection() {
                         <CardContent className="p-6 space-y-3">
                           <div className="flex items-start justify-between gap-2">
                             <h4 className="font-semibold text-lg leading-snug">{item.name}</h4>
-                            <Badge className="shrink-0 text-[10px] bg-accent text-accent-foreground border-0">
-                              Отгрузка от 1 т
-                            </Badge>
+                            <div className="flex flex-col items-end gap-1 shrink-0">
+                              {isCrumb && item.id === "crumb-1-2" && (
+                                <Badge className="text-[10px] bg-primary text-primary-foreground border-0">
+                                  Хит продаж
+                                </Badge>
+                              )}
+                              <Badge className="text-[10px] bg-accent text-accent-foreground border-0">
+                                Отгрузка от 1 т
+                              </Badge>
+                            </div>
                           </div>
 
                           <p className="text-sm text-muted-foreground">{item.description}</p>
