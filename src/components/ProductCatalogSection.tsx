@@ -106,7 +106,7 @@ export function ProductCatalogSection() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-sm">
                 {["Расчёт за 10 минут", "Подбор фракции под задачу", "Консультация инженера"].map((t) => (
                   <span key={t} className="flex items-center gap-1.5 text-muted-foreground">
-                    <CheckCircle className="h-4 w-4 text-primary/50 shrink-0" />
+                    <CheckCircle className="h-4 w-4 shrink-0" style={{ color: "#43A047" }} />
                     {t}
                   </span>
                 ))}
@@ -169,15 +169,15 @@ export function ProductCatalogSection() {
                             <ul className="space-y-0.5">
                               {CRUMB_SPECS[item.id].map((spec, idx) => (
                                 <li key={idx} className="flex items-start gap-1.5 text-[11px] text-muted-foreground leading-snug">
-                                  <CheckCircle className="h-3 w-3 mt-0.5 shrink-0 text-primary/50" />
+                                  <CheckCircle className="h-3 w-3 mt-0.5 shrink-0" style={{ color: "#43A047" }} />
                                   <span>{spec}</span>
                                 </li>
                               ))}
                             </ul>
                           )}
 
-                          <div className="flex items-center gap-1.5 text-xs text-foreground">
-                            <CheckCircle className="h-3.5 w-3.5 text-primary/50" />
+                          <div className="flex items-center gap-1.5 text-xs" style={{ color: "#43A047" }}>
+                            <CheckCircle className="h-3.5 w-3.5" />
                             В наличии
                           </div>
 

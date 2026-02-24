@@ -78,8 +78,8 @@ const Wholesale = () => {
                         <div className="p-6">
                           <h3 className="font-semibold mb-2">{item.name}</h3>
                           <p className="text-sm text-muted-foreground">{item.description}</p>
-                          <div className="mt-3 flex items-center gap-1.5 text-xs text-muted-foreground">
-                            <CheckCircle className="h-3.5 w-3.5 text-foreground/40" />
+                          <div className="mt-3 flex items-center gap-1.5 text-xs" style={{ color: "#43A047" }}>
+                            <CheckCircle className="h-3.5 w-3.5" />
                             В наличии
                           </div>
                           {item.price && item.showPrice ? (
