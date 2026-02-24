@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { Calculator } from "@/components/Calculator";
 import { QuoteModal } from "@/components/QuoteModal";
+import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 const FRACTION_FILTERS = [
   { label: "Все", value: "all" },
@@ -63,6 +64,10 @@ export function ProductCatalogSection() {
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [quoteData, setQuoteData] = useState({ area: 0, thickness: 0, weight: 0 });
 
+  const sectionRef = useScrollReveal();
+  const trustRef = useScrollReveal();
+  const trustStagger = useStaggerReveal(5, 100, 80);
+
   const handleCalcQuote = (area: number, thickness: number, weight: number) => {
     setQuoteData({ area, thickness, weight });
     setCalcOpen(false);
@@ -88,7 +93,7 @@ export function ProductCatalogSection() {
 
   return (
     <>
-      <section className="section-alt section-padding">
+      <section className="section-alt section-padding" ref={sectionRef}>
         <div className="section-container">
           <h2 className="text-3xl font-bold text-center mb-4">Наша продукция</h2>
 
@@ -127,7 +132,6 @@ export function ProductCatalogSection() {
                   <h3 className="text-2xl font-bold mb-1">{category.name}</h3>
                   <p className="text-muted-foreground mb-4">{category.description}</p>
 
-                  {/* Fraction filter for crumb */}
                   {isCrumb && (
                     <div className="flex flex-wrap gap-2 mb-6">
                       {FRACTION_FILTERS.map((f) => (
@@ -146,7 +150,7 @@ export function ProductCatalogSection() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
                     {filteredItems.map((item) => (
-                      <Card key={item.id}>
+                      <Card key={item.id} className="card-hover">
                         <CardContent className="p-6 space-y-3">
                           <div className="flex items-start justify-between gap-2">
                             <h4 className="font-semibold text-lg leading-snug">{item.name}</h4>
@@ -164,7 +168,6 @@ export function ProductCatalogSection() {
 
                           <p className="text-sm text-muted-foreground">{item.description}</p>
 
-                          {/* Crumb specs bullets */}
                           {isCrumb && CRUMB_SPECS[item.id] && (
                             <ul className="space-y-0.5">
                               {CRUMB_SPECS[item.id].map((spec, idx) => (
@@ -181,7 +184,6 @@ export function ProductCatalogSection() {
                             В наличии
                           </div>
 
-                          {/* Price */}
                           {item.price && item.showPrice ? (
                             <Badge variant="secondary" className="text-sm font-semibold pointer-events-none bg-muted text-foreground">
                               {item.price}
@@ -213,12 +215,12 @@ export function ProductCatalogSection() {
       </section>
 
       {/* Trust block */}
-      <section className="section-padding hero-gradient">
+      <section className="section-padding hero-gradient" ref={trustRef}>
         <div className="section-container">
           <h2 className="text-2xl font-bold text-center mb-8">Почему нам доверяют подрядчики</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {trustItems.map((item, i) => (
-              <div key={i} className="flex flex-col items-center text-center gap-2">
+              <div key={i} ref={trustStagger(i)} className="flex flex-col items-center text-center gap-2">
                 <div className="h-11 w-11 rounded-lg bg-white/10 flex items-center justify-center">
                   <item.icon className="h-5 w-5 text-white/70" />
                 </div>
