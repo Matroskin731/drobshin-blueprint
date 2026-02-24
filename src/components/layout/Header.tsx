@@ -26,9 +26,9 @@ export function Header() {
           <Link
             key={item.id}
             to={item.path}
-            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+            className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
             location.pathname === item.path ?
-            "bg-primary/10 text-primary" :
+            "bg-foreground/8 text-foreground" :
             "text-muted-foreground hover:text-foreground hover:bg-muted"}`
             }>
 
@@ -40,7 +40,7 @@ export function Header() {
         <div className="hidden xl:flex items-center gap-3">
           {mainPhone &&
           <a href={`tel:${mainPhone.number.replace(/[^\d+]/g, "")}`} className="flex items-center gap-1.5 text-sm font-medium text-foreground">
-              <Phone className="h-4 w-4 text-primary" />
+              <Phone className="h-4 w-4 text-foreground/60" />
               {mainPhone.number}
             </a>
           }
@@ -69,9 +69,9 @@ export function Header() {
             key={item.id}
             to={item.path}
             onClick={() => setMobileOpen(false)}
-            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+            className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
             location.pathname === item.path ?
-            "bg-primary/10 text-primary" :
+            "bg-foreground/8 text-foreground" :
             "text-muted-foreground hover:text-foreground"}`
             }>
 
@@ -81,7 +81,7 @@ export function Header() {
             <div className="pt-3 mt-3 border-t flex flex-col gap-2">
               {mainPhone &&
             <a href={`tel:${mainPhone.number.replace(/[^\d+]/g, "")}`} className="flex items-center gap-1.5 text-sm font-medium">
-                  <Phone className="h-4 w-4 text-primary" />
+                  <Phone className="h-4 w-4 text-foreground/60" />
                   {mainPhone.number}
                 </a>
             }

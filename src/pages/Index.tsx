@@ -78,12 +78,9 @@ const Index = () => {
                   { icon: Shield, label: "Качество продукции", value: "ГОСТ Р 59228-2020" },
                   { icon: Users, label: "Постоянных клиентов", value: "500+" },
                 ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="stat-card text-center p-5"
-                  >
-                    <div className="mx-auto mb-3 h-11 w-11 rounded-lg bg-primary/15 flex items-center justify-center">
-                      <item.icon className="h-6 w-6 text-primary" />
+                  <div key={i} className="stat-card text-center p-5">
+                    <div className="mx-auto mb-3 h-11 w-11 rounded-lg bg-white/10 flex items-center justify-center">
+                      <item.icon className="h-6 w-6 text-white/70" />
                     </div>
                     <p className="font-bold text-lg text-white">{item.value}</p>
                     <p className="text-xs text-white/60">{item.label}</p>
@@ -110,8 +107,8 @@ const Index = () => {
                 { icon: Users, title: "Индивидуальный подход", desc: "Гибкие условия для оптовых покупателей" },
               ].map((item, i) => (
                 <div key={i} className="unified-card text-center p-6">
-                  <div className="mx-auto mb-3 h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <item.icon className="h-6 w-6 text-primary" />
+                  <div className="mx-auto mb-3 h-12 w-12 rounded-lg bg-muted flex items-center justify-center">
+                    <item.icon className="h-6 w-6 text-foreground/60" />
                   </div>
                   <h3 className="font-semibold mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
@@ -135,7 +132,7 @@ const Index = () => {
                 { step: "04", title: "Доставка", desc: "Отгрузим и доставим в ваш регион" },
               ].map((item, i) => (
                 <div key={i} className="relative">
-                  <span className="text-5xl font-extrabold text-primary/20">{item.step}</span>
+                  <span className="text-5xl font-extrabold text-white/10">{item.step}</span>
                   <h3 className="font-semibold mt-1 mb-1">{item.title}</h3>
                   <p className="text-sm text-white/60">{item.desc}</p>
                 </div>
@@ -157,7 +154,7 @@ const Index = () => {
                 { icon: Award, title: "ГОСТ", desc: "Соответствие государственным стандартам" },
               ].map((item, i) => (
                 <div key={i} className="unified-card flex flex-col items-center p-6">
-                  <item.icon className="h-10 w-10 text-primary mb-3" />
+                  <item.icon className="h-10 w-10 text-foreground/50 mb-3" />
                   <h3 className="font-semibold mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </div>

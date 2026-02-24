@@ -41,14 +41,14 @@ const Wholesale = () => {
                           <img src={item.image} alt={item.name} className="w-full h-40 object-cover" />
                         ) : (
                           <div className="w-full h-40 bg-muted flex items-center justify-center">
-                            <div className="h-2 w-12 rounded-full bg-primary/20" />
+                            <div className="h-2 w-12 rounded-full bg-muted-foreground/20" />
                           </div>
                         )}
                         <div className="p-6">
                           <h3 className="font-semibold mb-2">{item.name}</h3>
                           <p className="text-sm text-muted-foreground">{item.description}</p>
-                          <div className="mt-3 flex items-center gap-1.5 text-xs text-primary">
-                            <CheckCircle className="h-3.5 w-3.5" />
+                          <div className="mt-3 flex items-center gap-1.5 text-xs text-muted-foreground">
+                            <CheckCircle className="h-3.5 w-3.5 text-foreground/40" />
                             В наличии
                           </div>
                           {item.price && item.showPrice ? (

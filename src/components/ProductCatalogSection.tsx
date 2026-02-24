@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { CheckCircle, Factory, Truck, Recycle, MapPin, Award, Calculator as CalcIcon } from "lucide-react";
+import { CheckCircle, Factory, Truck, Recycle, MapPin, Award, Calculator as CalcIcon, Circle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -90,7 +90,6 @@ export function ProductCatalogSection() {
     <>
       <section className="section-alt section-padding">
         <div className="section-container">
-          {/* B2B intro */}
           <h2 className="text-3xl font-bold text-center mb-4">Наша продукция</h2>
 
           {/* Micro-offer */}
@@ -107,7 +106,7 @@ export function ProductCatalogSection() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-sm">
                 {["Расчёт за 10 минут", "Подбор фракции под задачу", "Консультация инженера"].map((t) => (
                   <span key={t} className="flex items-center gap-1.5 text-muted-foreground">
-                    <CheckCircle className="h-4 w-4 text-primary shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-foreground/40 shrink-0" />
                     {t}
                   </span>
                 ))}
@@ -135,7 +134,8 @@ export function ProductCatalogSection() {
                         <Button
                           key={f.value}
                           size="sm"
-                          variant={fractionFilter === f.value ? "default" : "outline"}
+                          variant={fractionFilter === f.value ? "default" : "ghost"}
+                          className={fractionFilter !== f.value ? "bg-muted text-foreground hover:bg-muted/80" : ""}
                           onClick={() => setFractionFilter(f.value)}
                         >
                           {f.label}
@@ -156,7 +156,7 @@ export function ProductCatalogSection() {
                                   Хит продаж
                                 </Badge>
                               )}
-                              <Badge className="text-[10px] bg-accent text-accent-foreground border-0">
+                              <Badge className="text-[10px] bg-muted text-foreground border-0">
                                 Отгрузка от 1 т
                               </Badge>
                             </div>
@@ -169,21 +169,21 @@ export function ProductCatalogSection() {
                             <ul className="space-y-0.5">
                               {CRUMB_SPECS[item.id].map((spec, idx) => (
                                 <li key={idx} className="flex items-start gap-1.5 text-[11px] text-muted-foreground leading-snug">
-                                  <CheckCircle className="h-3 w-3 mt-0.5 shrink-0 text-primary/60" />
+                                  <Circle className="h-2 w-2 mt-1 shrink-0 fill-foreground/30 text-foreground/30" />
                                   <span>{spec}</span>
                                 </li>
                               ))}
                             </ul>
                           )}
 
-                          <div className="flex items-center gap-1.5 text-xs text-primary">
-                            <CheckCircle className="h-3.5 w-3.5" />
+                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                            <Circle className="h-2.5 w-2.5 fill-foreground/30 text-foreground/30" />
                             В наличии
                           </div>
 
                           {/* Price */}
                           {item.price && item.showPrice ? (
-                            <Badge variant="secondary" className="text-sm font-semibold pointer-events-none">
+                            <Badge variant="secondary" className="text-sm font-semibold pointer-events-none bg-muted text-foreground">
                               {item.price}
                             </Badge>
                           ) : (
@@ -219,8 +219,8 @@ export function ProductCatalogSection() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {trustItems.map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center gap-2">
-                <div className="h-11 w-11 rounded-md bg-primary/20 flex items-center justify-center">
-                  <item.icon className="h-5 w-5 text-primary" />
+                <div className="h-11 w-11 rounded-lg bg-white/10 flex items-center justify-center">
+                  <item.icon className="h-5 w-5 text-white/70" />
                 </div>
                 <p className="text-sm font-medium leading-snug opacity-90">{item.text}</p>
               </div>
@@ -232,7 +232,7 @@ export function ProductCatalogSection() {
       {/* Calculator modal */}
       {calcOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={() => setCalcOpen(false)}>
-          <div className="bg-card rounded-lg shadow-xl max-w-md w-full mx-4" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-card rounded-xl shadow-xl max-w-md w-full mx-4" onClick={(e) => e.stopPropagation()}>
             <div className="p-4 border-b border-border flex items-center justify-between">
               <h3 className="font-semibold">Калькулятор расхода — {calcFraction}</h3>
               <Button variant="ghost" size="sm" onClick={() => setCalcOpen(false)}>✕</Button>

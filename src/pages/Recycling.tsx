@@ -32,7 +32,7 @@ const Recycling = () => {
               { icon: Truck, title: "Самовывоз", desc: "Возможен вывоз шин с вашей территории" },
             ].map((item, i) => (
               <div key={i} className="unified-card flex gap-4 p-6">
-                <item.icon className="h-8 w-8 text-primary shrink-0" />
+                <item.icon className="h-8 w-8 text-foreground/50 shrink-0" />
                 <div>
                   <h3 className="font-semibold mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
