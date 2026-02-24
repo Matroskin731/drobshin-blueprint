@@ -94,7 +94,7 @@ export function ProductCatalogSection() {
           <h2 className="text-3xl font-bold text-center mb-4">Наша продукция</h2>
 
           {/* Micro-offer */}
-          <Card className="max-w-4xl mx-auto mb-10 border-border/50 shadow-sm">
+          <Card className="max-w-4xl mx-auto mb-10">
             <CardContent className="p-6 sm:p-8 space-y-4">
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold leading-snug mb-1">
@@ -146,7 +146,7 @@ export function ProductCatalogSection() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
                     {filteredItems.map((item) => (
-                      <Card key={item.id} className="card-hover border-border/60">
+                      <Card key={item.id}>
                         <CardContent className="p-6 space-y-3">
                           <div className="flex items-start justify-between gap-2">
                             <h4 className="font-semibold text-lg leading-snug">{item.name}</h4>
@@ -213,7 +213,7 @@ export function ProductCatalogSection() {
       </section>
 
       {/* Trust block */}
-      <section className="section-padding border-t border-border/40" style={{ background: "hsl(220 20% 12%)", color: "hsl(0 0% 100%)" }}>
+      <section className="section-padding hero-gradient">
         <div className="section-container">
           <h2 className="text-2xl font-bold text-center mb-8">Почему нам доверяют подрядчики</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">

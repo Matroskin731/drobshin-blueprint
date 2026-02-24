@@ -35,7 +35,7 @@ const Wholesale = () => {
                 <p className="text-muted-foreground mb-6">{category.description}</p>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {category.items.filter((i) => i.visible).map((item) => (
-                    <Card key={item.id} className="card-hover overflow-hidden">
+                    <Card key={item.id} className="overflow-hidden">
                       <CardContent className="pt-0 p-0">
                         {item.image ? (
                           <img src={item.image} alt={item.name} className="w-full h-40 object-cover" />

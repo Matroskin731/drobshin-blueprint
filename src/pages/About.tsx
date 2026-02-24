@@ -30,7 +30,7 @@ const About = () => {
               { icon: Award, title: "ГОСТ", desc: "Сертификация" },
               { icon: Users, title: "500+", desc: "Клиентов" },
             ].map((item, i) => (
-              <div key={i} className="text-center p-6 rounded-lg bg-card border">
+              <div key={i} className="unified-card text-center p-6">
                 <item.icon className="h-8 w-8 mx-auto mb-3 text-primary" />
                 <p className="text-2xl font-bold">{item.title}</p>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>

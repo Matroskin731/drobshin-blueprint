@@ -26,7 +26,7 @@ const Articles = () => {
             <div className="space-y-6">
               {visibleArticles.map((article) => (
                 <Link key={article.id} to={`/articles/${article.id}`} className="block">
-                  <Card className="card-hover">
+                  <Card>
                     <CardContent className="pt-6">
                       <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
                         <CalendarDays className="h-3.5 w-3.5" />
