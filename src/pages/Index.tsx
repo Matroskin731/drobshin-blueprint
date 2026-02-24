@@ -80,7 +80,7 @@ const Index = () => {
                 ].map((item, i) => (
                   <div key={i} className="stat-card text-center p-5">
                     <div className="mx-auto mb-3 h-11 w-11 rounded-lg bg-white/10 flex items-center justify-center">
-                      <item.icon className="h-6 w-6 text-white/70" />
+                      <item.icon className="h-6 w-6 text-white" />
                     </div>
                     <p className="font-bold text-lg text-white">{item.value}</p>
                     <p className="text-xs text-white/60">{item.label}</p>
@@ -121,7 +121,7 @@ const Index = () => {
 
       {/* How we work */}
       {isBlockVisible("how-we-work") && (
-        <section className="hero-gradient section-padding">
+        <section className="section-padding" style={{ background: "hsl(var(--dark-mid))", color: "hsl(var(--hero-foreground))" }}>
           <div className="section-container">
             <h2 className="text-3xl font-bold text-center mb-10">Как мы работаем</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -132,9 +132,9 @@ const Index = () => {
                 { step: "04", title: "Доставка", desc: "Отгрузим и доставим в ваш регион" },
               ].map((item, i) => (
                 <div key={i} className="relative pl-4 border-l-2 border-primary/40">
-                  <span className="text-4xl font-extrabold text-white/20 leading-none">{item.step}</span>
+                  <span className="text-4xl font-extrabold text-white/30 leading-none">{item.step}</span>
                   <h3 className="font-bold mt-2 mb-1 text-white">{item.title}</h3>
-                  <p className="text-sm text-white/60">{item.desc}</p>
+                  <p className="text-sm text-white/70">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -166,7 +166,7 @@ const Index = () => {
 
       {/* Calculator + Request Form */}
       {isBlockVisible("request-form") && (
-        <section id="request-form" className="hero-gradient section-padding">
+        <section id="request-form" className="section-padding" style={{ background: "hsl(var(--dark-light))", color: "hsl(var(--hero-foreground))" }}>
           <div className="section-container">
             <h2 className="text-3xl font-bold text-center mb-10">Рассчитайте и закажите</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">

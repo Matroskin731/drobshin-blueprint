@@ -8,8 +8,8 @@ export function Footer() {
   const visibleNav = navigation.filter((n) => n.visible);
 
   return (
-    <footer className="hero-gradient text-white">
-      <div className="section-container py-12">
+    <footer style={{ background: "hsl(var(--footer-bg))" }} className="text-white border-t border-white/5">
+      <div className="section-container py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
@@ -31,7 +31,7 @@ export function Footer() {
                 <Link
                   key={item.id}
                   to={item.path}
-                  className="text-sm opacity-70 hover:opacity-100 transition-opacity"
+                  className="text-sm opacity-80 hover:opacity-100 transition-opacity"
                 >
                   {item.title}
                 </Link>
@@ -45,13 +45,13 @@ export function Footer() {
             <div className="flex flex-col gap-2.5 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-white/50" />
-                <span className="opacity-70">{contacts.address}</span>
+                <span className="opacity-80">{contacts.address}</span>
               </div>
               {contacts.phones.map((phone, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <Phone className="h-4 w-4 mt-0.5 shrink-0 text-white/50" />
                   <div>
-                    <a href={`tel:${phone.number.replace(/[^\d+]/g, "")}`} className="opacity-70 hover:opacity-100">
+                    <a href={`tel:${phone.number.replace(/[^\d+]/g, "")}`} className="opacity-80 hover:opacity-100">
                       {phone.number}
                     </a>
                     <p className="text-xs opacity-50">{phone.name} — {phone.role}</p>
@@ -61,7 +61,7 @@ export function Footer() {
               {contacts.emails.map((email, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <Mail className="h-4 w-4 shrink-0 text-white/50" />
-                  <a href={`mailto:${email}`} className="opacity-70 hover:opacity-100">{email}</a>
+                  <a href={`mailto:${email}`} className="opacity-80 hover:opacity-100">{email}</a>
                 </div>
               ))}
             </div>
@@ -74,7 +74,7 @@ export function Footer() {
               {contacts.schedule.map((line, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <Clock className="h-4 w-4 shrink-0 text-white/50" />
-                  <span className="opacity-70">{line}</span>
+                  <span className="opacity-80">{line}</span>
                 </div>
               ))}
             </div>
