@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { CheckCircle, Factory, Truck, Recycle, MapPin, Award, Calculator as CalcIcon, Circle } from "lucide-react";
+import { CheckCircle, Factory, Truck, Recycle, MapPin, Award, Calculator as CalcIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -106,7 +106,7 @@ export function ProductCatalogSection() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-sm">
                 {["Расчёт за 10 минут", "Подбор фракции под задачу", "Консультация инженера"].map((t) => (
                   <span key={t} className="flex items-center gap-1.5 text-muted-foreground">
-                    <CheckCircle className="h-4 w-4 text-foreground/40 shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-primary/50 shrink-0" />
                     {t}
                   </span>
                 ))}
@@ -152,11 +152,11 @@ export function ProductCatalogSection() {
                             <h4 className="font-semibold text-lg leading-snug">{item.name}</h4>
                             <div className="flex flex-col items-end gap-1 shrink-0">
                               {isCrumb && item.id === "crumb-1-2" && (
-                                <Badge className="text-[10px] bg-primary text-primary-foreground border-0">
+                                <Badge className="text-[10px] border-0" style={{ background: "hsl(30 100% 48%)", color: "#fff" }}>
                                   Хит продаж
                                 </Badge>
                               )}
-                              <Badge className="text-[10px] bg-muted text-foreground border-0">
+                              <Badge className="text-[10px] border-0 bg-primary/15 text-primary">
                                 Отгрузка от 1 т
                               </Badge>
                             </div>
@@ -169,15 +169,15 @@ export function ProductCatalogSection() {
                             <ul className="space-y-0.5">
                               {CRUMB_SPECS[item.id].map((spec, idx) => (
                                 <li key={idx} className="flex items-start gap-1.5 text-[11px] text-muted-foreground leading-snug">
-                                  <Circle className="h-2 w-2 mt-1 shrink-0 fill-foreground/30 text-foreground/30" />
+                                  <CheckCircle className="h-3 w-3 mt-0.5 shrink-0 text-primary/50" />
                                   <span>{spec}</span>
                                 </li>
                               ))}
                             </ul>
                           )}
 
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                            <Circle className="h-2.5 w-2.5 fill-foreground/30 text-foreground/30" />
+                          <div className="flex items-center gap-1.5 text-xs text-foreground">
+                            <CheckCircle className="h-3.5 w-3.5 text-primary/50" />
                             В наличии
                           </div>
 
