@@ -31,7 +31,7 @@ const About = () => {
               { icon: Users, title: "500+", desc: "Клиентов" },
             ].map((item, i) => (
               <div key={i} className="unified-card text-center p-6">
-                <item.icon className="h-8 w-8 mx-auto mb-3 text-primary" />
+                <item.icon className="h-8 w-8 mx-auto mb-3 text-foreground/50" />
                 <p className="text-2xl font-bold">{item.title}</p>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
@@ -42,19 +42,19 @@ const About = () => {
             <h2 className="text-2xl font-bold">Наши направления</h2>
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />
                 <span><strong className="text-foreground">Переработка и утилизация РТИ</strong> — приём и переработка автомобильных шин и других резинотехнических изделий</span>
               </li>
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />
                 <span><strong className="text-foreground">Резиновая крошка</strong> — производство гранулята различных фракций для покрытий, спортивных площадок и строительства</span>
               </li>
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />
                 <span><strong className="text-foreground">Резиновая плитка</strong> — безопасные покрытия для детских и спортивных площадок</span>
               </li>
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />
                 <span><strong className="text-foreground">Бесшовные покрытия</strong> — монолитные резиновые покрытия для различных назначений</span>
               </li>
             </ul>

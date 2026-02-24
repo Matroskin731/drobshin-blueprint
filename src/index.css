@@ -24,8 +24,8 @@
     --muted: 200 8% 90%;
     --muted-foreground: 210 6% 45%;
 
-    --accent: 123 46% 34%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 200 8% 90%;
+    --accent-foreground: 210 9% 18%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -148,7 +148,7 @@
 }
 
 .stat-card:hover {
-  border-color: hsl(123 46% 34% / 0.5);
+  border-color: hsl(210 10% 28%);
 }
 
 /* Global responsive safeguards */

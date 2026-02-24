@@ -29,7 +29,7 @@ export function Calculator({ onRequestQuote }: CalculatorProps) {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <CalcIcon className="h-5 w-5 text-primary" />
+          <CalcIcon className="h-5 w-5 text-foreground/60" />
           Калькулятор расхода крошки
         </CardTitle>
       </CardHeader>
@@ -66,9 +66,9 @@ export function Calculator({ onRequestQuote }: CalculatorProps) {
         </Button>
 
         {result !== null && (
-          <div className="rounded-lg bg-primary/5 border border-primary/20 p-4 text-center space-y-3">
+          <div className="rounded-xl bg-muted border border-border p-4 text-center space-y-3">
             <p className="text-sm text-muted-foreground">Ориентировочный вес крошки:</p>
-            <p className="text-3xl font-bold text-primary">{result} кг</p>
+            <p className="text-3xl font-bold text-foreground">{result} кг</p>
             <Button
               variant="outline"
               size="sm"

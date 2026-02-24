@@ -14,7 +14,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-lg font-bold mb-3">
-              <span className="text-primary">Дроб</span>Шин
+              <span className="text-white">Дроб</span>Шин
             </h3>
             <p className="text-sm opacity-70 leading-relaxed">
               ООО «Нижегородский завод по переработке РТИ»
@@ -44,12 +44,12 @@ export function Footer() {
             <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-50">Контакты</h4>
             <div className="flex flex-col gap-2.5 text-sm">
               <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-white/50" />
                 <span className="opacity-70">{contacts.address}</span>
               </div>
               {contacts.phones.map((phone, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <Phone className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
+                  <Phone className="h-4 w-4 mt-0.5 shrink-0 text-white/50" />
                   <div>
                     <a href={`tel:${phone.number.replace(/[^\d+]/g, "")}`} className="opacity-70 hover:opacity-100">
                       {phone.number}
@@ -60,7 +60,7 @@ export function Footer() {
               ))}
               {contacts.emails.map((email, i) => (
                 <div key={i} className="flex items-center gap-2">
-                  <Mail className="h-4 w-4 shrink-0 text-primary" />
+                  <Mail className="h-4 w-4 shrink-0 text-white/50" />
                   <a href={`mailto:${email}`} className="opacity-70 hover:opacity-100">{email}</a>
                 </div>
               ))}
@@ -73,7 +73,7 @@ export function Footer() {
             <div className="flex flex-col gap-1.5 text-sm">
               {contacts.schedule.map((line, i) => (
                 <div key={i} className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 shrink-0 text-primary" />
+                  <Clock className="h-4 w-4 shrink-0 text-white/50" />
                   <span className="opacity-70">{line}</span>
                 </div>
               ))}

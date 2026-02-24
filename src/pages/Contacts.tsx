@@ -25,7 +25,7 @@ const Contacts = () => {
               <Card>
                 <CardContent className="pt-6 space-y-4">
                   <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <MapPin className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                     <div>
                       <p className="font-semibold mb-1">Адрес</p>
                       <p className="text-sm text-muted-foreground">{contacts.address}</p>
@@ -34,11 +34,11 @@ const Contacts = () => {
 
                   {contacts.phones.map((phone, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Phone className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                      <Phone className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                       <div>
                         <p className="font-semibold mb-0.5">{phone.name}</p>
                         <p className="text-xs text-muted-foreground mb-1">{phone.role}</p>
-                        <a href={`tel:${phone.number.replace(/[^\d+]/g, "")}`} className="text-sm text-primary hover:underline">
+                        <a href={`tel:${phone.number.replace(/[^\d+]/g, "")}`} className="text-sm text-foreground hover:underline">
                           {phone.number}
                         </a>
                       </div>
@@ -47,16 +47,16 @@ const Contacts = () => {
 
                   {contacts.emails.map((email, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Mail className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                      <Mail className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                       <div>
                         <p className="font-semibold mb-1">Email</p>
-                        <a href={`mailto:${email}`} className="text-sm text-primary hover:underline">{email}</a>
+                        <a href={`mailto:${email}`} className="text-sm text-foreground hover:underline">{email}</a>
                       </div>
                     </div>
                   ))}
 
                   <div className="flex items-start gap-3">
-                    <Clock className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <Clock className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                     <div>
                       <p className="font-semibold mb-1">График работы</p>
                       {contacts.schedule.map((line, i) => (
