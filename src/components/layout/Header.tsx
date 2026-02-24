@@ -16,7 +16,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="section-container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-bold text-xl tracking-tight">
-          <span className="text-primary bg-transparent">ДробШин</span>
+          <span className="bg-transparent text-primary">ДробШин</span>
           <span className="text-foreground mx-0">​</span>
         </Link>
 
