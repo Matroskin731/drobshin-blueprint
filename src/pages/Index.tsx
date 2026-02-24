@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Recycle, Shield, Truck, Factory, Award, FileCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { RequestForm } from "@/components/RequestForm";
 import { Calculator } from "@/components/Calculator";
@@ -25,38 +24,28 @@ const Index = () => {
       {/* Hero */}
       {isBlockVisible("hero") && (
         <section className="hero-photo relative overflow-hidden">
-          {/* Background image with parallax */}
           <div
             className="hero-photo__bg absolute inset-0"
             style={{ backgroundImage: `url(${heroFactory})` }}
             aria-hidden="true"
           />
-          {/* Gradient overlay */}
           <div className="absolute inset-0 hero-photo__overlay" aria-hidden="true" />
 
           <div className="section-container section-padding relative z-10">
             <div className="max-w-2xl">
-              <h1
-                className="text-[2.25rem] md:text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.25] md:leading-tight text-white animate-fade-in"
-              >
+              <h1 className="text-[2.25rem] md:text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.25] md:leading-tight text-white">
                 Переработка шин.
                 <br />
-                <span style={{ color: "hsl(152, 55%, 50%)" }}>Резиновая крошка и покрытия.</span>
+                <span className="text-primary">Резиновая крошка и покрытия.</span>
               </h1>
-              <p
-                className="text-lg md:text-xl text-white/80 max-w-2xl mb-8 animate-fade-in"
-                style={{ animationDelay: "0.2s", animationFillMode: "both" }}
-              >
+              <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
                 Производим резиновую крошку, плитку и бесшовные покрытия из переработанных шин. Оптом по всей России.
               </p>
-              <div
-                className="flex flex-col sm:flex-row gap-3 animate-fade-in"
-                style={{ animationDelay: "0.3s", animationFillMode: "both" }}
-              >
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" asChild className="text-base">
                   <Link to="/wholesale">Продукция и цены</Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild className="text-base border-white/30 text-white/90 bg-white/5 hover:bg-white/15 hover:text-white">
+                <Button size="lg" variant="outline" asChild className="text-base border-white/30 text-white/90 bg-white/5 hover:bg-white/15 hover:text-white hover:border-white/50">
                   <a href="#request-form">Оставить заявку</a>
                 </Button>
               </div>
@@ -91,9 +80,9 @@ const Index = () => {
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="industrial-card text-center p-5 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:border-primary/60"
+                    className="stat-card text-center p-5"
                   >
-                    <div className="mx-auto mb-3 h-11 w-11 rounded-md bg-primary/15 flex items-center justify-center industrial-icon-glow">
+                    <div className="mx-auto mb-3 h-11 w-11 rounded-lg bg-primary/15 flex items-center justify-center">
                       <item.icon className="h-6 w-6 text-primary" />
                     </div>
                     <p className="font-bold text-lg text-white">{item.value}</p>
@@ -120,8 +109,8 @@ const Index = () => {
                 { icon: Truck, title: "Логистика по РФ", desc: "Организуем доставку в любой регион России" },
                 { icon: Users, title: "Индивидуальный подход", desc: "Гибкие условия для оптовых покупателей" },
               ].map((item, i) => (
-                <div key={i} className="text-center">
-                  <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <div key={i} className="unified-card text-center p-6">
+                  <div className="mx-auto mb-3 h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
                     <item.icon className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="font-semibold mb-1">{item.title}</h3>
@@ -135,7 +124,7 @@ const Index = () => {
 
       {/* How we work */}
       {isBlockVisible("how-we-work") && (
-        <section className="section-alt section-padding">
+        <section className="hero-gradient section-padding">
           <div className="section-container">
             <h2 className="text-3xl font-bold text-center mb-10">Как мы работаем</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -146,9 +135,9 @@ const Index = () => {
                 { step: "04", title: "Доставка", desc: "Отгрузим и доставим в ваш регион" },
               ].map((item, i) => (
                 <div key={i} className="relative">
-                  <span className="text-5xl font-extrabold text-primary/10">{item.step}</span>
+                  <span className="text-5xl font-extrabold text-primary/20">{item.step}</span>
                   <h3 className="font-semibold mt-1 mb-1">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  <p className="text-sm text-white/60">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -167,7 +156,7 @@ const Index = () => {
                 { icon: Shield, title: "Экологичность", desc: "Безопасные материалы, переработка отходов" },
                 { icon: Award, title: "ГОСТ", desc: "Соответствие государственным стандартам" },
               ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center">
+                <div key={i} className="unified-card flex flex-col items-center p-6">
                   <item.icon className="h-10 w-10 text-primary mb-3" />
                   <h3 className="font-semibold mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
@@ -180,7 +169,7 @@ const Index = () => {
 
       {/* Calculator + Request Form */}
       {isBlockVisible("request-form") && (
-        <section id="request-form" className="section-alt section-padding">
+        <section id="request-form" className="hero-gradient section-padding">
           <div className="section-container">
             <h2 className="text-3xl font-bold text-center mb-10">Рассчитайте и закажите</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">

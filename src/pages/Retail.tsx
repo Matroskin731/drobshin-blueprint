@@ -25,7 +25,7 @@ const Retail = () => {
         <div className="section-container">
           <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {config.retailCategories.filter((c) => c.visible).map((cat) => (
-              <Card key={cat.id} className="card-hover text-center">
+              <Card key={cat.id} className="text-center">
                 <CardContent className="pt-6">
                   <h3 className="font-semibold">{cat.name}</h3>
                   <p className="text-sm text-muted-foreground mt-2">Скоро в наличии</p>

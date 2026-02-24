@@ -26,7 +26,7 @@ export function Calculator({ onRequestQuote }: CalculatorProps) {
   };
 
   return (
-    <Card className="card-hover">
+    <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <CalcIcon className="h-5 w-5 text-primary" />

@@ -8,7 +8,7 @@ export function Footer() {
   const visibleNav = navigation.filter((n) => n.visible);
 
   return (
-    <footer className="bg-foreground text-primary-foreground">
+    <footer className="hero-gradient text-white">
       <div className="section-container py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}

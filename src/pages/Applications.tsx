@@ -50,7 +50,7 @@ const Applications = () => {
         <div className="section-container">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {applications.map((app, i) => (
-              <Card key={i} className="card-hover">
+              <Card key={i}>
                 <CardContent className="pt-6">
                   <h3 className="text-lg font-bold mb-2">{app.title}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{app.desc}</p>
