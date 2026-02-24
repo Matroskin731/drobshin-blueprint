@@ -107,10 +107,10 @@ const Index = () => {
                 { icon: Users, title: "Индивидуальный подход", desc: "Гибкие условия для оптовых покупателей" },
               ].map((item, i) => (
                 <div key={i} className="unified-card text-center p-6">
-                  <div className="mx-auto mb-3 h-12 w-12 rounded-lg bg-muted flex items-center justify-center">
-                    <item.icon className="h-6 w-6 text-foreground/60" />
+                  <div className="mx-auto mb-3 h-12 w-12 rounded-lg bg-foreground/5 flex items-center justify-center">
+                    <item.icon className="h-6 w-6 text-foreground" />
                   </div>
-                  <h3 className="font-semibold mb-1">{item.title}</h3>
+                  <h3 className="font-bold mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
@@ -131,9 +131,9 @@ const Index = () => {
                 { step: "03", title: "Производство", desc: "Изготовим продукцию под ваш заказ" },
                 { step: "04", title: "Доставка", desc: "Отгрузим и доставим в ваш регион" },
               ].map((item, i) => (
-                <div key={i} className="relative">
-                  <span className="text-5xl font-extrabold text-white/10">{item.step}</span>
-                  <h3 className="font-semibold mt-1 mb-1">{item.title}</h3>
+                <div key={i} className="relative pl-4 border-l-2 border-primary/40">
+                  <span className="text-4xl font-extrabold text-white/20 leading-none">{item.step}</span>
+                  <h3 className="font-bold mt-2 mb-1 text-white">{item.title}</h3>
                   <p className="text-sm text-white/60">{item.desc}</p>
                 </div>
               ))}
@@ -154,8 +154,8 @@ const Index = () => {
                 { icon: Award, title: "ГОСТ", desc: "Соответствие государственным стандартам" },
               ].map((item, i) => (
                 <div key={i} className="unified-card flex flex-col items-center p-6">
-                  <item.icon className="h-10 w-10 text-foreground/50 mb-3" />
-                  <h3 className="font-semibold mb-1">{item.title}</h3>
+                  <item.icon className="h-10 w-10 text-foreground mb-3" />
+                  <h3 className="font-bold mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
