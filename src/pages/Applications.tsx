@@ -57,7 +57,7 @@ const Applications = () => {
                   <ul className="space-y-1.5">
                     {app.items.map((item, j) =>
                   <li key={j} className="flex items-center gap-2 text-sm">
-                        <CheckCircle className="h-3.5 w-3.5 shrink-0 text-lime-600" />
+                        <CheckCircle className="h-3.5 w-3.5 shrink-0 text-lime-500" />
                         {item}
                       </li>
                   )}
