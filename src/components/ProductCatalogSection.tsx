@@ -154,16 +154,11 @@ export function ProductCatalogSection() {
                         <CardContent className="p-6 space-y-3">
                           <div className="flex items-start justify-between gap-2">
                             <h4 className="font-semibold text-lg leading-snug">{item.name}</h4>
-                            <div className="flex flex-col items-end gap-1 shrink-0">
-                              {isCrumb && item.id === "crumb-1-2" && (
-                                <Badge className="text-[10px] border-0" style={{ background: "hsl(30 100% 48%)", color: "#fff" }}>
-                                  Хит продаж
-                                </Badge>
-                              )}
-                              <Badge className="text-[10px] border-0 bg-primary/15 text-primary">
-                                Отгрузка от 1 т
+                            {isCrumb && item.id === "crumb-1-2" && (
+                              <Badge className="text-[10px] border-0 shrink-0" style={{ background: "hsl(30 100% 48%)", color: "#fff" }}>
+                                Хит продаж
                               </Badge>
-                            </div>
+                            )}
                           </div>
 
                           <p className="text-sm text-muted-foreground">{item.description}</p>
