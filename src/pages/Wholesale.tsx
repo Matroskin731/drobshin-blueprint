@@ -7,6 +7,34 @@ import { RequestForm } from "@/components/RequestForm";
 import { Calculator } from "@/components/Calculator";
 import { useState } from "react";
 
+import crumb063Img from "@/assets/products/crumb-063.jpg";
+import crumb12Img from "@/assets/products/crumb-1-2.jpg";
+import crumb24Img from "@/assets/products/crumb-2-4.jpg";
+import crumbColorImg from "@/assets/products/crumb-color.jpg";
+import tile20Img from "@/assets/products/tile-20.jpg";
+import tile30Img from "@/assets/products/tile-30.jpg";
+import tile40Img from "@/assets/products/tile-40.jpg";
+import tile50Img from "@/assets/products/tile-50.jpg";
+import seamless10Img from "@/assets/products/seamless-10.jpg";
+import seamless20Img from "@/assets/products/seamless-20.jpg";
+import seamless40Img from "@/assets/products/seamless-40.jpg";
+import seamless50Img from "@/assets/products/seamless-50.jpg";
+
+const PRODUCT_IMAGES: Record<string, string> = {
+  "crumb-063": crumb063Img,
+  "crumb-1-2": crumb12Img,
+  "crumb-2-4": crumb24Img,
+  "crumb-color": crumbColorImg,
+  "tile-20": tile20Img,
+  "tile-30": tile30Img,
+  "tile-40": tile40Img,
+  "tile-50": tile50Img,
+  "seamless-10": seamless10Img,
+  "seamless-20": seamless20Img,
+  "seamless-40": seamless40Img,
+  "seamless-50": seamless50Img,
+};
+
 const Wholesale = () => {
   const { config } = useSiteConfig();
   const [calcMessage, setCalcMessage] = useState("");
@@ -37,13 +65,16 @@ const Wholesale = () => {
                   {category.items.filter((i) => i.visible).map((item) => (
                     <Card key={item.id} className="overflow-hidden">
                       <CardContent className="pt-0 p-0">
-                        {item.image ? (
-                          <img src={item.image} alt={item.name} className="w-full h-40 object-cover" />
-                        ) : (
-                          <div className="w-full h-40 bg-muted flex items-center justify-center">
-                            <div className="h-2 w-12 rounded-full bg-muted-foreground/20" />
-                          </div>
-                        )}
+                        {(() => {
+                          const imgSrc = PRODUCT_IMAGES[item.id] || item.image;
+                          return imgSrc ? (
+                            <img src={imgSrc} alt={item.name} className="w-full h-44 object-cover" />
+                          ) : (
+                            <div className="w-full h-44 bg-muted flex items-center justify-center">
+                              <div className="h-2 w-12 rounded-full bg-muted-foreground/20" />
+                            </div>
+                          );
+                        })()}
                         <div className="p-6">
                           <h3 className="font-semibold mb-2">{item.name}</h3>
                           <p className="text-sm text-muted-foreground">{item.description}</p>
