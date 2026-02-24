@@ -136,10 +136,27 @@
   border: 1px solid hsl(210 10% 86%);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .unified-card:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 8px 28px rgba(0, 0, 0, 0.07);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Card hover lift (for shadcn Card) */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Button press effect */
+button:not(:disabled):active,
+a[role="button"]:active {
+  transform: scale(0.97);
 }
 
 /* Dark stat cards (about section) */

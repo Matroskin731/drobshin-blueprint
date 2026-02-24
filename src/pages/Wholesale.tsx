@@ -6,6 +6,7 @@ import { CheckCircle } from "lucide-react";
 import { RequestForm } from "@/components/RequestForm";
 import { Calculator } from "@/components/Calculator";
 import { useState } from "react";
+import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 import crumb063Img from "@/assets/products/crumb-063.jpg";
 import crumb12Img from "@/assets/products/crumb-1-2.jpg";
@@ -39,6 +40,9 @@ const Wholesale = () => {
   const { config } = useSiteConfig();
   const [calcMessage, setCalcMessage] = useState("");
 
+  const catalogRef = useScrollReveal();
+  const formRef = useScrollReveal();
+
   const scrollToForm = () => {
     document.getElementById("wholesale-form")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -54,53 +58,56 @@ const Wholesale = () => {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding" ref={catalogRef}>
         <div className="section-container">
           <div className="space-y-12">
-            {config.products.filter((c) => c.visible).map((category) => (
-              <div key={category.id}>
-                <h2 className="text-2xl font-bold mb-2">{category.name}</h2>
-                <p className="text-muted-foreground mb-6">{category.description}</p>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {category.items.filter((i) => i.visible).map((item) => (
-                    <Card key={item.id} className="overflow-hidden">
-                      <CardContent className="pt-0 p-0">
-                        {(() => {
-                          const imgSrc = PRODUCT_IMAGES[item.id] || item.image;
-                          return imgSrc ? (
-                            <img src={imgSrc} alt={item.name} className="w-full h-44 object-cover" />
-                          ) : (
-                            <div className="w-full h-44 bg-muted flex items-center justify-center">
-                              <div className="h-2 w-12 rounded-full bg-muted-foreground/20" />
+            {config.products.filter((c) => c.visible).map((category) => {
+              const items = category.items.filter((i) => i.visible);
+              return (
+                <div key={category.id}>
+                  <h2 className="text-2xl font-bold mb-2">{category.name}</h2>
+                  <p className="text-muted-foreground mb-6">{category.description}</p>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {items.map((item) => (
+                      <Card key={item.id} className="overflow-hidden card-hover">
+                        <CardContent className="pt-0 p-0">
+                          {(() => {
+                            const imgSrc = PRODUCT_IMAGES[item.id] || item.image;
+                            return imgSrc ? (
+                              <img src={imgSrc} alt={item.name} className="w-full h-44 object-cover" />
+                            ) : (
+                              <div className="w-full h-44 bg-muted flex items-center justify-center">
+                                <div className="h-2 w-12 rounded-full bg-muted-foreground/20" />
+                              </div>
+                            );
+                          })()}
+                          <div className="p-6">
+                            <h3 className="font-semibold mb-2">{item.name}</h3>
+                            <p className="text-sm text-muted-foreground">{item.description}</p>
+                            <div className="mt-3 flex items-center gap-1.5 text-xs" style={{ color: "#43A047" }}>
+                              <CheckCircle className="h-3.5 w-3.5" />
+                              В наличии
                             </div>
-                          );
-                        })()}
-                        <div className="p-6">
-                          <h3 className="font-semibold mb-2">{item.name}</h3>
-                          <p className="text-sm text-muted-foreground">{item.description}</p>
-                          <div className="mt-3 flex items-center gap-1.5 text-xs" style={{ color: "#43A047" }}>
-                            <CheckCircle className="h-3.5 w-3.5" />
-                            В наличии
+                            {item.price && item.showPrice ? (
+                              <Badge variant="secondary" className="mt-3 text-sm font-semibold pointer-events-none">
+                                {item.price}
+                              </Badge>
+                            ) : (
+                              <Button variant="outline" size="sm" className="mt-3" onClick={scrollToForm}>
+                                Узнать цену
+                              </Button>
+                            )}
                           </div>
-                          {item.price && item.showPrice ? (
-                            <Badge variant="secondary" className="mt-3 text-sm font-semibold pointer-events-none">
-                              {item.price}
-                            </Badge>
-                          ) : (
-                            <Button variant="outline" size="sm" className="mt-3" onClick={scrollToForm}>
-                              Узнать цену
-                            </Button>
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          <div className="mt-16 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="mt-16 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" ref={formRef}>
             <Calculator onRequestQuote={(a, t, w) => {
               setCalcMessage(`Калькулятор: ${a} м², ${t} мм, ≈${w} кг`);
               document.getElementById("wholesale-form")?.scrollIntoView({ behavior: "smooth" });
