@@ -27,8 +27,8 @@ const Recycling = () => {
           <div className="grid sm:grid-cols-2 gap-6 mb-12">
             {[
               { icon: Recycle, title: "Приём шин", desc: "Принимаем легковые и грузовые шины любого размера" },
-              { icon: Factory, title: "Полный цикл", desc: "Переработка на собственном оборудовании" },
-              { icon: Leaf, title: "Экологичность", desc: "Безотходная технология переработки" },
+              { icon: Factory, title: "Полный цикл", desc: "Утилизация на собственном оборудовании" },
+              { icon: Leaf, title: "Экологичность", desc: "Безотходная технология утилизации" },
               { icon: Truck, title: "Самовывоз", desc: "Возможен вывоз шин с вашей территории" },
             ].map((item, i) => (
               <div key={i} className="unified-card flex gap-4 p-6">
