@@ -14,6 +14,7 @@ import Wholesale from "./pages/Wholesale";
 import Retail from "./pages/Retail";
 import Recycling from "./pages/Recycling";
 import Rop from "./pages/Rop";
+import Accessories from "./pages/Accessories";
 import Applications from "./pages/Applications";
 import Articles from "./pages/Articles";
 import ArticlePage from "./pages/ArticlePage";
