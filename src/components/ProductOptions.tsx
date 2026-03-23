@@ -109,9 +109,9 @@ export function ProductOptions({ itemId, categoryId }: Props) {
                 <button
                   key={t}
                   onClick={() => setSelectedThickness(isActive ? null : t)}
-                  className={`text-[11px] px-2.5 py-1.5 rounded-lg border transition-all duration-200 hover:border-primary/50 ${
+                  className={`text-[11px] px-2.5 py-1.5 rounded-lg border transition-all duration-200 hover:border-primary/40 hover:bg-muted/50 ${
                     isActive
-                      ? "border-primary bg-primary/10 text-foreground font-medium shadow-sm"
+                      ? "border-primary bg-primary/10 text-foreground font-medium shadow-[0_0_0_1px_hsl(var(--primary)/0.2),0_0_8px_hsl(var(--primary)/0.12)]"
                       : "border-border text-muted-foreground"
                   }`}
                 >
