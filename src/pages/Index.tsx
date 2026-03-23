@@ -86,8 +86,8 @@ const Index = () => {
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
                   { icon: Factory, label: "Собственное производство", value: "2 линии" },
-                  { icon: Recycle, label: "Переработка шин", value: "5000+ т/год" },
-                  { icon: Shield, label: "Качество продукции", value: "ГОСТ Р 59228-2020" },
+                  { icon: Recycle, label: "Утилизация отходов РТИ", value: "2400+ т/год" },
+                  { icon: Shield, label: "Качество продукции", value: "ТУ" },
                   { icon: Users, label: "Постоянных клиентов", value: "500+" },
                 ].map((item, i) => (
                   <div key={i} ref={statStagger(i)} className="stat-card text-center p-5">
