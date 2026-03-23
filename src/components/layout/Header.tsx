@@ -26,7 +26,7 @@ export function Header() {
           <Link
             key={item.id}
             to={item.path}
-            className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+            className={`whitespace-nowrap px-2 py-2 rounded-lg text-[13px] font-medium transition-colors ${
             location.pathname === item.path ?
             "bg-foreground/8 text-foreground" :
             "text-muted-foreground hover:text-foreground hover:bg-muted"}`
