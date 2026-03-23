@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import { ProductOptions } from "@/components/ProductOptions";
 import { RequestForm } from "@/components/RequestForm";
 import { Calculator } from "@/components/Calculator";
 import { useState } from "react";

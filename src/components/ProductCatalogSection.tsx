@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle, Factory, Truck, Recycle, MapPin, Award, Calculator as CalcIcon } from "lucide-react";
+import { ProductOptions } from "@/components/ProductOptions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
