@@ -1,6 +1,12 @@
-import { Factory, Recycle, Award, Users } from "lucide-react";
+import { Factory, Recycle, Award, Users, ShieldCheck, FileText, Building2, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
+  const scrollToForm = () => {
+    document.getElementById("request-form")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div>
       <section className="hero-gradient py-16">
@@ -59,6 +65,41 @@ const About = () => {
               </li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Trust / License block */}
+      <section className="section-alt section-padding">
+        <div className="section-container max-w-4xl">
+          <Card>
+            <CardContent className="p-6 sm:p-8 space-y-5">
+              <div className="flex items-start gap-3">
+                <ShieldCheck className="h-7 w-7 shrink-0 text-primary mt-0.5" />
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-bold leading-snug">Надёжный партнёр по утилизации РТИ</h2>
+                  <p className="text-sm text-muted-foreground mt-1 leading-relaxed max-w-2xl">
+                    ООО «НЗ ППРТИ» осуществляет деятельность на основании лицензии №Л020-00113-52/00043188 от 16.04.2018 г. и включено в реестр утилизаторов. Предоставляем полный пакет документов для экологической отчётности.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                {[
+                  { icon: FileText, text: "Лицензия на утилизацию отходов" },
+                  { icon: CheckCircle, text: "Включение в реестр утилизаторов" },
+                  { icon: FileText, text: "Предоставление актов утилизации" },
+                  { icon: Building2, text: "Работа с юридическими лицами" },
+                ].map((item, i) => (
+                  <span key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <item.icon className="h-4 w-4 shrink-0 text-primary" />
+                    {item.text}
+                  </span>
+                ))}
+              </div>
+
+              <Button size="sm" onClick={scrollToForm}>Запросить документы</Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>
