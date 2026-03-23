@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle, Factory, Truck, Recycle, MapPin, Award, Calculator as CalcIcon } from "lucide-react";
+import { ProductOptions } from "@/components/ProductOptions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -133,6 +134,8 @@ export function ProductCatalogSection() {
                           </div>
 
                           <p className="text-sm text-muted-foreground">{item.description}</p>
+
+                          <ProductOptions itemId={item.id} categoryId={category.id} />
 
                           {isCrumb && CRUMB_SPECS[item.id] && (
                             <ul className="space-y-0.5">

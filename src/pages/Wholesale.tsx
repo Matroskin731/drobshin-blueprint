@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import { ProductOptions } from "@/components/ProductOptions";
 import { RequestForm } from "@/components/RequestForm";
 import { Calculator } from "@/components/Calculator";
 import { useState } from "react";
@@ -84,6 +85,7 @@ const Wholesale = () => {
                           <div className="p-6">
                             <h3 className="font-semibold mb-2">{item.name}</h3>
                             <p className="text-sm text-muted-foreground">{item.description}</p>
+                            <ProductOptions itemId={item.id} categoryId={category.id} />
                             <div className="mt-3 flex items-center gap-1.5 text-xs" style={{ color: "#43A047" }}>
                               <CheckCircle className="h-3.5 w-3.5" />
                               В наличии
