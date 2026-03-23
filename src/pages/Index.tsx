@@ -46,12 +46,12 @@ const Index = () => {
           <div className="section-container section-padding relative z-10">
             <div className="max-w-2xl">
               <h1 className="text-[2.25rem] md:text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.25] md:leading-tight text-white">
-                Переработка шин.
+                Утилизация отходов РТИ.
                 <br />
                 <span className="text-primary">Резиновая крошка и покрытия.</span>
               </h1>
               <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-                Производим резиновую крошку, плитку и бесшовные покрытия из переработанных шин. Оптом по всей России.
+                Производим резиновую крошку, плитку и бесшовные покрытия из утилизированных шин.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" asChild className="text-base">
