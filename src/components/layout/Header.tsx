@@ -12,16 +12,25 @@ export function Header() {
   const visibleNav = config.navigation.filter((n) => n.visible);
   const mainPhone = config.contacts.phones[0];
 
+  const handleRequestClick = (e: React.MouseEvent) => {
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      document.getElementById("request-form")?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
-      <div className="max-w-[1280px] mx-auto px-4 flex h-16 items-center justify-between gap-4">
-        {/* Left: Logo */}
-        <Link to="/" className="shrink-0 whitespace-nowrap font-bold text-xl tracking-tight text-primary">
-          ДробШин
-        </Link>
+      <div className="max-w-[1280px] mx-auto px-5 flex h-16 items-center">
+        {/* Left: Logo — fixed width */}
+        <div className="shrink-0 w-[100px]">
+          <Link to="/" className="whitespace-nowrap font-bold text-xl tracking-tight text-primary">
+            ДробШин
+          </Link>
+        </div>
 
-        {/* Center: Desktop nav */}
-        <nav className="hidden xl:flex items-center gap-1 min-w-0">
+        {/* Center: Nav — takes remaining space, centered */}
+        <nav className="hidden xl:flex flex-1 items-center justify-center gap-0.5 min-w-0 overflow-hidden">
           {visibleNav.map((item) => (
             <Link
               key={item.id}
@@ -37,44 +46,28 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Right: Phone + CTA */}
-        <div className="hidden xl:flex items-center gap-4 shrink-0">
+        {/* Right: Phone + CTA — fixed, never shrinks */}
+        <div className="hidden xl:flex items-center gap-4 shrink-0 ml-4">
           {mainPhone && (
             <a
               href={`tel:${mainPhone.number.replace(/[^\d+]/g, "")}`}
-              className="flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-muted-foreground"
+              className="hidden 2xl:flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-muted-foreground shrink-0"
             >
               <Phone className="h-3.5 w-3.5 shrink-0" />
               {mainPhone.number}
             </a>
           )}
           <Button asChild size="sm" className="shrink-0 whitespace-nowrap">
-            <a
-              href="/#request-form"
-              onClick={(e) => {
-                if (window.location.pathname === "/") {
-                  e.preventDefault();
-                  document.getElementById("request-form")?.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-            >
+            <a href="/#request-form" onClick={handleRequestClick}>
               Оставить заявку
             </a>
           </Button>
         </div>
 
         {/* Mobile: CTA + burger */}
-        <div className="xl:hidden flex items-center gap-2">
+        <div className="xl:hidden flex items-center gap-2 ml-auto shrink-0">
           <Button asChild size="sm" className="shrink-0 whitespace-nowrap">
-            <a
-              href="/#request-form"
-              onClick={(e) => {
-                if (window.location.pathname === "/") {
-                  e.preventDefault();
-                  document.getElementById("request-form")?.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-            >
+            <a href="/#request-form" onClick={handleRequestClick}>
               Оставить заявку
             </a>
           </Button>
@@ -87,7 +80,7 @@ export function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="xl:hidden border-t bg-card">
-          <nav className="max-w-[1280px] mx-auto px-4 py-4 flex flex-col gap-1">
+          <nav className="max-w-[1280px] mx-auto px-5 py-4 flex flex-col gap-1">
             {visibleNav.map((item) => (
               <Link
                 key={item.id}
@@ -102,7 +95,7 @@ export function Header() {
                 {item.title}
               </Link>
             ))}
-            <div className="pt-3 mt-3 border-t flex flex-col gap-2">
+            <div className="pt-3 mt-3 border-t">
               {mainPhone && (
                 <a
                   href={`tel:${mainPhone.number.replace(/[^\d+]/g, "")}`}
