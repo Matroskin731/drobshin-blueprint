@@ -135,6 +135,8 @@ export function ProductCatalogSection() {
 
                           <p className="text-sm text-muted-foreground">{item.description}</p>
 
+                          <ProductOptions itemId={item.id} categoryId={category.id} />
+
                           {isCrumb && CRUMB_SPECS[item.id] && (
                             <ul className="space-y-0.5">
                               {CRUMB_SPECS[item.id].map((spec, idx) => (
