@@ -100,6 +100,7 @@ const Wholesale = () => {
                               </Button>
                             )}
                             <p className="text-[10px] text-muted-foreground/60 mt-1">Ответим в течение рабочего дня</p>
+                            <p className="text-[10px] text-muted-foreground/50 mt-0.5">Работаем с оптовыми заказами от 1 тонны</p>
                           </div>
                         </CardContent>
                       </Card>
