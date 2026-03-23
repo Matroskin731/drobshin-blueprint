@@ -50,12 +50,12 @@ export function ProductOptions({ itemId, categoryId }: Props) {
                   key={c.hex}
                   title={c.name}
                   onClick={() => setSelectedColor(isActive ? null : c.hex)}
-                  className="h-7 w-7 rounded-full border-2 transition-all duration-200 hover:scale-110"
+                  className="h-7 w-7 rounded-full border-2 transition-all duration-200 hover:scale-110 hover:shadow-md"
                   style={{
                     backgroundColor: c.hex,
-                    borderColor: isActive ? "hsl(var(--primary))" : "transparent",
+                    borderColor: isActive ? "#2E7D32" : "transparent",
                     boxShadow: isActive
-                      ? "0 0 0 2px hsl(var(--primary) / 0.3), 0 0 8px hsl(var(--primary) / 0.2)"
+                      ? "0 0 0 2px rgba(46,125,50,0.35), 0 0 10px rgba(46,125,50,0.25)"
                       : "0 1px 3px rgba(0,0,0,0.15)",
                   }}
                 />
@@ -84,9 +84,9 @@ export function ProductOptions({ itemId, categoryId }: Props) {
                 <button
                   key={opt.value}
                   onClick={() => setSeamlessColors(opt.value)}
-                  className={`text-[11px] px-3 py-1.5 rounded-lg border transition-all duration-200 hover:border-primary/50 ${
+                  className={`text-[11px] px-3 py-1.5 rounded-lg border transition-all duration-200 hover:border-primary/40 hover:bg-muted/50 ${
                     isActive
-                      ? "border-primary bg-primary/10 text-foreground font-medium shadow-sm"
+                      ? "border-primary bg-primary/10 text-foreground font-medium shadow-[0_0_0_1px_hsl(var(--primary)/0.2),0_0_8px_hsl(var(--primary)/0.12)]"
                       : "border-border text-muted-foreground"
                   }`}
                 >
@@ -109,9 +109,9 @@ export function ProductOptions({ itemId, categoryId }: Props) {
                 <button
                   key={t}
                   onClick={() => setSelectedThickness(isActive ? null : t)}
-                  className={`text-[11px] px-2.5 py-1.5 rounded-lg border transition-all duration-200 hover:border-primary/50 ${
+                  className={`text-[11px] px-2.5 py-1.5 rounded-lg border transition-all duration-200 hover:border-primary/40 hover:bg-muted/50 ${
                     isActive
-                      ? "border-primary bg-primary/10 text-foreground font-medium shadow-sm"
+                      ? "border-primary bg-primary/10 text-foreground font-medium shadow-[0_0_0_1px_hsl(var(--primary)/0.2),0_0_8px_hsl(var(--primary)/0.12)]"
                       : "border-border text-muted-foreground"
                   }`}
                 >
@@ -134,9 +134,9 @@ export function ProductOptions({ itemId, categoryId }: Props) {
                 <button
                   key={opt}
                   onClick={() => setSelectedBase(isActive ? null : opt)}
-                  className={`text-[11px] px-3 py-2 rounded-lg border text-left transition-all duration-200 hover:border-primary/50 ${
+                  className={`text-[11px] px-3 py-2 rounded-lg border text-left transition-all duration-200 hover:border-primary/40 hover:bg-muted/50 ${
                     isActive
-                      ? "border-primary bg-primary/10 text-foreground font-medium shadow-sm"
+                      ? "border-primary bg-primary/10 text-foreground font-medium shadow-[0_0_0_1px_hsl(var(--primary)/0.2),0_0_8px_hsl(var(--primary)/0.12)]"
                       : "border-border text-muted-foreground"
                   }`}
                 >
