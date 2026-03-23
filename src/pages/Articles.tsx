@@ -13,7 +13,7 @@ const Articles = () => {
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">Статьи</h1>
           <p className="text-lg opacity-80 max-w-2xl mx-auto">
-            Полезная информация о резиновых покрытиях и переработке
+            Полезная информация о резиновых покрытиях и утилизации
           </p>
         </div>
       </section>

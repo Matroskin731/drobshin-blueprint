@@ -7,7 +7,7 @@ const About = () => {
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">О заводе «ДробШин»</h1>
           <p className="text-lg opacity-80 max-w-2xl mx-auto">
-            ООО «Нижегородский завод по переработке РТИ» — надёжный партнёр в переработке шин с 2007 года
+            ООО «Нижегородский завод по переработке РТИ» — надёжный партнёр в утилизации отходов РТИ с 2007 года
           </p>
         </div>
       </section>
