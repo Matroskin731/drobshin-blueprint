@@ -46,12 +46,12 @@ const Index = () => {
           <div className="section-container section-padding relative z-10">
             <div className="max-w-2xl">
               <h1 className="text-[2.25rem] md:text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.25] md:leading-tight text-white">
-                Переработка шин.
+                Утилизация отходов РТИ.
                 <br />
                 <span className="text-primary">Резиновая крошка и покрытия.</span>
               </h1>
               <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-                Производим резиновую крошку, плитку и бесшовные покрытия из переработанных шин. Оптом по всей России.
+                Производим резиновую крошку, плитку и бесшовные покрытия из утилизированных шин.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" asChild className="text-base">
@@ -74,7 +74,7 @@ const Index = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-4">О заводе «ДробШин»</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Современное производство с полным циклом переработки и строгим контролем качества.
+                  Современное производство с полным циклом утилизации и строгим контролем качества.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   С 2007 года мы превращаем отходы в качественную продукцию: резиновую крошку различных фракций, плитку и бесшовные покрытия для спортивных и детских площадок.
@@ -86,8 +86,8 @@ const Index = () => {
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
                   { icon: Factory, label: "Собственное производство", value: "2 линии" },
-                  { icon: Recycle, label: "Переработка шин", value: "5000+ т/год" },
-                  { icon: Shield, label: "Качество продукции", value: "ГОСТ Р 59228-2020" },
+                  { icon: Recycle, label: "Утилизация отходов РТИ", value: "2400+ т/год" },
+                  { icon: Shield, label: "Качество продукции", value: "ТУ" },
                   { icon: Users, label: "Постоянных клиентов", value: "500+" },
                 ].map((item, i) => (
                   <div key={i} ref={statStagger(i)} className="stat-card text-center p-5">
@@ -113,8 +113,8 @@ const Index = () => {
             <h2 className="text-3xl font-bold text-center mb-10">Почему выбирают нас</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
               {[
-                { icon: Factory, title: "Собственное производство", desc: "Полный цикл переработки на своих мощностях" },
-                { icon: Shield, title: "Гарантия качества", desc: "Продукция соответствует ГОСТ и экологическим стандартам" },
+                { icon: Factory, title: "Собственное производство", desc: "Полный цикл утилизации на своих мощностях" },
+                { icon: Shield, title: "Гарантия качества", desc: "Продукция соответствует ТУ (ГОСТов на данную продукцию не существует)" },
                 { icon: Truck, title: "Логистика по РФ", desc: "Организуем доставку в любой регион России" },
                 { icon: Users, title: "Индивидуальный подход", desc: "Гибкие условия для оптовых покупателей" },
               ].map((item, i) => (
@@ -162,8 +162,8 @@ const Index = () => {
             <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
               {[
                 { icon: FileCheck, title: "Сертификаты", desc: "Вся продукция сертифицирована" },
-                { icon: Shield, title: "Экологичность", desc: "Безопасные материалы, переработка отходов" },
-                { icon: Award, title: "ГОСТ", desc: "Соответствие государственным стандартам" },
+                { icon: Shield, title: "Экологичность", desc: "Безопасные материалы, утилизация отходов" },
+                { icon: Award, title: "ТУ", desc: "Продукция соответствует ТУ (ГОСТов на данную продукцию не существует)" },
               ].map((item, i) => (
                 <div key={i} ref={guaranteeStagger(i)} className="unified-card flex flex-col items-center p-6">
                   <item.icon className="h-10 w-10 text-foreground mb-3" />

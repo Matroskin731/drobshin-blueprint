@@ -73,8 +73,8 @@ export const defaultConfig: SiteConfig = {
   contacts: {
     address: "Нижегородская область, г. Богородск, ул. Пушкина, зд. 24/5",
     phones: [
-      { name: "Елена", role: "менеджер по продажам", number: "+7 (987) 740-40-62" },
-      { name: "Дмитрий", role: "менеджер по утилизации", number: "+7 (910) 108-59-37" },
+      { name: "", role: "менеджер по продажам", number: "+7 (987) 740-40-62" },
+      { name: "", role: "менеджер по утилизации", number: "+7 (910) 108-59-37" },
     ],
     emails: ["torg.waste-rti@mail.ru", "waste-rti@mail.ru"],
     schedule: ["Пн–Пт 08:00–17:00", "Перерыв 12:00–13:00", "Сб–Вс выходной"],
@@ -84,7 +84,7 @@ export const defaultConfig: SiteConfig = {
     { id: "about", title: "О заводе", path: "/about", visible: true },
     { id: "wholesale", title: "Оптовые поставки", path: "/wholesale", visible: true },
     { id: "retail", title: "Розница", path: "/retail", visible: false },
-    { id: "recycling", title: "Переработка РТИ", path: "/recycling", visible: true },
+    { id: "recycling", title: "Утилизация РТИ", path: "/recycling", visible: true },
     { id: "applications", title: "Применение продукции", path: "/applications", visible: true },
     { id: "articles", title: "Статьи", path: "/articles", visible: true },
     { id: "contacts", title: "Контакты", path: "/contacts", visible: true },

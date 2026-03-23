@@ -54,7 +54,7 @@ export function Footer() {
                     <a href={`tel:${phone.number.replace(/[^\d+]/g, "")}`} className="opacity-80 hover:opacity-100">
                       {phone.number}
                     </a>
-                    <p className="text-xs opacity-50">{phone.name} — {phone.role}</p>
+                    <p className="text-xs opacity-50">{phone.name ? `${phone.name} — ${phone.role}` : phone.role}</p>
                   </div>
                 </div>
               )}

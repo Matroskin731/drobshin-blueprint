@@ -84,7 +84,7 @@ export function ProductCatalogSection() {
   };
 
   const trustItems = [
-    { icon: Recycle, text: "5 000+ тонн переработки в год" },
+    { icon: Recycle, text: "2 400+ тонн утилизированных отходов в год" },
     { icon: Factory, text: "2 производственные линии" },
     { icon: Award, text: "Собственное производство" },
     { icon: MapPin, text: "Работаем с муниципальными объектами" },

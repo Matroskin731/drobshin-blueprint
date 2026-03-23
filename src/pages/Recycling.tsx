@@ -6,9 +6,9 @@ const Recycling = () => {
     <div>
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
-          <h1 className="text-4xl font-bold mb-4">Переработка РТИ</h1>
+          <h1 className="text-4xl font-bold mb-4">Утилизация отходов РТИ</h1>
           <p className="text-lg opacity-80 max-w-2xl mx-auto">
-            Принимаем на переработку автомобильные шины и резинотехнические изделия
+            Принимаем на утилизацию автомобильные шины и резинотехнические изделия
           </p>
         </div>
       </section>
@@ -17,7 +17,7 @@ const Recycling = () => {
         <div className="section-container max-w-4xl">
           <div className="space-y-6 text-muted-foreground mb-12">
             <p>
-              Завод «ДробШин» осуществляет приём и переработку изношенных автомобильных шин и других резинотехнических изделий. Мы предлагаем экологичное решение проблемы утилизации РТИ.
+              Завод «ДробШин» осуществляет приём и утилизацию изношенных автомобильных шин и других резинотехнических изделий. Мы предлагаем экологичное решение проблемы утилизации РТИ.
             </p>
             <p>
               Принимаем шины от предприятий, автопарков, шиномонтажных мастерских и частных лиц. Выдаём все необходимые документы для отчётности.
@@ -27,8 +27,8 @@ const Recycling = () => {
           <div className="grid sm:grid-cols-2 gap-6 mb-12">
             {[
               { icon: Recycle, title: "Приём шин", desc: "Принимаем легковые и грузовые шины любого размера" },
-              { icon: Factory, title: "Полный цикл", desc: "Переработка на собственном оборудовании" },
-              { icon: Leaf, title: "Экологичность", desc: "Безотходная технология переработки" },
+              { icon: Factory, title: "Полный цикл", desc: "Утилизация на собственном оборудовании" },
+              { icon: Leaf, title: "Экологичность", desc: "Безотходная технология утилизации" },
               { icon: Truck, title: "Самовывоз", desc: "Возможен вывоз шин с вашей территории" },
             ].map((item, i) => (
               <div key={i} className="unified-card flex gap-4 p-6">
@@ -42,7 +42,7 @@ const Recycling = () => {
           </div>
 
           <div className="max-w-md mx-auto">
-            <RequestForm source="переработка РТИ" />
+            <RequestForm source="утилизация РТИ" />
           </div>
         </div>
       </section>
