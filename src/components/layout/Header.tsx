@@ -37,14 +37,14 @@ export function Header() {
           )}
         </nav>
 
-        <div className="hidden xl:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-3 shrink-0">
           {mainPhone &&
-          <a href={`tel:${mainPhone.number.replace(/[^\d+]/g, "")}`} className="flex items-center gap-1.5 text-sm font-medium text-foreground">
-              <Phone className="h-4 w-4 text-foreground/60" />
+          <a href={`tel:${mainPhone.number.replace(/[^\d+]/g, "")}`} className="flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-muted-foreground">
+              <Phone className="h-3.5 w-3.5" />
               {mainPhone.number}
             </a>
           }
-          <Button asChild size="sm">
+          <Button asChild size="sm" className="shrink-0">
             <a href="/#request-form" onClick={(e) => {
               if (window.location.pathname === '/') {
                 e.preventDefault();
