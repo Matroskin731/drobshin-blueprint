@@ -26,8 +26,8 @@ const About = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {[
               { icon: Factory, title: "2007", desc: "Год основания" },
-              { icon: Recycle, title: "5000+ т", desc: "Переработки в год" },
-              { icon: Award, title: "ГОСТ", desc: "Сертификация" },
+              { icon: Recycle, title: "2400+ т", desc: "Утилизации в год" },
+              { icon: Award, title: "ТУ", desc: "Сертификация" },
               { icon: Users, title: "500+", desc: "Клиентов" },
             ].map((item, i) => (
               <div key={i} className="unified-card text-center p-6">
