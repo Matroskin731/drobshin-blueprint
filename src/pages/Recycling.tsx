@@ -6,9 +6,9 @@ const Recycling = () => {
     <div>
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
-          <h1 className="text-4xl font-bold mb-4">Переработка РТИ</h1>
+          <h1 className="text-4xl font-bold mb-4">Утилизация отходов РТИ</h1>
           <p className="text-lg opacity-80 max-w-2xl mx-auto">
-            Принимаем на переработку автомобильные шины и резинотехнические изделия
+            Принимаем на утилизацию автомобильные шины и резинотехнические изделия
           </p>
         </div>
       </section>
