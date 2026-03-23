@@ -50,12 +50,12 @@ export function ProductOptions({ itemId, categoryId }: Props) {
                   key={c.hex}
                   title={c.name}
                   onClick={() => setSelectedColor(isActive ? null : c.hex)}
-                  className="h-7 w-7 rounded-full border-2 transition-all duration-200 hover:scale-110"
+                  className="h-7 w-7 rounded-full border-2 transition-all duration-200 hover:scale-110 hover:shadow-md"
                   style={{
                     backgroundColor: c.hex,
-                    borderColor: isActive ? "hsl(var(--primary))" : "transparent",
+                    borderColor: isActive ? "#2E7D32" : "transparent",
                     boxShadow: isActive
-                      ? "0 0 0 2px hsl(var(--primary) / 0.3), 0 0 8px hsl(var(--primary) / 0.2)"
+                      ? "0 0 0 2px rgba(46,125,50,0.35), 0 0 10px rgba(46,125,50,0.25)"
                       : "0 1px 3px rgba(0,0,0,0.15)",
                   }}
                 />
