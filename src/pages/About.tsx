@@ -43,7 +43,7 @@ const About = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start gap-3">
                 <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />
-                <span><strong className="text-foreground">Переработка и утилизация РТИ</strong> — приём и переработка автомобильных шин и других резинотехнических изделий</span>
+                <span><strong className="text-foreground">Обработка и утилизация РТИ</strong> — сбор, транспортирование, обработка и утилизация автомобильных шин, покрышек, камер и других резинотехнических изделий</span>
               </li>
               <li className="flex items-start gap-3">
                 <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />

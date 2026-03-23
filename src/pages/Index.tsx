@@ -162,8 +162,8 @@ const Index = () => {
             <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
               {[
                 { icon: FileCheck, title: "Сертификаты", desc: "Вся продукция сертифицирована" },
-                { icon: Shield, title: "Экологичность", desc: "Безопасные материалы, переработка отходов" },
-                { icon: Award, title: "ГОСТ", desc: "Соответствие государственным стандартам" },
+                { icon: Shield, title: "Экологичность", desc: "Безопасные материалы, утилизация отходов" },
+                { icon: Award, title: "ТУ", desc: "Продукция соответствует ТУ (ГОСТов на данную продукцию не существует)" },
               ].map((item, i) => (
                 <div key={i} ref={guaranteeStagger(i)} className="unified-card flex flex-col items-center p-6">
                   <item.icon className="h-10 w-10 text-foreground mb-3" />

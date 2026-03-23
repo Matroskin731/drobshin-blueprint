@@ -42,7 +42,7 @@ const Recycling = () => {
           </div>
 
           <div className="max-w-md mx-auto">
-            <RequestForm source="переработка РТИ" />
+            <RequestForm source="утилизация РТИ" />
           </div>
         </div>
       </section>
