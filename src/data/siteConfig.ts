@@ -104,7 +104,7 @@ export const defaultConfig: SiteConfig = {
     {
       id: "crumb",
       name: "Резиновая крошка",
-      description: "Гранулят из переработанных шин различных фракций",
+      description: "Гранулят из утилизированных шин различных фракций",
       visible: true,
       items: [
         { id: "crumb-063", name: "Крошка до 0,63 мм", description: "Мелкая фракция для бесшовных покрытий и наполнителей", visible: true },
