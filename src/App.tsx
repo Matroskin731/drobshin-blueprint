@@ -14,6 +14,7 @@ import Wholesale from "./pages/Wholesale";
 import Retail from "./pages/Retail";
 import Recycling from "./pages/Recycling";
 import Rop from "./pages/Rop";
+import Accessories from "./pages/Accessories";
 import Applications from "./pages/Applications";
 import Articles from "./pages/Articles";
 import ArticlePage from "./pages/ArticlePage";
@@ -41,6 +42,7 @@ const App = () => (
                 <Route path="/retail" element={<Retail />} />
                 <Route path="/recycling" element={<Recycling />} />
                 <Route path="/rop" element={<Rop />} />
+                <Route path="/accessories" element={<Accessories />} />
                 <Route path="/applications" element={<Applications />} />
                 <Route path="/articles" element={<Articles />} />
                 <Route path="/articles/:id" element={<ArticlePage />} />

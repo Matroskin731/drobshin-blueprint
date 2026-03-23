@@ -86,6 +86,7 @@ export const defaultConfig: SiteConfig = {
     { id: "retail", title: "Розница", path: "/retail", visible: false },
     { id: "recycling", title: "Утилизация РТИ", path: "/recycling", visible: true },
     { id: "rop", title: "РОП", path: "/rop", visible: true },
+    { id: "accessories", title: "Сопутствующие товары", path: "/accessories", visible: true },
     { id: "applications", title: "Применение продукции", path: "/applications", visible: true },
     { id: "articles", title: "Статьи", path: "/articles", visible: true },
     { id: "contacts", title: "Контакты", path: "/contacts", visible: true },
