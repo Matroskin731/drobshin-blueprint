@@ -32,31 +32,38 @@ export function ProductOptions({ itemId, categoryId }: Props) {
 
   if (!isCrumbColor && !isTile && !isSeamless) return null;
 
+  const hasSelection = selectedColor || selectedBase || selectedThickness;
+
   return (
     <div className="space-y-2.5">
-      {/* Color picker for: SBR crumb, tiles, seamless */}
+      {/* Color picker */}
       {(isCrumbColor || isTile || isSeamless) && (
         <div>
           <p className="text-[11px] text-muted-foreground mb-1.5">
             {isSeamless ? "Цвет покрытия" : isTile ? "Цвет верхнего слоя" : "Цвет крошки"}
           </p>
-          <div className="flex flex-wrap gap-1.5">
-            {COLORS.map((c) => (
-              <button
-                key={c.hex}
-                title={c.name}
-                onClick={() => setSelectedColor(selectedColor === c.hex ? null : c.hex)}
-                className="h-6 w-6 rounded-full border-2 transition-all duration-200"
-                style={{
-                  backgroundColor: c.hex,
-                  borderColor: selectedColor === c.hex ? "hsl(var(--primary))" : "transparent",
-                  boxShadow: selectedColor === c.hex ? "0 0 0 2px hsl(var(--primary) / 0.3)" : "none",
-                }}
-              />
-            ))}
+          <div className="flex flex-wrap gap-2">
+            {COLORS.map((c) => {
+              const isActive = selectedColor === c.hex;
+              return (
+                <button
+                  key={c.hex}
+                  title={c.name}
+                  onClick={() => setSelectedColor(isActive ? null : c.hex)}
+                  className="h-7 w-7 rounded-full border-2 transition-all duration-200 hover:scale-110"
+                  style={{
+                    backgroundColor: c.hex,
+                    borderColor: isActive ? "hsl(var(--primary))" : "transparent",
+                    boxShadow: isActive
+                      ? "0 0 0 2px hsl(var(--primary) / 0.3), 0 0 8px hsl(var(--primary) / 0.2)"
+                      : "0 1px 3px rgba(0,0,0,0.15)",
+                  }}
+                />
+              );
+            })}
           </div>
           {selectedColor && (
-            <p className="text-[10px] text-muted-foreground mt-1">
+            <p className="text-[10px] text-primary mt-1 font-medium">
               {COLORS.find((c) => c.hex === selectedColor)?.name}
             </p>
           )}
@@ -71,19 +78,22 @@ export function ProductOptions({ itemId, categoryId }: Props) {
             {[
               { value: "one", label: "Один цвет" },
               { value: "multi", label: "Несколько цветов" },
-            ].map((opt) => (
-              <button
-                key={opt.value}
-                onClick={() => setSeamlessColors(opt.value)}
-                className={`text-[11px] px-2.5 py-1 rounded-md border transition-colors duration-200 ${
-                  seamlessColors === opt.value
-                    ? "border-primary bg-primary/10 text-foreground"
-                    : "border-border text-muted-foreground hover:border-primary/40"
-                }`}
-              >
-                {opt.label}
-              </button>
-            ))}
+            ].map((opt) => {
+              const isActive = seamlessColors === opt.value;
+              return (
+                <button
+                  key={opt.value}
+                  onClick={() => setSeamlessColors(opt.value)}
+                  className={`text-[11px] px-3 py-1.5 rounded-lg border transition-all duration-200 hover:border-primary/50 ${
+                    isActive
+                      ? "border-primary bg-primary/10 text-foreground font-medium shadow-sm"
+                      : "border-border text-muted-foreground"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              );
+            })}
           </div>
         </div>
       )}
@@ -93,19 +103,22 @@ export function ProductOptions({ itemId, categoryId }: Props) {
         <div>
           <p className="text-[11px] text-muted-foreground mb-1.5">Толщина, мм</p>
           <div className="flex flex-wrap gap-1.5">
-            {SEAMLESS_THICKNESSES.map((t) => (
-              <button
-                key={t}
-                onClick={() => setSelectedThickness(selectedThickness === t ? null : t)}
-                className={`text-[11px] px-2 py-1 rounded-md border transition-colors duration-200 ${
-                  selectedThickness === t
-                    ? "border-primary bg-primary/10 text-foreground font-medium"
-                    : "border-border text-muted-foreground hover:border-primary/40"
-                }`}
-              >
-                {t}
-              </button>
-            ))}
+            {SEAMLESS_THICKNESSES.map((t) => {
+              const isActive = selectedThickness === t;
+              return (
+                <button
+                  key={t}
+                  onClick={() => setSelectedThickness(isActive ? null : t)}
+                  className={`text-[11px] px-2.5 py-1.5 rounded-lg border transition-all duration-200 hover:border-primary/50 ${
+                    isActive
+                      ? "border-primary bg-primary/10 text-foreground font-medium shadow-sm"
+                      : "border-border text-muted-foreground"
+                  }`}
+                >
+                  {t}
+                </button>
+              );
+            })}
           </div>
         </div>
       )}
@@ -115,21 +128,31 @@ export function ProductOptions({ itemId, categoryId }: Props) {
         <div>
           <p className="text-[11px] text-muted-foreground mb-1.5">Тип основания</p>
           <div className="flex flex-col gap-1.5">
-            {BASE_OPTIONS.map((opt) => (
-              <button
-                key={opt}
-                onClick={() => setSelectedBase(selectedBase === opt ? null : opt)}
-                className={`text-[11px] px-2.5 py-1.5 rounded-md border text-left transition-colors duration-200 ${
-                  selectedBase === opt
-                    ? "border-primary bg-primary/10 text-foreground"
-                    : "border-border text-muted-foreground hover:border-primary/40"
-                }`}
-              >
-                {opt}
-              </button>
-            ))}
+            {BASE_OPTIONS.map((opt) => {
+              const isActive = selectedBase === opt;
+              return (
+                <button
+                  key={opt}
+                  onClick={() => setSelectedBase(isActive ? null : opt)}
+                  className={`text-[11px] px-3 py-2 rounded-lg border text-left transition-all duration-200 hover:border-primary/50 ${
+                    isActive
+                      ? "border-primary bg-primary/10 text-foreground font-medium shadow-sm"
+                      : "border-border text-muted-foreground"
+                  }`}
+                >
+                  {opt}
+                </button>
+              );
+            })}
           </div>
         </div>
+      )}
+
+      {/* Hint text */}
+      {hasSelection && (
+        <p className="text-[10px] text-muted-foreground/70 italic">
+          Выбранные параметры будут учтены при расчёте стоимости
+        </p>
       )}
     </div>
   );

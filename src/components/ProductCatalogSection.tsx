@@ -169,9 +169,10 @@ export function ProductCatalogSection() {
                               <span className="truncate">Рассчитать объём</span>
                             </Button>
                             <Button size="sm" className="w-full sm:w-1/2 text-xs truncate" onClick={scrollToForm}>
-                              Запросить цену
+                              Получить расчёт
                             </Button>
                           </div>
+                          <p className="text-[10px] text-muted-foreground/60 text-center">Ответим в течение рабочего дня</p>
                         </CardContent>
                       </Card>
                     ))}

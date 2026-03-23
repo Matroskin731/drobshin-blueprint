@@ -96,9 +96,10 @@ const Wholesale = () => {
                               </Badge>
                             ) : (
                               <Button variant="outline" size="sm" className="mt-3" onClick={scrollToForm}>
-                                Узнать цену
+                                Получить расчёт
                               </Button>
                             )}
+                            <p className="text-[10px] text-muted-foreground/60 mt-1">Ответим в течение рабочего дня</p>
                           </div>
                         </CardContent>
                       </Card>
