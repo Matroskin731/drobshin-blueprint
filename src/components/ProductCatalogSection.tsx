@@ -67,7 +67,7 @@ export function ProductCatalogSection() {
     <>
       <section className="section-alt section-padding" ref={sectionRef}>
         <div className="section-container">
-          <h2 className="text-3xl font-bold text-center mb-4">Наша продукция</h2>
+          <h2 className="text-3xl font-bold text-center mb-4 whitespace-normal overflow-visible">Наша продукция</h2>
 
           {/* Micro-offer */}
           <Card className="max-w-4xl mx-auto mb-10">
