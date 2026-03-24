@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Phone } from "lucide-react";
 import { ArrowRight, Recycle, Shield, Truck, Factory, Award, FileCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
@@ -61,6 +62,10 @@ const Index = () => {
                   <a href="#request-form">Оставить заявку</a>
                 </Button>
               </div>
+              <a href="tel:+79877404062" className="inline-flex items-center gap-2 mt-6 text-sm text-white/60 hover:text-white/80 transition-colors">
+                <Phone className="h-4 w-4" />
+                <span>+7 (987) 740-40-62 — ответим в течение 10 минут</span>
+              </a>
             </div>
           </div>
         </section>
