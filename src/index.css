@@ -136,21 +136,29 @@
   border: 1px solid hsl(210 10% 86%);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.03);
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition: transform 0.28s ease-out, box-shadow 0.28s ease-out, border-color 0.28s ease-out;
 }
 
 .unified-card:hover {
-  transform: translateY(-4px) scale(1.015);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08), 0 16px 40px rgba(0, 0, 0, 0.06);
+  transform: translateY(-6px) scale(1.02);
+  border-color: hsl(130 52% 35% / 0.2);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.08),
+    0 20px 48px rgba(0, 0, 0, 0.05),
+    0 4px 20px rgba(46, 125, 50, 0.06);
 }
 
 /* Card hover lift (for shadcn Card) */
 .card-hover {
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition: transform 0.28s ease-out, box-shadow 0.28s ease-out, border-color 0.28s ease-out;
 }
 .card-hover:hover {
-  transform: translateY(-4px) scale(1.015);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08), 0 16px 40px rgba(0, 0, 0, 0.06);
+  transform: translateY(-6px) scale(1.02);
+  border-color: hsl(130 52% 35% / 0.2);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.08),
+    0 20px 48px rgba(0, 0, 0, 0.05),
+    0 4px 20px rgba(46, 125, 50, 0.06);
 }
 
 /* Button press effect */
@@ -164,13 +172,13 @@ a[role="button"]:active {
   background: hsl(210 13% 9%);
   border: 1px solid hsl(210 10% 16%);
   border-radius: 12px;
-  transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition: transform 0.28s ease-out, border-color 0.28s ease-out, box-shadow 0.28s ease-out;
 }
 
 .stat-card:hover {
-  transform: translateY(-4px) scale(1.015);
-  border-color: hsl(210 10% 28%);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-6px) scale(1.02);
+  border-color: hsl(130 52% 35% / 0.25);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(46, 125, 50, 0.08);
 }
 
 /* Global responsive safeguards */
