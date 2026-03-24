@@ -12,8 +12,8 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(delay = 
     if (!el) return;
 
     el.style.opacity = "0";
-    el.style.transform = "translateY(18px)";
-    el.style.transition = `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms`;
+    el.style.transform = "translateY(30px)";
+    el.style.transition = `opacity 0.65s ease-out ${delay}ms, transform 0.65s ease-out ${delay}ms`;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -46,8 +46,8 @@ export function useStaggerReveal(count: number, baseDelay = 0, step = 80) {
       if (!el) return;
       const d = baseDelay + i * step;
       el.style.opacity = "0";
-      el.style.transform = "translateY(18px)";
-      el.style.transition = `opacity 0.5s ease ${d}ms, transform 0.5s ease ${d}ms`;
+      el.style.transform = "translateY(30px)";
+      el.style.transition = `opacity 0.65s ease-out ${d}ms, transform 0.65s ease-out ${d}ms`;
 
       const obs = new IntersectionObserver(
         ([entry]) => {
