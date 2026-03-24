@@ -73,37 +73,31 @@ const Index = () => {
 
       {/* About preview */}
       {isBlockVisible("about-preview") && (
-        <section className="section-padding" ref={aboutRef}>
+        <section className="section-padding" style={{ background: "hsl(var(--dark-mid))", color: "hsl(var(--hero-foreground))" }} ref={aboutRef}>
           <div className="section-container">
-            <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
-              <div>
-                <h2 className="text-3xl font-bold mb-4">О заводе «ДробШин»</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Современное производство с полным циклом утилизации и строгим контролем качества.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  С 2007 года мы превращаем отходы в качественную продукцию: резиновую крошку различных фракций, плитку и бесшовные покрытия для спортивных и детских площадок.
-                </p>
-                <Button variant="outline" asChild>
-                  <Link to="/about">Подробнее о заводе <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                </Button>
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {[
-                  { icon: Factory, label: "Собственное производство", value: "2 линии" },
-                  { icon: Recycle, label: "Утилизация отходов РТИ", value: "2400+ т/год" },
-                  { icon: Shield, label: "Качество продукции", value: "ТУ" },
-                  { icon: Users, label: "Постоянных клиентов", value: "500+" },
-                ].map((item, i) => (
-                  <div key={i} ref={statStagger(i)} className="stat-card text-center p-5">
-                    <div className="mx-auto mb-3 h-11 w-11 rounded-lg bg-white/10 flex items-center justify-center">
-                      <item.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <p className="font-bold text-lg text-white">{item.value}</p>
-                    <p className="text-xs text-white/60">{item.label}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-3">Почему нам доверяют</h2>
+              <p className="text-white/60 max-w-xl mx-auto">Собственное производство полного цикла с 2007 года</p>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+              {[
+                { value: "2 400+", unit: "тонн/год", title: "Переработки", desc: "Полный цикл утилизации отходов РТИ" },
+                { value: "17+", unit: "лет", title: "На рынке", desc: "Работаем с 2007 года" },
+                { value: "500+", unit: "", title: "Клиентов", desc: "Постоянные партнёры по всей России" },
+                { value: "2", unit: "линии", title: "Производство", desc: "Собственные мощности" },
+              ].map((item, i) => (
+                <div key={i} ref={statStagger(i)} className="trust-stat-card text-center p-6 lg:p-8">
+                  <p className="text-3xl lg:text-4xl font-extrabold text-primary leading-none">{item.value}</p>
+                  {item.unit && <span className="text-sm text-white/50 mt-1 block">{item.unit}</span>}
+                  <h3 className="font-bold text-white mt-3 mb-1">{item.title}</h3>
+                  <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Button variant="outline" asChild className="border-white/15 text-white/70 hover:bg-white/5 hover:text-white">
+                <Link to="/about">Подробнее о заводе <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              </Button>
             </div>
           </div>
         </section>

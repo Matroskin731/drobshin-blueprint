@@ -182,6 +182,20 @@ a[role="button"]:active {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(46, 125, 50, 0.08);
 }
 
+/* Trust stat cards */
+.trust-stat-card {
+  background: hsl(210 12% 8%);
+  border: 1px solid hsl(210 10% 14%);
+  border-radius: 14px;
+  transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.trust-stat-card:hover {
+  transform: translateY(-6px);
+  border-color: hsl(123 46% 34% / 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 24px rgba(46, 125, 50, 0.1);
+}
+
 /* Global responsive safeguards */
 html, body {
   overflow-x: hidden;
