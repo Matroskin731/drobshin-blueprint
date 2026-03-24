@@ -39,10 +39,10 @@ export function Header() {
             <Link
               key={item.id}
               to={item.path}
-              className={`whitespace-nowrap px-2 py-2 rounded-lg text-[13px] font-medium transition-colors ${
+              className={`relative whitespace-nowrap px-2 py-2 rounded-lg text-[13px] font-medium transition-all duration-200 ease-out after:absolute after:bottom-1 after:left-2 after:right-2 after:h-[1.5px] after:bg-foreground after:origin-left after:transition-transform after:duration-200 after:ease-out ${
                 location.pathname === item.path
-                  ? "bg-foreground/8 text-foreground"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  ? "text-foreground after:scale-x-100"
+                  : "text-muted-foreground hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
               }`}
             >
             {shortLabels[item.title] || item.title}
