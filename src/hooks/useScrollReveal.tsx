@@ -12,8 +12,8 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(delay = 
     if (!el) return;
 
     el.style.opacity = "0";
-    el.style.transform = "translateY(18px)";
-    el.style.transition = `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms`;
+    el.style.transform = "translateY(30px)";
+    el.style.transition = `opacity 0.65s ease-out ${delay}ms, transform 0.65s ease-out ${delay}ms`;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
