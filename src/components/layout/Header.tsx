@@ -86,20 +86,9 @@ export function Header() {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {item.title}
+            {shortLabels[item.title] || item.title}
               </Link>
             ))}
-            <div className="pt-3 mt-3 border-t">
-              {mainPhone && (
-                <a
-                  href={`tel:${mainPhone.number.replace(/[^\d+]/g, "")}`}
-                  className="flex items-center gap-1.5 text-sm font-medium"
-                >
-                  <Phone className="h-4 w-4 text-foreground/60 shrink-0" />
-                  {mainPhone.number}
-                </a>
-              )}
-            </div>
           </nav>
         </div>
       )}
