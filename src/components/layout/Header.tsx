@@ -9,8 +9,11 @@ export function Header() {
   const { config } = useSiteConfig();
   const location = useLocation();
 
+  const shortLabels: Record<string, string> = {
+    "Сопутствующие товары": "Товары",
+    "Применение продукции": "Применение",
+  };
   const visibleNav = config.navigation.filter((n) => n.visible);
-  const mainPhone = config.contacts.phones[0];
 
   const handleRequestClick = (e: React.MouseEvent) => {
     if (window.location.pathname === "/") {
