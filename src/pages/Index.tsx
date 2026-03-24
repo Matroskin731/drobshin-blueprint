@@ -46,23 +46,23 @@ const Index = () => {
 
           <div className="section-container section-padding relative z-10">
             <div className="max-w-2xl">
-              <h1 className="text-[2.25rem] md:text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.25] md:leading-tight text-white">
+              <h1 className="text-[2.25rem] md:text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.25] md:leading-tight text-white drop-shadow-lg">
                 Утилизация отходов РТИ.
                 <br />
                 <span className="text-primary">Резиновая крошка и покрытия.</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
+              <p className="text-lg md:text-xl text-white/90 max-w-2xl mb-8">
                 Производим резиновую крошку, плитку и бесшовные покрытия из утилизированных шин.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button size="lg" asChild className="text-base">
+                <Button size="lg" asChild className="text-base h-13 px-10 text-[15px]">
                   <Link to="/wholesale">Продукция и цены</Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild className="text-base border-white/30 text-white/90 bg-white/5 hover:bg-white/15 hover:text-white hover:border-white/50">
+                <Button size="lg" variant="outline" asChild className="text-base border-white/20 text-white/70 bg-white/5 hover:bg-white/10 hover:text-white/90 hover:border-white/30">
                   <a href="#request-form">Оставить заявку</a>
                 </Button>
               </div>
-              <a href="tel:+79877404062" className="inline-flex items-center gap-2 mt-6 text-sm text-white/60 hover:text-white/80 transition-colors">
+              <a href="tel:+79877404062" className="inline-flex items-center gap-2 mt-8 text-sm text-white/50 hover:text-white/75 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>+7 (987) 740-40-62 — ответим в течение 10 минут</span>
               </a>
