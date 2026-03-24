@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { Button } from "@/components/ui/button";
 
@@ -9,8 +9,11 @@ export function Header() {
   const { config } = useSiteConfig();
   const location = useLocation();
 
+  const shortLabels: Record<string, string> = {
+    "Сопутствующие товары": "Товары",
+    "Применение продукции": "Применение",
+  };
   const visibleNav = config.navigation.filter((n) => n.visible);
-  const mainPhone = config.contacts.phones[0];
 
   const handleRequestClick = (e: React.MouseEvent) => {
     if (window.location.pathname === "/") {
@@ -41,22 +44,13 @@ export function Header() {
                   : "text-muted-foreground hover:text-foreground hover:bg-muted"
               }`}
             >
-              {item.title}
+            {shortLabels[item.title] || item.title}
             </Link>
           ))}
         </nav>
 
-        {/* Right: Phone + CTA — fixed, never shrinks */}
-        <div className="hidden xl:flex items-center gap-4 shrink-0 ml-4">
-          {mainPhone && (
-            <a
-              href={`tel:${mainPhone.number.replace(/[^\d+]/g, "")}`}
-              className="hidden 2xl:flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-muted-foreground shrink-0"
-            >
-              <Phone className="h-3.5 w-3.5 shrink-0" />
-              {mainPhone.number}
-            </a>
-          )}
+        {/* Right: CTA */}
+        <div className="hidden xl:flex items-center shrink-0 ml-4">
           <Button asChild size="sm" className="shrink-0 whitespace-nowrap">
             <a href="/#request-form" onClick={handleRequestClick}>
               Оставить заявку
@@ -92,20 +86,9 @@ export function Header() {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {item.title}
+            {shortLabels[item.title] || item.title}
               </Link>
             ))}
-            <div className="pt-3 mt-3 border-t">
-              {mainPhone && (
-                <a
-                  href={`tel:${mainPhone.number.replace(/[^\d+]/g, "")}`}
-                  className="flex items-center gap-1.5 text-sm font-medium"
-                >
-                  <Phone className="h-4 w-4 text-foreground/60 shrink-0" />
-                  {mainPhone.number}
-                </a>
-              )}
-            </div>
           </nav>
         </div>
       )}
