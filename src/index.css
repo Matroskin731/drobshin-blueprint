@@ -135,22 +135,22 @@
   background: hsl(0 0% 100%);
   border: 1px solid hsl(210 10% 86%);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
 .unified-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 12px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08), 0 16px 40px rgba(0, 0, 0, 0.06);
 }
 
 /* Card hover lift (for shadcn Card) */
 .card-hover {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 .card-hover:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 12px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08), 0 16px 40px rgba(0, 0, 0, 0.06);
 }
 
 /* Button press effect */
@@ -164,11 +164,13 @@ a[role="button"]:active {
   background: hsl(210 13% 9%);
   border: 1px solid hsl(210 10% 16%);
   border-radius: 12px;
-  transition: border-color 0.2s ease;
+  transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
 .stat-card:hover {
+  transform: translateY(-4px) scale(1.015);
   border-color: hsl(210 10% 28%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* Global responsive safeguards */
