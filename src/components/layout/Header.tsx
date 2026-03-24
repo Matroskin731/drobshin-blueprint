@@ -10,6 +10,7 @@ export function Header() {
   const location = useLocation();
 
   const shortLabels: Record<string, string> = {
+    "Утилизация РТИ": "Утилизация",
     "Сопутствующие товары": "Товары",
     "Применение продукции": "Применение",
   };
