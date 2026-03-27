@@ -73,7 +73,7 @@ const Index = () => {
 
       {/* About preview */}
       {isBlockVisible("about-preview") && (
-        <section className="section-padding" style={{ background: "hsl(var(--dark-mid))", color: "hsl(var(--hero-foreground))" }} ref={aboutRef}>
+        <section className="section-padding section-dark" ref={aboutRef}>
           <div className="section-container">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-3">Почему нам доверяют</h2>
@@ -107,7 +107,7 @@ const Index = () => {
 
       {/* Why us */}
       {isBlockVisible("why-us") && (
-        <section className="section-padding" ref={whyUsRef}>
+        <section className="section-padding bg-[hsl(210_10%_96%)]" ref={whyUsRef}>
           <div className="section-container">
             <h2 className="text-3xl font-bold text-center mb-10">Почему выбирают нас</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -117,8 +117,8 @@ const Index = () => {
                 { icon: Truck, title: "Логистика по РФ", desc: "Организуем доставку в любой регион России" },
                 { icon: Users, title: "Индивидуальный подход", desc: "Гибкие условия для оптовых покупателей" },
               ].map((item, i) => (
-                <div key={i} ref={whyStagger(i)} className="unified-card text-center p-6">
-                  <div className="mx-auto mb-3 h-12 w-12 rounded-lg bg-foreground/5 flex items-center justify-center">
+                <div key={i} ref={whyStagger(i)} className="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow text-center p-7">
+                  <div className="mx-auto mb-3 h-12 w-12 rounded-lg bg-muted flex items-center justify-center">
                     <item.icon className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="font-bold mb-1">{item.title}</h3>
@@ -132,7 +132,7 @@ const Index = () => {
 
       {/* How we work */}
       {isBlockVisible("how-we-work") && (
-        <section className="section-padding" style={{ background: "hsl(var(--dark-mid))", color: "hsl(var(--hero-foreground))" }} ref={howRef}>
+        <section className="section-padding section-dark-alt" ref={howRef}>
           <div className="section-container">
             <h2 className="text-3xl font-bold text-center mb-10">Как мы работаем</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -155,7 +155,7 @@ const Index = () => {
 
       {/* Guarantees */}
       {isBlockVisible("guarantees") && (
-        <section className="section-padding" ref={guaranteesRef}>
+        <section className="section-padding bg-[hsl(210_10%_96%)]" ref={guaranteesRef}>
           <div className="section-container text-center">
             <h2 className="text-3xl font-bold mb-10">Гарантии и соответствие</h2>
             <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
@@ -164,7 +164,7 @@ const Index = () => {
                 { icon: Shield, title: "Экологичность", desc: "Безопасные материалы, утилизация отходов" },
                 { icon: Award, title: "ТУ", desc: "Продукция соответствует ТУ (ГОСТов на данную продукцию не существует)" },
               ].map((item, i) => (
-                <div key={i} ref={guaranteeStagger(i)} className="unified-card flex flex-col items-center p-6">
+                <div key={i} ref={guaranteeStagger(i)} className="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow flex flex-col items-center p-7">
                   <item.icon className="h-10 w-10 text-foreground mb-3" />
                   <h3 className="font-bold mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
@@ -177,7 +177,7 @@ const Index = () => {
 
       {/* Calculator + Request Form */}
       {isBlockVisible("request-form") && (
-        <section id="request-form" className="section-padding" style={{ background: "hsl(var(--dark-light))", color: "hsl(var(--hero-foreground))" }} ref={formRef}>
+        <section id="request-form" className="section-padding section-dark" ref={formRef}>
           <div className="section-container">
             <h2 className="text-3xl font-bold text-center mb-10">Рассчитайте и закажите</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
