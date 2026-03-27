@@ -79,7 +79,7 @@
   }
 
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-28;
   }
 
   .section-alt {
@@ -168,9 +168,20 @@ a[role="button"]:active {
   transform: scale(0.97);
 }
 
+/* Dark section gradient */
+.section-dark {
+  background: linear-gradient(180deg, hsl(210 14% 6%) 0%, hsl(210 14% 4%) 100%);
+  color: hsl(var(--hero-foreground));
+}
+
+.section-dark-alt {
+  background: linear-gradient(180deg, hsl(210 12% 7%) 0%, hsl(210 14% 5%) 100%);
+  color: hsl(var(--hero-foreground));
+}
+
 /* Dark stat cards (about section) */
 .stat-card {
-  background: hsl(210 13% 9%);
+  background: hsl(210 12% 10%);
   border: 1px solid hsl(210 10% 16%);
   border-radius: 12px;
   transition: transform 0.28s ease-out, border-color 0.28s ease-out, box-shadow 0.28s ease-out;
@@ -184,8 +195,8 @@ a[role="button"]:active {
 
 /* Trust stat cards */
 .trust-stat-card {
-  background: hsl(210 12% 8%);
-  border: 1px solid hsl(210 10% 14%);
+  background: hsl(210 12% 10%);
+  border: 1px solid hsl(210 10% 15%);
   border-radius: 14px;
   transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out;
 }
