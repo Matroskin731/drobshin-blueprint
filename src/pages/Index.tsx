@@ -84,7 +84,7 @@ const Index = () => {
               {[
                 { value: "2 400+", unit: "тонн/год", title: "Переработки", desc: "Полный цикл утилизации отходов РТИ" },
                 { value: "17+", unit: "лет", title: "На рынке", desc: "Работаем с 2007 года" },
-                { value: "500+", unit: "", title: "Клиентов", desc: "Постоянные партнёры по всей России" },
+                { value: "1000+", unit: "", title: "Клиентов", desc: "Постоянные партнёры по всей России" },
                 { value: "2", unit: "линии", title: "Производство", desc: "Собственные мощности" },
               ].map((item, i) => (
                 <div key={i} ref={statStagger(i)} className="trust-stat-card text-center p-6 lg:p-8">
