@@ -34,7 +34,7 @@ const About = () => {
               { icon: Factory, title: "2007", desc: "Год основания" },
               { icon: Recycle, title: "2400+ т", desc: "Утилизации в год" },
               { icon: Award, title: "ТУ", desc: "Сертификация" },
-              { icon: Users, title: "500+", desc: "Клиентов" },
+              { icon: Users, title: "1000+", desc: "Клиентов" },
             ].map((item, i) => (
               <div key={i} className="unified-card text-center p-6">
                 <item.icon className="h-8 w-8 mx-auto mb-3 text-foreground/50" />
