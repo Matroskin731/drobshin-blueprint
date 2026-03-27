@@ -227,3 +227,27 @@ button, a[role="button"], .btn, [class*="Button"] {
   word-break: break-word;
   overflow-wrap: break-word;
 }
+
+/* Mobile-specific optimizations */
+@media (max-width: 639px) {
+  .section-padding {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .section-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 { font-size: 1.75rem !important; }
+  h2 { font-size: 1.5rem !important; }
+
+  .trust-stat-card {
+    border-radius: 10px;
+  }
+
+  .unified-card {
+    border-radius: 10px;
+  }
+}

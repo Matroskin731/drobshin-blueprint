@@ -117,7 +117,7 @@ export const DocumentsSection = () => {
                 }}
               >
                 {/* Thumbnail preview */}
-                <div className="w-full h-28 rounded-lg mb-4 overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center">
+                <div className="w-full h-20 sm:h-28 rounded-lg mb-3 sm:mb-4 overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center">
                   {doc.thumb ? (
                     <img
                       src={doc.thumb}
