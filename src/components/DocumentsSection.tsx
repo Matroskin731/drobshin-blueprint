@@ -8,7 +8,7 @@ const documents = [
     title: "Лицензия на обращение с отходами",
     desc: "Разрешение на сбор, транспортировку, обработку и утилизацию отходов I–IV класса опасности",
     btn: "Открыть документ",
-    href: "#", // TODO: replace with actual PDF URL
+    href: "/documents/license-attachment.jpg",
   },
   {
     icon: Shield,
