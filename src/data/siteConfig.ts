@@ -98,6 +98,7 @@ export const defaultConfig: SiteConfig = {
     { id: "wholesale-preview", title: "Оптовые поставки", visible: true },
     { id: "applications", title: "Применение продукции", visible: true },
     { id: "why-us", title: "Почему выбирают нас", visible: true },
+    { id: "documents", title: "Документы и лицензии", visible: true },
     { id: "how-we-work", title: "Как мы работаем", visible: true },
     { id: "guarantees", title: "Гарантии и соответствие", visible: true },
     { id: "request-form", title: "Форма заявки", visible: true },
