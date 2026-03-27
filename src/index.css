@@ -79,7 +79,7 @@
   }
 
   .section-padding {
-    @apply py-20 md:py-28;
+    @apply py-24 md:py-32;
   }
 
   .section-alt {
@@ -131,35 +131,38 @@
   }
 }
 
-/* Unified card system */
+/* Unified card system — premium depth */
 .unified-card {
   background: hsl(0 0% 100%);
   border: 1px solid hsl(210 10% 86%);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.03);
-  transition: transform 0.28s ease-out, box-shadow 0.28s ease-out, border-color 0.28s ease-out;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 12px 32px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease-out, border-color 0.3s ease-out;
 }
 
 .unified-card:hover {
   transform: translateY(-6px) scale(1.02);
-  border-color: hsl(130 52% 35% / 0.2);
+  border-color: hsl(130 52% 35% / 0.25);
   box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.08),
-    0 20px 48px rgba(0, 0, 0, 0.05),
-    0 4px 20px rgba(46, 125, 50, 0.06);
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 16px 40px rgba(0, 0, 0, 0.08),
+    0 0 20px rgba(46, 125, 50, 0.08);
 }
 
 /* Card hover lift (for shadcn Card) */
 .card-hover {
-  transition: transform 0.28s ease-out, box-shadow 0.28s ease-out, border-color 0.28s ease-out;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease-out, border-color 0.3s ease-out;
 }
 .card-hover:hover {
   transform: translateY(-6px) scale(1.02);
-  border-color: hsl(130 52% 35% / 0.2);
+  border-color: hsl(130 52% 35% / 0.25);
   box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.08),
-    0 20px 48px rgba(0, 0, 0, 0.05),
-    0 4px 20px rgba(46, 125, 50, 0.06);
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 16px 40px rgba(0, 0, 0, 0.08),
+    0 0 20px rgba(46, 125, 50, 0.08);
 }
 
 /* Button press effect */
@@ -168,43 +171,45 @@ a[role="button"]:active {
   transform: scale(0.97);
 }
 
-/* Dark section gradient */
+/* Dark section gradient — deeper layered feel */
 .section-dark {
-  background: linear-gradient(180deg, hsl(210 14% 6%) 0%, hsl(210 14% 4%) 100%);
+  background: linear-gradient(180deg, hsl(210 14% 8%) 0%, hsl(210 14% 4%) 100%);
   color: hsl(var(--hero-foreground));
 }
 
 .section-dark-alt {
-  background: linear-gradient(180deg, hsl(210 12% 7%) 0%, hsl(210 14% 5%) 100%);
+  background: linear-gradient(180deg, hsl(210 12% 9%) 0%, hsl(210 14% 5%) 100%);
   color: hsl(var(--hero-foreground));
 }
 
-/* Dark stat cards (about section) */
+/* Dark stat cards (about section) — elevated depth */
 .stat-card {
-  background: hsl(210 12% 10%);
+  background: hsl(210 12% 11%);
   border: 1px solid hsl(210 10% 16%);
-  border-radius: 12px;
-  transition: transform 0.28s ease-out, border-color 0.28s ease-out, box-shadow 0.28s ease-out;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
 .stat-card:hover {
   transform: translateY(-6px) scale(1.02);
-  border-color: hsl(130 52% 35% / 0.25);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(46, 125, 50, 0.08);
+  border-color: hsl(130 52% 35% / 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 16px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(46, 125, 50, 0.1);
 }
 
-/* Trust stat cards */
+/* Trust stat cards — premium elevated */
 .trust-stat-card {
-  background: hsl(210 12% 10%);
-  border: 1px solid hsl(210 10% 15%);
+  background: hsl(210 12% 11%);
+  border: 1px solid hsl(210 10% 16%);
   border-radius: 14px;
-  transition: transform 0.3s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
 .trust-stat-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.02);
   border-color: hsl(123 46% 34% / 0.3);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 24px rgba(46, 125, 50, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 16px 40px rgba(0, 0, 0, 0.2), 0 0 24px rgba(46, 125, 50, 0.12);
 }
 
 /* Global responsive safeguards */

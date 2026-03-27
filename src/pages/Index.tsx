@@ -117,7 +117,7 @@ const Index = () => {
                 { icon: Truck, title: "Логистика по РФ", desc: "Организуем доставку в любой регион России" },
                 { icon: Users, title: "Индивидуальный подход", desc: "Гибкие условия для оптовых покупателей" },
               ].map((item, i) => (
-                <div key={i} ref={whyStagger(i)} className="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow text-center p-7">
+                <div key={i} ref={whyStagger(i)} className="unified-card text-center p-7">
                   <div className="mx-auto mb-3 h-12 w-12 rounded-lg bg-muted flex items-center justify-center">
                     <item.icon className="h-6 w-6 text-foreground" />
                   </div>
@@ -164,7 +164,7 @@ const Index = () => {
                 { icon: Shield, title: "Экологичность", desc: "Безопасные материалы, утилизация отходов" },
                 { icon: Award, title: "ТУ", desc: "Продукция соответствует ТУ (ГОСТов на данную продукцию не существует)" },
               ].map((item, i) => (
-                <div key={i} ref={guaranteeStagger(i)} className="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow flex flex-col items-center p-7">
+                <div key={i} ref={guaranteeStagger(i)} className="unified-card flex flex-col items-center p-7">
                   <item.icon className="h-10 w-10 text-foreground mb-3" />
                   <h3 className="font-bold mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
