@@ -7,6 +7,7 @@ import { RequestForm } from "@/components/RequestForm";
 import { Calculator } from "@/components/Calculator";
 import { QuoteModal } from "@/components/QuoteModal";
 import { ProductCatalogSection } from "@/components/ProductCatalogSection";
+import { DocumentsSection } from "@/components/DocumentsSection";
 import { useState } from "react";
 import heroFactory from "@/assets/hero-factory.jpg";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
