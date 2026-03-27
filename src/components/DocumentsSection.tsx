@@ -18,11 +18,18 @@ const documents = [
     href: "/documents/license-attachment.jpg",
   },
   {
+    icon: Shield,
+    title: "Сертификат на резиновую крошку",
+    desc: "Подтверждение качества продукции и соответствия нормативам",
+    btn: "Смотреть сертификат",
+    href: "/documents/certificate-crumb.pdf",
+  },
+  {
     icon: ClipboardCheck,
     title: "Правила приёмки шин",
     desc: "Требования к принимаемому сырью (шины, покрышки, камеры)",
     btn: "Ознакомиться",
-    href: "#",
+    href: "/documents/rules-acceptance.docx",
   },
 ];
 
@@ -40,7 +47,7 @@ export const DocumentsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {documents.map((doc, i) => (
             <div
               key={i}
