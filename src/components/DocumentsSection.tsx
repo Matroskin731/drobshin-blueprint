@@ -22,7 +22,7 @@ const documents = [
     title: "Сертификат на резиновую крошку",
     desc: "Подтверждение качества продукции и соответствия нормативам",
     btn: "Смотреть сертификат",
-    href: "/documents/certificate-crumb.pdf",
+    href: "/documents/sertifikat-rti.pdf",
   },
   {
     icon: ClipboardCheck,
