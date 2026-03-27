@@ -97,14 +97,14 @@ export const DocumentsSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 max-w-5xl mx-auto">
             {documents.map((doc, i) => (
               <button
                 key={i}
                 ref={stagger(i)}
                 type="button"
                 onClick={() => setActiveDoc(doc.viewer)}
-                className="trust-stat-card flex flex-col items-center text-center p-5 cursor-pointer group transition-all duration-300 hover:scale-[1.02] hover:border-primary/30"
+                className="trust-stat-card flex flex-col items-center text-center p-3 sm:p-5 cursor-pointer group transition-all duration-300 hover:scale-[1.02] hover:border-primary/30"
                 style={{
                   transitionProperty: "transform, box-shadow, border-color",
                 }}
@@ -117,7 +117,7 @@ export const DocumentsSection = () => {
                 }}
               >
                 {/* Thumbnail preview */}
-                <div className="w-full h-28 rounded-lg mb-4 overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center">
+                <div className="w-full h-20 sm:h-28 rounded-lg mb-3 sm:mb-4 overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center">
                   {doc.thumb ? (
                     <img
                       src={doc.thumb}
@@ -137,12 +137,12 @@ export const DocumentsSection = () => {
                   )}
                 </div>
 
-                <div className="mb-3 h-10 w-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-                  <doc.icon className="h-5 w-5 text-primary" />
+                <div className="mb-2 sm:mb-3 h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                  <doc.icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
-                <h3 className="font-bold text-white mb-2 text-sm leading-tight">{doc.title}</h3>
-                <p className="text-xs text-white/50 leading-relaxed mb-4 flex-1">{doc.desc}</p>
-                <span className="text-xs text-primary/80 group-hover:text-primary transition-colors font-medium">
+                <h3 className="font-bold text-white mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">{doc.title}</h3>
+                <p className="text-[10px] sm:text-xs text-white/50 leading-relaxed mb-3 sm:mb-4 flex-1 hidden sm:block">{doc.desc}</p>
+                <span className="text-[10px] sm:text-xs text-primary/80 group-hover:text-primary transition-colors font-medium">
                   {doc.btn} →
                 </span>
               </button>
