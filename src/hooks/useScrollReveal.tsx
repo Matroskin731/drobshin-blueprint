@@ -57,7 +57,7 @@ export function useStaggerReveal(count: number, baseDelay = 0, step = 80) {
             obs.unobserve(el);
           }
         },
-        { threshold: 0.12 }
+        { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
       );
       obs.observe(el);
       observers.push(obs);
