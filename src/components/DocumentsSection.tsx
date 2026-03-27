@@ -15,7 +15,7 @@ const documents = [
     title: "Сертификат на резиновую крошку",
     desc: "Подтверждение качества продукции и соответствия нормативам",
     btn: "Смотреть сертификат",
-    href: "#",
+    href: "/documents/license-attachment-2.jpg",
   },
   {
     icon: ClipboardCheck,
