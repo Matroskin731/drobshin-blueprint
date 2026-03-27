@@ -131,6 +131,8 @@ const Index = () => {
         </section>
       )}
 
+      {isBlockVisible("documents") && <DocumentsSection />}
+
       {/* How we work */}
       {isBlockVisible("how-we-work") && (
         <section className="section-padding section-dark-alt" ref={howRef}>
