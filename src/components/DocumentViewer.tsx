@@ -84,9 +84,9 @@ export const DocumentViewer = ({ doc, onClose }: Props) => {
               asChild
               className="border-white/15 text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
             >
-              <a href={doc.href} target="_blank" rel="noopener noreferrer">
+              <a href={doc.href} target="_blank" rel="noopener noreferrer" download>
                 <ExternalLink className="h-4 w-4 mr-1.5" />
-                Открыть в новой вкладке
+                Скачать документ
               </a>
             </Button>
             <button
