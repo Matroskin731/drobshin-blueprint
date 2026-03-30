@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";

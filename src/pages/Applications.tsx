@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 

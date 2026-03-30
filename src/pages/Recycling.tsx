@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Recycle, Truck, Factory, Leaf } from "lucide-react";
 import { RequestForm } from "@/components/RequestForm";
 

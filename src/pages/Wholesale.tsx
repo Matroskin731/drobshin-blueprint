@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";

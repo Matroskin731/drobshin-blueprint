@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { RequestForm } from "@/components/RequestForm";

@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Droplets, Palette, PaintBucket } from "lucide-react";

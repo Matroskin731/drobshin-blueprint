@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { Phone } from "lucide-react";
 import { ArrowRight, Recycle, Shield, Truck, Factory, Award, FileCheck, Users } from "lucide-react";
