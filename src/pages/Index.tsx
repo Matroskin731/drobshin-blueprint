@@ -82,13 +82,13 @@ const Index = () => {
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
               {[
-                { value: "2 400+", unit: "тонн/год", title: "Переработки", desc: "Полный цикл утилизации отходов РТИ" },
-                { value: "17+", unit: "лет", title: "На рынке", desc: "Работаем с 2007 года" },
-                { value: "1000+", unit: "", title: "Клиентов", desc: "Постоянные партнёры по всей России" },
-                { value: "2", unit: "линии", title: "Производство", desc: "Собственные мощности" },
+                { num: 2400, suffix: "+", unit: "тонн/год", title: "Переработки", desc: "Полный цикл утилизации отходов РТИ", format: true },
+                { num: 17, suffix: "+", unit: "лет", title: "На рынке", desc: "Работаем с 2007 года", format: false },
+                { num: 1000, suffix: "+", unit: "", title: "Клиентов", desc: "Постоянные партнёры по всей России", format: true },
+                { num: 2, suffix: "", unit: "линии", title: "Производство", desc: "Собственные мощности", format: false },
               ].map((item, i) => (
                 <div key={i} ref={statStagger(i)} className="trust-stat-card text-center p-6 lg:p-8">
-                  <p className="text-3xl lg:text-4xl font-extrabold text-primary leading-none">{item.value}</p>
+                  <AnimatedStat num={item.num} suffix={item.suffix} format={item.format} inView={aboutInView} />
                   {item.unit && <span className="text-sm text-white/50 mt-1 block">{item.unit}</span>}
                   <h3 className="font-bold text-white mt-3 mb-1">{item.title}</h3>
                   <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
