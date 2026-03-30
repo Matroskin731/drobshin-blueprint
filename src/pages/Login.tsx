@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
@@ -30,6 +31,7 @@ const Login = () => {
 
   return (
     <div className="min-h-[60vh] flex items-center justify-center">
+      <SEO title="Вход в панель управления — ДробШин" description="Авторизация в административной панели сайта ДробШин." />
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <div className="mx-auto mb-2 h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">

@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,6 +24,7 @@ const ArticlePage = () => {
 
   return (
     <div>
+      <SEO title={`${article.title} — ДробШин`} description={article.excerpt || "Статья на сайте завода ДробШин."} ogType="article" />
       <section className="hero-gradient py-12">
         <div className="section-container max-w-3xl">
           <Button variant="ghost" size="sm" asChild className="mb-4 text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/10">

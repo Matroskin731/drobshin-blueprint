@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -14,6 +15,7 @@ const Retail = () => {
 
   return (
     <div>
+      <SEO title="Розничная продажа резиновых покрытий — ДробШин" description="Купить резиновую плитку и крошку в розницу от производителя. Доставка по Нижнему Новгороду и России." />
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">Розница</h1>

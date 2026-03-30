@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { ShieldCheck, FileText, Truck, Factory, CheckCircle, CreditCard, Handshake } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -27,6 +28,7 @@ const scrollToForm = () => {
 const Rop = () => {
   return (
     <div>
+      <SEO title="Расширенная ответственность производителя (РОП) — ДробШин" description="Услуги утилизации для выполнения нормативов РОП. Полный пакет документов, включение в реестр утилизаторов." />
       {/* Hero */}
       <section className="hero-gradient py-16">
         <div className="section-container text-center">

@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { Phone } from "lucide-react";
 import { ArrowRight, Recycle, Shield, Truck, Factory, Award, FileCheck, Users } from "lucide-react";
@@ -107,6 +108,7 @@ const Index = () => {
 
   return (
     <div>
+      <SEO title="ДробШин — Резиновая крошка и покрытия, утилизация РТИ | Нижний Новгород" description="Производим резиновую крошку, плитку и бесшовные покрытия из переработанных шин с 2007 года. Оптовые поставки по всей России." />
       {/* Hero */}
       {isBlockVisible("hero") && (
         <section className="hero-photo relative overflow-hidden" ref={heroSectionRef}>

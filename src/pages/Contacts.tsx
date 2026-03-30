@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { RequestForm } from "@/components/RequestForm";
@@ -9,6 +10,7 @@ const Contacts = () => {
 
   return (
     <div>
+      <SEO title="Контакты — ДробШин" description="Свяжитесь с заводом ДробШин. Адрес, телефоны, email и форма обратной связи." />
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">Контакты</h1>
