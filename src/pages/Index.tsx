@@ -72,7 +72,7 @@ const Index = () => {
     const el = aboutRef.current;
     if (!el) return;
     const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { setAboutInView(true); obs.disconnect(); }
+      setAboutInView(e.isIntersecting);
     }, { threshold: 0.05 });
     obs.observe(el);
     return () => obs.disconnect();

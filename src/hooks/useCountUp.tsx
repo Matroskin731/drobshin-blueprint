@@ -1,24 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 
-function easeOutCubic(t: number) {
-  return 1 - Math.pow(1 - t, 3);
+function easeOutQuart(t: number) {
+  return 1 - Math.pow(1 - t, 4);
 }
 
 /**
- * Animates a number from 0 to `end` over `duration` ms when `start` becomes true.
+ * Animates a number from 0 to `end` over `duration` ms.
+ * Re-runs every time `start` flips from false → true.
  */
-export function useCountUp(end: number, start: boolean, duration = 1500) {
+export function useCountUp(end: number, start: boolean, duration = 1800) {
   const [value, setValue] = useState(0);
   const rafRef = useRef<number>();
 
   useEffect(() => {
-    if (!start) return;
+    if (!start) {
+      setValue(0);
+      return;
+    }
     const t0 = performance.now();
 
     const tick = (now: number) => {
       const elapsed = now - t0;
       const progress = Math.min(elapsed / duration, 1);
-      setValue(Math.round(easeOutCubic(progress) * end));
+      setValue(Math.round(easeOutQuart(progress) * end));
       if (progress < 1) {
         rafRef.current = requestAnimationFrame(tick);
       }
