@@ -8,9 +8,16 @@ import { Calculator } from "@/components/Calculator";
 import { QuoteModal } from "@/components/QuoteModal";
 import { ProductCatalogSection } from "@/components/ProductCatalogSection";
 import { DocumentsSection } from "@/components/DocumentsSection";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import heroFactory from "@/assets/hero-factory.jpg";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
+import { useCountUp } from "@/hooks/useCountUp";
+
+function AnimatedStat({ num, suffix, format, inView }: { num: number; suffix: string; format: boolean; inView: boolean }) {
+  const value = useCountUp(num, inView, 1500);
+  const display = format ? value.toLocaleString("ru-RU") : String(value);
+  return <p className="text-3xl lg:text-4xl font-extrabold text-primary leading-none">{display}{suffix}</p>;
+}
 
 const Index = () => {
   const { config, isBlockVisible } = useSiteConfig();
@@ -22,7 +29,19 @@ const Index = () => {
     setQuoteOpen(true);
   };
 
-  const aboutRef = useScrollReveal();
+  const aboutRef = useRef<HTMLElement>(null);
+  const aboutRevealRef = useScrollReveal();
+  const [aboutInView, setAboutInView] = useState(false);
+
+  useEffect(() => {
+    const el = aboutRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { setAboutInView(true); obs.disconnect(); }
+    }, { threshold: 0.05 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
   const whyUsRef = useScrollReveal();
   const howRef = useScrollReveal();
   const guaranteesRef = useScrollReveal();
