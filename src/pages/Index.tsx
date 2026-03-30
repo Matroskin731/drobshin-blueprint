@@ -67,25 +67,60 @@ const Index = () => {
           <div className="section-container section-padding relative z-10">
             <div className="max-w-2xl">
               <h1 className="text-[2.25rem] md:text-5xl lg:text-6xl font-extrabold mb-6 leading-[1.25] md:leading-tight text-white drop-shadow-lg">
-                Утилизация отходов РТИ.
-                <br />
-                <span className="text-primary">Резиновая крошка и покрытия.</span>
+                {(() => {
+                  const line1 = "Утилизация отходов РТИ.";
+                  const line2 = "Резиновая крошка и покрытия.";
+                  const words1 = line1.split(" ");
+                  const words2 = line2.split(" ");
+                  let wordIndex = 0;
+                  return (
+                    <>
+                      {words1.map((w, i) => (
+                        <span key={`l1-${i}`} className="hero-word" style={{ animationDelay: `${(wordIndex + i) * 80}ms` }}>
+                          {w}{i < words1.length - 1 ? "\u00A0" : ""}
+                        </span>
+                      ))}
+                      <br />
+                      <span className="text-primary">
+                        {words2.map((w, i) => {
+                          const delay = (words1.length + i) * 80;
+                          return (
+                            <span key={`l2-${i}`} className="hero-word" style={{ animationDelay: `${delay}ms` }}>
+                              {w}{i < words2.length - 1 ? "\u00A0" : ""}
+                            </span>
+                          );
+                        })}
+                      </span>
+                    </>
+                  );
+                })()}
               </h1>
-              <p className="text-lg md:text-xl text-white/90 max-w-2xl mb-8">
-                Производим резиновую крошку, плитку и бесшовные покрытия из утилизированных шин.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button size="lg" asChild className="text-base h-13 px-10 text-[15px]">
-                  <Link to="/wholesale">Продукция и цены</Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild className="text-base border-white/20 text-white/70 bg-white/5 hover:bg-white/10 hover:text-white/90 hover:border-white/30">
-                  <a href="#request-form">Оставить заявку</a>
-                </Button>
-              </div>
-              <a href="tel:+79877404062" className="inline-flex items-center gap-2 mt-8 text-sm text-white/50 hover:text-white/75 transition-colors">
-                <Phone className="h-4 w-4" />
-                <span>+7 (987) 740-40-62 — ответим в течение 10 минут</span>
-              </a>
+              {(() => {
+                const totalWords = 4 + 4; // words in both lines
+                const lastWordEnd = totalWords * 80;
+                const pDelay = lastWordEnd + 400;
+                const btnDelay = pDelay + 200;
+                const phoneDelay = btnDelay + 200;
+                return (
+                  <>
+                    <p className="hero-fade text-lg md:text-xl text-white/90 max-w-2xl mb-8" style={{ animationDelay: `${pDelay}ms` }}>
+                      Производим резиновую крошку, плитку и бесшовные покрытия из утилизированных шин.
+                    </p>
+                    <div className="hero-fade flex flex-col sm:flex-row gap-3" style={{ animationDelay: `${btnDelay}ms` }}>
+                      <Button size="lg" asChild className="text-base h-13 px-10 text-[15px]">
+                        <Link to="/wholesale">Продукция и цены</Link>
+                      </Button>
+                      <Button size="lg" variant="outline" asChild className="text-base border-white/20 text-white/70 bg-white/5 hover:bg-white/10 hover:text-white/90 hover:border-white/30">
+                        <a href="#request-form">Оставить заявку</a>
+                      </Button>
+                    </div>
+                    <a href="tel:+79877404062" className="hero-fade inline-flex items-center gap-2 mt-8 text-sm text-white/50 hover:text-white/75 transition-colors" style={{ animationDelay: `${phoneDelay}ms` }}>
+                      <Phone className="h-4 w-4" />
+                      <span>+7 (987) 740-40-62 — ответим в течение 10 минут</span>
+                    </a>
+                  </>
+                );
+              })()}
             </div>
           </div>
         </section>

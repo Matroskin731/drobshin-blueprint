@@ -251,3 +251,20 @@ button, a[role="button"], .btn, [class*="Button"] {
     border-radius: 10px;
   }
 }
+
+/* Hero staggered reveal */
+@keyframes hero-word-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  animation: hero-word-up 0.5s ease-out forwards;
+}
+
+.hero-fade {
+  opacity: 0;
+  animation: hero-word-up 0.5s ease-out forwards;
+}
