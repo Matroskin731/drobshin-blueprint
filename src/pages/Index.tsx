@@ -8,9 +8,16 @@ import { Calculator } from "@/components/Calculator";
 import { QuoteModal } from "@/components/QuoteModal";
 import { ProductCatalogSection } from "@/components/ProductCatalogSection";
 import { DocumentsSection } from "@/components/DocumentsSection";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import heroFactory from "@/assets/hero-factory.jpg";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
+import { useCountUp } from "@/hooks/useCountUp";
+
+function AnimatedStat({ num, suffix, format, inView }: { num: number; suffix: string; format: boolean; inView: boolean }) {
+  const value = useCountUp(num, inView, 1500);
+  const display = format ? value.toLocaleString("ru-RU") : String(value);
+  return <p className="text-3xl lg:text-4xl font-extrabold text-primary leading-none">{display}{suffix}</p>;
+}
 
 const Index = () => {
   const { config, isBlockVisible } = useSiteConfig();
@@ -22,7 +29,19 @@ const Index = () => {
     setQuoteOpen(true);
   };
 
-  const aboutRef = useScrollReveal();
+  const aboutRef = useRef<HTMLElement>(null);
+  const aboutRevealRef = useScrollReveal();
+  const [aboutInView, setAboutInView] = useState(false);
+
+  useEffect(() => {
+    const el = aboutRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { setAboutInView(true); obs.disconnect(); }
+    }, { threshold: 0.05 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
   const whyUsRef = useScrollReveal();
   const howRef = useScrollReveal();
   const guaranteesRef = useScrollReveal();
@@ -74,7 +93,7 @@ const Index = () => {
 
       {/* About preview */}
       {isBlockVisible("about-preview") && (
-        <section className="section-padding section-dark" ref={aboutRef}>
+        <section className="section-padding section-dark" ref={(el) => { (aboutRef as React.MutableRefObject<HTMLElement | null>).current = el; (aboutRevealRef as React.MutableRefObject<HTMLElement | null>).current = el; }}>
           <div className="section-container">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-3">Почему нам доверяют</h2>
@@ -82,13 +101,13 @@ const Index = () => {
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
               {[
-                { value: "2 400+", unit: "тонн/год", title: "Переработки", desc: "Полный цикл утилизации отходов РТИ" },
-                { value: "17+", unit: "лет", title: "На рынке", desc: "Работаем с 2007 года" },
-                { value: "1000+", unit: "", title: "Клиентов", desc: "Постоянные партнёры по всей России" },
-                { value: "2", unit: "линии", title: "Производство", desc: "Собственные мощности" },
+                { num: 2400, suffix: "+", unit: "тонн/год", title: "Переработки", desc: "Полный цикл утилизации отходов РТИ", format: true },
+                { num: 17, suffix: "+", unit: "лет", title: "На рынке", desc: "Работаем с 2007 года", format: false },
+                { num: 1000, suffix: "+", unit: "", title: "Клиентов", desc: "Постоянные партнёры по всей России", format: true },
+                { num: 2, suffix: "", unit: "линии", title: "Производство", desc: "Собственные мощности", format: false },
               ].map((item, i) => (
                 <div key={i} ref={statStagger(i)} className="trust-stat-card text-center p-6 lg:p-8">
-                  <p className="text-3xl lg:text-4xl font-extrabold text-primary leading-none">{item.value}</p>
+                  <AnimatedStat num={item.num} suffix={item.suffix} format={item.format} inView={aboutInView} />
                   {item.unit && <span className="text-sm text-white/50 mt-1 block">{item.unit}</span>}
                   <h3 className="font-bold text-white mt-3 mb-1">{item.title}</h3>
                   <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
