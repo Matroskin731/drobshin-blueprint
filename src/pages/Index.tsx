@@ -227,19 +227,38 @@ const Index = () => {
         <section className="section-padding section-dark-alt" ref={howRef}>
           <div className="section-container">
             <h2 className="text-3xl font-bold text-center mb-10">Как мы работаем</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-              {[
-                { step: "01", title: "Заявка", desc: "Оставьте заявку на сайте или позвоните" },
-                { step: "02", title: "Расчёт", desc: "Подберём продукцию и рассчитаем стоимость" },
-                { step: "03", title: "Производство", desc: "Изготовим продукцию под ваш заказ" },
-                { step: "04", title: "Доставка", desc: "Отгрузим и доставим в ваш регион" },
-              ].map((item, i) => (
-                <div key={i} ref={stepStagger(i)} className="relative pl-4 border-l-2 border-primary/40">
-                  <span className="text-4xl font-extrabold text-white/30 leading-none text-left">{item.step}</span>
-                  <h3 className="font-bold mt-2 mb-1 text-white">{item.title}</h3>
-                  <p className="text-sm text-white/70">{item.desc}</p>
-                </div>
-              ))}
+            <div className="relative">
+              {/* Connecting SVG line – xl only */}
+              <svg
+                ref={stepsLineRef}
+                className="hidden xl:block absolute top-[28px] left-[12.5%] right-[12.5%] h-[3px] pointer-events-none"
+                style={{ width: "75%", overflow: "visible" }}
+                preserveAspectRatio="none"
+              >
+                <line
+                  x1="0" y1="1" x2="100%" y2="1"
+                  stroke="hsl(var(--primary))"
+                  strokeOpacity="0.3"
+                  strokeWidth="2"
+                  strokeDasharray="1000"
+                  strokeDashoffset="1000"
+                  className="steps-connecting-line"
+                />
+              </svg>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+                {[
+                  { step: "01", title: "Заявка", desc: "Оставьте заявку на сайте или позвоните" },
+                  { step: "02", title: "Расчёт", desc: "Подберём продукцию и рассчитаем стоимость" },
+                  { step: "03", title: "Производство", desc: "Изготовим продукцию под ваш заказ" },
+                  { step: "04", title: "Доставка", desc: "Отгрузим и доставим в ваш регион" },
+                ].map((item, i) => (
+                  <div key={i} ref={stepStagger(i)} className="relative pl-4 border-l-2 border-primary/40">
+                    <span className="text-4xl font-extrabold text-white/30 leading-none text-left">{item.step}</span>
+                    <h3 className="font-bold mt-2 mb-1 text-white">{item.title}</h3>
+                    <p className="text-sm text-white/70">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
