@@ -2,12 +2,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import { SiteConfigProvider } from "@/contexts/SiteConfigContext";
 import { AuthProvider } from "@/hooks/useAuth";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Layout } from "@/components/layout/Layout";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { PageTransition } from "@/components/PageTransition";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Wholesale from "./pages/Wholesale";
@@ -25,6 +27,34 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+function AnimatedRoutes() {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransition><Index /></PageTransition>} />
+        <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+        <Route path="/wholesale" element={<PageTransition><Wholesale /></PageTransition>} />
+        <Route path="/retail" element={<PageTransition><Retail /></PageTransition>} />
+        <Route path="/recycling" element={<PageTransition><Recycling /></PageTransition>} />
+        <Route path="/rop" element={<PageTransition><Rop /></PageTransition>} />
+        <Route path="/accessories" element={<PageTransition><Accessories /></PageTransition>} />
+        <Route path="/applications" element={<PageTransition><Applications /></PageTransition>} />
+        <Route path="/articles" element={<PageTransition><Articles /></PageTransition>} />
+        <Route path="/articles/:id" element={<PageTransition><ArticlePage /></PageTransition>} />
+        <Route path="/contacts" element={<PageTransition><Contacts /></PageTransition>} />
+        <Route path="/login" element={<PageTransition><Login /></PageTransition>} />
+        <Route path="/admin" element={
+          <ProtectedRoute>
+            <PageTransition><Admin /></PageTransition>
+          </ProtectedRoute>
+        } />
+        <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -35,26 +65,7 @@ const App = () => (
           <BrowserRouter>
             <ScrollToTop />
             <Layout>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/wholesale" element={<Wholesale />} />
-                <Route path="/retail" element={<Retail />} />
-                <Route path="/recycling" element={<Recycling />} />
-                <Route path="/rop" element={<Rop />} />
-                <Route path="/accessories" element={<Accessories />} />
-                <Route path="/applications" element={<Applications />} />
-                <Route path="/articles" element={<Articles />} />
-                <Route path="/articles/:id" element={<ArticlePage />} />
-                <Route path="/contacts" element={<Contacts />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/admin" element={
-                  <ProtectedRoute>
-                    <Admin />
-                  </ProtectedRoute>
-                } />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <AnimatedRoutes />
             </Layout>
           </BrowserRouter>
         </SiteConfigProvider>
