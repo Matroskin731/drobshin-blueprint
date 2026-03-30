@@ -5,6 +5,7 @@ import { RequestForm } from "@/components/RequestForm";
 const Recycling = () => {
   return (
     <div>
+      <SEO title="Утилизация отходов РТИ — ДробШин" description="Сбор, транспортирование и утилизация автомобильных шин и резинотехнических изделий. Лицензия, акты утилизации." />
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">Утилизация отходов РТИ</h1>

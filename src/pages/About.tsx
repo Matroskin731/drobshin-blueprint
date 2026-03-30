@@ -10,6 +10,7 @@ const About = () => {
 
   return (
     <div>
+      <SEO title="О заводе ДробШин — Утилизация РТИ с 2007 года" description="ООО «НЗ ППРТИ» — надёжный партнёр в утилизации отходов РТИ. Полный цикл переработки шин, производство резиновой крошки и покрытий." />
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">О заводе «ДробШин»</h1>

@@ -51,6 +51,7 @@ const Wholesale = () => {
 
   return (
     <div>
+      <SEO title="Оптовые поставки резиновой крошки и покрытий — ДробШин" description="Резиновая крошка, плитка и бесшовные покрытия оптом от производителя. Гибкие условия, доставка по России." />
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">Оптовые поставки</h1>

@@ -28,6 +28,7 @@ const scrollToForm = () => {
 const Rop = () => {
   return (
     <div>
+      <SEO title="Расширенная ответственность производителя (РОП) — ДробШин" description="Услуги утилизации для выполнения нормативов РОП. Полный пакет документов, включение в реестр утилизаторов." />
       {/* Hero */}
       <section className="hero-gradient py-16">
         <div className="section-container text-center">

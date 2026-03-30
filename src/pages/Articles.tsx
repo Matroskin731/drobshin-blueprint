@@ -10,6 +10,7 @@ const Articles = () => {
 
   return (
     <div>
+      <SEO title="Статьи и новости — ДробШин" description="Полезные статьи о резиновых покрытиях, утилизации шин и применении резиновой крошки." />
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">Статьи</h1>

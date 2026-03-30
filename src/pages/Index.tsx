@@ -108,6 +108,7 @@ const Index = () => {
 
   return (
     <div>
+      <SEO title="ДробШин — Резиновая крошка и покрытия, утилизация РТИ | Нижний Новгород" description="Производим резиновую крошку, плитку и бесшовные покрытия из переработанных шин с 2007 года. Оптовые поставки по всей России." />
       {/* Hero */}
       {isBlockVisible("hero") && (
         <section className="hero-photo relative overflow-hidden" ref={heroSectionRef}>

@@ -38,6 +38,7 @@ const applications = [
 const Applications = () => {
   return (
     <div>
+      <SEO title="Области применения резиновых покрытий — ДробШин" description="Резиновые покрытия для детских площадок, спортивных объектов, парковок и промышленных зон." />
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">Применение продукции</h1>

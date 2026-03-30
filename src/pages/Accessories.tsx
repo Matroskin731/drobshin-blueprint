@@ -37,6 +37,7 @@ const Accessories = () => {
 
   return (
     <div>
+      <SEO title="Сопутствующие товары для резиновых покрытий — ДробШин" description="Клей, краска и расходные материалы для монтажа резиновых покрытий от производителя." />
       <section className="hero-gradient py-16" ref={heroRef}>
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">
