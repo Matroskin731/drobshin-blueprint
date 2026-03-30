@@ -78,6 +78,25 @@ const Index = () => {
   }, []);
   const whyUsRef = useScrollReveal();
   const howRef = useScrollReveal();
+  const stepsLineRef = useRef<SVGSVGElement>(null);
+
+  // Animate connecting line when "how we work" enters viewport
+  useEffect(() => {
+    const svg = stepsLineRef.current;
+    if (!svg) return;
+    const line = svg.querySelector(".steps-connecting-line") as SVGLineElement | null;
+    if (!line) return;
+
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        line.style.transition = "stroke-dashoffset 1.5s ease-out";
+        line.style.strokeDashoffset = "0";
+        obs.disconnect();
+      }
+    }, { threshold: 0.1 });
+    obs.observe(svg);
+    return () => obs.disconnect();
+  }, []);
   const guaranteesRef = useScrollReveal();
   const formRef = useScrollReveal();
 
