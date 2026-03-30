@@ -31,6 +31,40 @@ const Index = () => {
 
   const aboutRef = useRef<HTMLElement>(null);
   const aboutRevealRef = useScrollReveal();
+  const heroBgRef = useRef<HTMLDivElement>(null);
+  const heroSectionRef = useRef<HTMLElement>(null);
+
+  // Parallax effect on hero bg
+  useEffect(() => {
+    const bg = heroBgRef.current;
+    const section = heroSectionRef.current;
+    if (!bg || !section) return;
+
+    let rafId: number;
+    let ticking = false;
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      rafId = requestAnimationFrame(() => {
+        if (window.innerWidth >= 768) {
+          const rect = section.getBoundingClientRect();
+          if (rect.bottom > 0) {
+            bg.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+          }
+        } else {
+          bg.style.transform = "";
+        }
+        ticking = false;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(rafId);
+    };
+  }, []);
   const [aboutInView, setAboutInView] = useState(false);
 
   useEffect(() => {
@@ -56,9 +90,10 @@ const Index = () => {
     <div>
       {/* Hero */}
       {isBlockVisible("hero") && (
-        <section className="hero-photo relative overflow-hidden">
+        <section className="hero-photo relative overflow-hidden" ref={heroSectionRef}>
           <div
-            className="hero-photo__bg absolute inset-0"
+            ref={heroBgRef}
+            className="hero-photo__bg absolute inset-0 will-change-transform"
             style={{ backgroundImage: `url(${heroFactory})` }}
             aria-hidden="true"
           />
