@@ -72,6 +72,25 @@ const Contacts = () => {
 
             <RequestForm source="контакты" />
           </div>
+
+          {/* Яндекс Карта */}
+          <div className="max-w-4xl mx-auto mt-12">
+            <h3 className="text-xl font-bold flex items-center gap-2 mb-4">
+              <MapPin className="h-5 w-5 text-primary" />
+              Как нас найти
+            </h3>
+            <div className="rounded-xl overflow-hidden">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?ll=44.002090%2C56.329882&z=16&pt=44.002090,56.329882,pm2rdm"
+                width="100%"
+                height="400"
+                frameBorder="0"
+                style={{ display: "block" }}
+                allowFullScreen
+                title="Местоположение завода ДробШин на карте"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </div>
