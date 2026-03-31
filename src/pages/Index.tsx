@@ -287,7 +287,7 @@ const Index = () => {
                     transition={{ duration: 0.7, delay: 0.1 * i, ease }}
                     className="relative pl-4 border-l-2 border-primary/40"
                   >
-                    <span className="text-4xl font-extrabold text-white/30 leading-none text-left">{item.step}</span>
+                    <span className="text-4xl font-extrabold text-white/40 leading-none text-left">{item.step}</span>
                     <h3 className="font-bold mt-2 mb-1 text-white">{item.title}</h3>
                     <p className="text-sm text-white/70">{item.desc}</p>
                   </motion.div>
