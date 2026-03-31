@@ -150,7 +150,7 @@ export function ProductOptions({ itemId, categoryId }: Props) {
 
       {/* Hint text */}
       {hasSelection && (
-        <p className="text-[10px] text-muted-foreground/70 italic">
+        <p className="text-[10px] text-foreground/55 italic">
           Выбранные параметры будут учтены при расчёте стоимости
         </p>
       )}
