@@ -30,7 +30,7 @@ const Contacts = () => {
                     <MapPin className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                     <div>
                       <p className="font-semibold mb-1">Адрес</p>
-                      <p className="text-sm text-muted-foreground">{contacts.address}</p>
+                      <p className="text-sm text-foreground/70">{contacts.address}</p>
                     </div>
                   </div>
 
