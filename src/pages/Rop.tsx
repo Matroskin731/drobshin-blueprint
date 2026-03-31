@@ -99,7 +99,7 @@ const Rop = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold mb-0.5">{step.title}</p>
-                    <p className="text-xs text-muted-foreground">{step.desc}</p>
+                    <p className="text-xs text-foreground/65 leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
