@@ -1,9 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
-/**
- * Adds a fade-in-up reveal animation when element enters viewport.
- * @param delay – stagger delay in ms (default 0)
- */
 export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(delay = 0) {
   const ref = useRef<T>(null);
 
@@ -11,31 +7,39 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(delay = 
     const el = ref.current;
     if (!el) return;
 
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = `opacity 0.65s ease-out ${delay}ms, transform 0.65s ease-out ${delay}ms`;
+    const show = () => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    };
+
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = `opacity 0.6s ease-out ${delay}ms, transform 0.6s ease-out ${delay}ms`;
+    el.style.willChange = 'opacity, transform';
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.style.opacity = "1";
-          el.style.transform = "translateY(0)";
+          show();
           observer.unobserve(el);
         }
       },
-      { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.01, rootMargin: '0px 0px -20px 0px' }
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+
+    const fallback = setTimeout(show, 2000);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallback);
+    };
   }, [delay]);
 
   return ref;
 }
 
-/**
- * Lightweight wrapper – returns a callback ref for mapping over lists with stagger.
- */
 export function useStaggerReveal(count: number, baseDelay = 0, step = 80) {
   const refs = useRef<(HTMLElement | null)[]>([]);
 
@@ -44,26 +48,33 @@ export function useStaggerReveal(count: number, baseDelay = 0, step = 80) {
 
     refs.current.forEach((el, i) => {
       if (!el) return;
+
       const d = baseDelay + i * step;
-      el.style.opacity = "0";
-      el.style.transform = "translateY(30px)";
-      el.style.transition = `opacity 0.65s ease-out ${d}ms, transform 0.65s ease-out ${d}ms`;
+      const show = () => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      };
+
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = `opacity 0.6s ease-out ${d}ms, transform 0.6s ease-out ${d}ms`;
 
       const obs = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
+            show();
             obs.unobserve(el);
           }
         },
-        { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
+        { threshold: 0.01, rootMargin: '0px 0px -20px 0px' }
       );
+
       obs.observe(el);
+      const fallback = setTimeout(show, 2000 + d);
       observers.push(obs);
     });
 
-    return () => observers.forEach((o) => o.disconnect());
+    return () => observers.forEach(o => o.disconnect());
   }, [count, baseDelay, step]);
 
   return (index: number) => (el: HTMLElement | null) => {

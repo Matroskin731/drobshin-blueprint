@@ -326,3 +326,8 @@ button, a[role="button"], .btn, [class*="Button"] {
   z-index: -1;
 }
 .btn-fill-slide:hover::before { transform: scaleX(1); }
+
+/* Страховка — текст всегда виден если анимация не сработала */
+p, h1, h2, h3, h4, li, span { min-opacity: unset; }
+.section-dark p, .section-dark-alt p, .section-dark span, .section-dark-alt span { color: hsl(0 0% 100% / 0.75); }
+.section-dark h2, .section-dark-alt h2, .section-dark h3, .section-dark-alt h3 { color: hsl(0 0% 100% / 0.95); }

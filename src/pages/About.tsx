@@ -14,7 +14,7 @@ const About = () => {
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">О заводе «ДробШин»</h1>
-          <p className="text-lg opacity-80 max-w-2xl mx-auto">
+          <p className="text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
             ООО «Нижегородский завод по переработке РТИ» — надёжный партнёр в утилизации отходов РТИ с 2007 года
           </p>
         </div>
@@ -22,11 +22,11 @@ const About = () => {
 
       <section className="section-padding">
         <div className="section-container max-w-4xl">
-          <div className="prose prose-lg max-w-none space-y-6 text-foreground/80 leading-relaxed">
-            <p>
+          <div className="max-w-none space-y-6">
+            <p className="text-white/75 leading-relaxed text-base">
               Обработка и утилизация РТИ — сбор, транспортирование, обработка и утилизация автомобильных шин, покрышек, камер и других резинотехнических изделий. Мы производим качественную резиновую крошку различных фракций, а также готовые покрытия: резиновую плитку и бесшовные покрытия.
             </p>
-            <p>
+            <p className="text-white/75 leading-relaxed text-base">
               За более чем 17 лет работы мы наладили полный цикл производства — от приёма сырья до выпуска готовой продукции. Наше оборудование позволяет утилизировать более 2400 тонн шин в год, внося вклад в экологию региона.
             </p>
           </div>
@@ -40,30 +40,30 @@ const About = () => {
             ].map((item, i) => (
               <div key={i} className="unified-card text-center p-6">
                 <item.icon className="h-8 w-8 mx-auto mb-3 text-foreground/50" />
-                <p className="text-2xl font-bold">{item.title}</p>
-                <p className="text-sm text-foreground/65">{item.desc}</p>
+                <p className="text-2xl font-bold text-foreground">{item.title}</p>
+                <p className="text-sm text-foreground/80 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-12 space-y-6">
-            <h2 className="text-2xl font-bold mb-4">Наши направления</h2>
-            <ul className="space-y-3 text-foreground/75 leading-relaxed">
+            <h2 className="text-2xl font-bold text-white leading-tight mb-4">Наши направления</h2>
+            <ul className="space-y-3 text-white/75 leading-relaxed">
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
-                <span><strong className="text-foreground">Обработка и утилизация РТИ</strong> — сбор, транспортирование, обработка и утилизация автомобильных шин, покрышек, камер и других резинотехнических изделий</span>
+                <Recycle className="h-5 w-5 text-white/50 mt-0.5 shrink-0" />
+                <span><strong className="text-white">Обработка и утилизация РТИ</strong> — сбор, транспортирование, обработка и утилизация автомобильных шин, покрышек, камер и других резинотехнических изделий</span>
               </li>
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
-                <span><strong className="text-foreground">Резиновая крошка</strong> — производство гранулята различных фракций для покрытий, спортивных площадок и строительства</span>
+                <Recycle className="h-5 w-5 text-white/50 mt-0.5 shrink-0" />
+                <span><strong className="text-white">Резиновая крошка</strong> — производство гранулята различных фракций для покрытий, спортивных площадок и строительства</span>
               </li>
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
-                <span><strong className="text-foreground">Резиновая плитка</strong> — безопасные покрытия для детских и спортивных площадок</span>
+                <Recycle className="h-5 w-5 text-white/50 mt-0.5 shrink-0" />
+                <span><strong className="text-white">Резиновая плитка</strong> — безопасные покрытия для детских и спортивных площадок</span>
               </li>
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
-                <span><strong className="text-foreground">Бесшовные покрытия</strong> — монолитные резиновые покрытия для различных назначений</span>
+                <Recycle className="h-5 w-5 text-white/50 mt-0.5 shrink-0" />
+                <span><strong className="text-white">Бесшовные покрытия</strong> — монолитные резиновые покрытия для различных назначений</span>
               </li>
             </ul>
           </div>
@@ -78,8 +78,8 @@ const About = () => {
               <div className="flex items-start gap-3">
                 <ShieldCheck className="h-7 w-7 shrink-0 text-primary mt-0.5" />
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-bold leading-snug mb-2">Надёжный партнёр по утилизации РТИ</h2>
-                  <p className="text-sm text-foreground/70 leading-relaxed max-w-2xl">
+                  <h2 className="text-xl sm:text-2xl font-bold text-foreground leading-snug mb-2">Надёжный партнёр по утилизации РТИ</h2>
+                  <p className="text-sm text-foreground/80 leading-relaxed max-w-2xl">
                     ООО «НЗ ППРТИ» осуществляет деятельность на основании лицензии №Л020-00113-52/00043188 от 16.04.2018 г. и включено в реестр утилизаторов. Предоставляем полный пакет документов для экологической отчётности.
                   </p>
                 </div>
