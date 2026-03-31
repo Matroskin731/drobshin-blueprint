@@ -11,8 +11,9 @@ import { ProductCatalogSection } from "@/components/ProductCatalogSection";
 import { DocumentsSection } from "@/components/DocumentsSection";
 import { useState, useEffect, useRef } from "react";
 import heroFactory from "@/assets/hero-factory.jpg";
-import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 import { useCountUp } from "@/hooks/useCountUp";
+import { motion } from "framer-motion";
+import { fadeUp, ease, viewport } from "@/hooks/useMotion";
 
 function AnimatedStat({ num, suffix, format }: { num: number; suffix: string; format: boolean }) {
   const { count, ref } = useCountUp(num, 1500);
@@ -34,8 +35,6 @@ const Index = () => {
     setQuoteOpen(true);
   };
 
-  const aboutRef = useRef<HTMLElement>(null);
-  const aboutRevealRef = useScrollReveal();
   const heroBgRef = useRef<HTMLDivElement>(null);
   const heroSectionRef = useRef<HTMLElement>(null);
 
@@ -71,9 +70,6 @@ const Index = () => {
     };
   }, []);
 
-
-  const whyUsRef = useScrollReveal();
-  const howRef = useScrollReveal();
   const stepsLineRef = useRef<SVGSVGElement>(null);
 
   // Animate connecting line when "how we work" enters viewport
@@ -93,13 +89,6 @@ const Index = () => {
     obs.observe(svg);
     return () => obs.disconnect();
   }, []);
-  const guaranteesRef = useScrollReveal();
-  const formRef = useScrollReveal();
-
-  
-  const whyStagger = useStaggerReveal(4, 100, 80);
-  const stepStagger = useStaggerReveal(4, 100, 100);
-  const guaranteeStagger = useStaggerReveal(3, 100, 80);
 
   return (
     <div>
@@ -150,11 +139,25 @@ const Index = () => {
 
       {/* About preview */}
       {isBlockVisible("about-preview") && (
-        <section className="section-dark pt-20 pb-24 md:pb-32" ref={(el) => { (aboutRef as React.MutableRefObject<HTMLElement | null>).current = el; (aboutRevealRef as React.MutableRefObject<HTMLElement | null>).current = el; }}>
+        <section className="section-dark pt-20 pb-24 md:pb-32" id="about-preview">
           <div className="section-container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-3">Почему нам доверяют</h2>
-              <p className="text-white/60 max-w-xl mx-auto">Собственное производство полного цикла с 2007 года</p>
+              <motion.h2
+                initial="hidden" whileInView="visible"
+                viewport={viewport} variants={fadeUp}
+                transition={{ duration: 0.7, ease }}
+                className="text-3xl font-bold mb-3"
+              >
+                Почему нам доверяют
+              </motion.h2>
+              <motion.p
+                initial="hidden" whileInView="visible"
+                viewport={viewport} variants={fadeUp}
+                transition={{ duration: 0.7, delay: 0.1, ease }}
+                className="text-white/60 max-w-xl mx-auto"
+              >
+                Собственное производство полного цикла с 2007 года
+              </motion.p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
               {[
@@ -163,19 +166,30 @@ const Index = () => {
                 { num: 1000, suffix: "+", unit: "", title: "Клиентов", desc: "Постоянные партнёры по всей России", format: true },
                 { num: 2, suffix: "", unit: "линии", title: "Производство", desc: "Собственные мощности", format: false },
               ].map((item, i) => (
-                <div key={i} className="trust-stat-card text-center p-6 lg:p-8">
+                <motion.div
+                  key={i}
+                  initial="hidden" whileInView="visible"
+                  viewport={viewport} variants={fadeUp}
+                  transition={{ duration: 0.7, delay: 0.1 * i, ease }}
+                  className="trust-stat-card text-center p-6 lg:p-8"
+                >
                   <AnimatedStat num={item.num} suffix={item.suffix} format={item.format} />
                   {item.unit && <span className="text-sm text-white/50 mt-1 block">{item.unit}</span>}
                   <h3 className="font-bold text-white mt-3 mb-1">{item.title}</h3>
                   <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
-            <div className="text-center mt-10">
+            <motion.div
+              initial="hidden" whileInView="visible"
+              viewport={viewport} variants={fadeUp}
+              transition={{ duration: 0.7, delay: 0.5, ease }}
+              className="text-center mt-10"
+            >
               <Button variant="outline" asChild className="border-white/15 text-white/70 hover:bg-white/5 hover:text-white">
                 <Link to="/about">Подробнее о заводе <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
-            </div>
+            </motion.div>
           </div>
         </section>
       )}
@@ -184,9 +198,16 @@ const Index = () => {
 
       {/* Why us */}
       {isBlockVisible("why-us") && (
-        <section className="section-padding bg-[hsl(210_10%_96%)]" ref={whyUsRef}>
+        <section className="section-padding bg-[hsl(210_10%_96%)]">
           <div className="section-container">
-            <h2 className="text-3xl font-bold text-center mb-10">Почему выбирают нас</h2>
+            <motion.h2
+              initial="hidden" whileInView="visible"
+              viewport={viewport} variants={fadeUp}
+              transition={{ duration: 0.7, ease }}
+              className="text-3xl font-bold text-center mb-10"
+            >
+              Почему выбирают нас
+            </motion.h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
               {[
                 { icon: Factory, title: "Собственное производство", desc: "Полный цикл утилизации на своих мощностях" },
@@ -194,13 +215,19 @@ const Index = () => {
                 { icon: Truck, title: "Логистика по РФ", desc: "Организуем доставку в любой регион России" },
                 { icon: Users, title: "Индивидуальный подход", desc: "Гибкие условия для оптовых покупателей" },
               ].map((item, i) => (
-                <div key={i} ref={whyStagger(i)} className="unified-card text-center p-7">
+                <motion.div
+                  key={i}
+                  initial="hidden" whileInView="visible"
+                  viewport={viewport} variants={fadeUp}
+                  transition={{ duration: 0.7, delay: 0.1 * i, ease }}
+                  className="unified-card text-center p-7"
+                >
                   <div className="mx-auto mb-3 h-12 w-12 rounded-lg bg-muted flex items-center justify-center">
                     <item.icon className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="font-bold mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -211,9 +238,16 @@ const Index = () => {
 
       {/* How we work */}
       {isBlockVisible("how-we-work") && (
-        <section className="section-padding section-dark-alt" ref={howRef}>
+        <section className="section-padding section-dark-alt">
           <div className="section-container">
-            <h2 className="text-3xl font-bold text-center mb-10">Как мы работаем</h2>
+            <motion.h2
+              initial="hidden" whileInView="visible"
+              viewport={viewport} variants={fadeUp}
+              transition={{ duration: 0.7, ease }}
+              className="text-3xl font-bold text-center mb-10"
+            >
+              Как мы работаем
+            </motion.h2>
             <div className="relative">
               {/* Connecting SVG line – xl only */}
               <svg
@@ -239,11 +273,17 @@ const Index = () => {
                   { step: "03", title: "Производство", desc: "Изготовим продукцию под ваш заказ" },
                   { step: "04", title: "Доставка", desc: "Отгрузим и доставим в ваш регион" },
                 ].map((item, i) => (
-                  <div key={i} ref={stepStagger(i)} className="relative pl-4 border-l-2 border-primary/40">
+                  <motion.div
+                    key={i}
+                    initial="hidden" whileInView="visible"
+                    viewport={viewport} variants={fadeUp}
+                    transition={{ duration: 0.7, delay: 0.1 * i, ease }}
+                    className="relative pl-4 border-l-2 border-primary/40"
+                  >
                     <span className="text-4xl font-extrabold text-white/30 leading-none text-left">{item.step}</span>
                     <h3 className="font-bold mt-2 mb-1 text-white">{item.title}</h3>
                     <p className="text-sm text-white/70">{item.desc}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -253,20 +293,33 @@ const Index = () => {
 
       {/* Guarantees */}
       {isBlockVisible("guarantees") && (
-        <section className="section-padding bg-[hsl(210_10%_96%)]" ref={guaranteesRef}>
+        <section className="section-padding bg-[hsl(210_10%_96%)]">
           <div className="section-container text-center">
-            <h2 className="text-3xl font-bold mb-10">Гарантии и соответствие</h2>
+            <motion.h2
+              initial="hidden" whileInView="visible"
+              viewport={viewport} variants={fadeUp}
+              transition={{ duration: 0.7, ease }}
+              className="text-3xl font-bold mb-10"
+            >
+              Гарантии и соответствие
+            </motion.h2>
             <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
               {[
                 { icon: FileCheck, title: "Сертификаты", desc: "Вся продукция сертифицирована" },
                 { icon: Shield, title: "Экологичность", desc: "Безопасные материалы, утилизация отходов" },
                 { icon: Award, title: "ТУ", desc: "Продукция соответствует ТУ (ГОСТов на данную продукцию не существует)" },
               ].map((item, i) => (
-                <div key={i} ref={guaranteeStagger(i)} className="unified-card flex flex-col items-center p-7">
+                <motion.div
+                  key={i}
+                  initial="hidden" whileInView="visible"
+                  viewport={viewport} variants={fadeUp}
+                  transition={{ duration: 0.7, delay: 0.1 * i, ease }}
+                  className="unified-card flex flex-col items-center p-7"
+                >
                   <item.icon className="h-10 w-10 text-foreground mb-3" />
                   <h3 className="font-bold mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -275,9 +328,16 @@ const Index = () => {
 
       {/* Calculator + Request Form */}
       {isBlockVisible("request-form") && (
-        <section id="request-form" className="section-padding section-dark" ref={formRef}>
+        <section id="request-form" className="section-padding section-dark">
           <div className="section-container">
-            <h2 className="text-3xl font-bold text-center mb-10">Рассчитайте и закажите</h2>
+            <motion.h2
+              initial="hidden" whileInView="visible"
+              viewport={viewport} variants={fadeUp}
+              transition={{ duration: 0.7, ease }}
+              className="text-3xl font-bold text-center mb-10"
+            >
+              Рассчитайте и закажите
+            </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <Calculator onRequestQuote={handleCalcQuote} />
               <RequestForm source="главная" />
