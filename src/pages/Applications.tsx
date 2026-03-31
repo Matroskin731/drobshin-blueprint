@@ -42,7 +42,7 @@ const Applications = () => {
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">Применение продукции</h1>
-          <p className="text-lg opacity-80 max-w-2xl mx-auto">
+          <p className="text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
             Где используется резиновая крошка и покрытия
           </p>
         </div>
@@ -54,11 +54,11 @@ const Applications = () => {
             {applications.map((app, i) =>
             <Card key={i}>
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-bold mb-2">{app.title}</h3>
-                  <p className="text-sm text-foreground/65 leading-relaxed mb-4">{app.desc}</p>
+                  <h3 className="text-lg font-bold text-foreground leading-tight mb-2">{app.title}</h3>
+                  <p className="text-sm text-foreground/80 leading-relaxed mb-4">{app.desc}</p>
                   <ul className="space-y-1.5">
                     {app.items.map((item, j) =>
-                  <li key={j} className="flex items-center gap-2 text-sm">
+                  <li key={j} className="flex items-center gap-2 text-sm text-foreground/80 leading-relaxed">
                         <CheckCircle className="h-3.5 w-3.5 shrink-0 text-lime-500" />
                         {item}
                       </li>

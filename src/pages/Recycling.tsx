@@ -9,7 +9,7 @@ const Recycling = () => {
       <section className="hero-gradient py-16">
         <div className="section-container text-center">
           <h1 className="text-4xl font-bold mb-4">Утилизация отходов РТИ</h1>
-          <p className="text-lg opacity-80 max-w-2xl mx-auto">
+          <p className="text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
             Принимаем на утилизацию автомобильные шины и резинотехнические изделия
           </p>
         </div>
@@ -17,7 +17,7 @@ const Recycling = () => {
 
       <section className="section-padding">
         <div className="section-container max-w-4xl">
-          <div className="space-y-6 text-foreground/80 leading-relaxed mb-12">
+          <div className="space-y-6 text-white/75 leading-relaxed mb-12">
             <p>
               Завод «ДробШин» осуществляет приём и утилизацию изношенных автомобильных шин и других резинотехнических изделий. Мы предлагаем экологичное решение проблемы утилизации РТИ.
             </p>
@@ -36,8 +36,8 @@ const Recycling = () => {
               <div key={i} className="unified-card flex gap-4 p-6">
                 <item.icon className="h-8 w-8 text-foreground/50 shrink-0" />
                 <div>
-                  <h3 className="font-semibold mb-1">{item.title}</h3>
-                  <p className="text-sm text-foreground/65 leading-relaxed">{item.desc}</p>
+                  <h3 className="font-bold text-foreground leading-tight mb-1">{item.title}</h3>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
