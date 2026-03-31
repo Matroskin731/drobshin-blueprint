@@ -22,7 +22,7 @@ const About = () => {
 
       <section className="section-padding">
         <div className="section-container max-w-4xl">
-          <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground">
+          <div className="prose prose-lg max-w-none space-y-6 text-foreground/80 leading-relaxed">
             <p>
               Обработка и утилизация РТИ — сбор, транспортирование, обработка и утилизация автомобильных шин, покрышек, камер и других резинотехнических изделий. Мы производим качественную резиновую крошку различных фракций, а также готовые покрытия: резиновую плитку и бесшовные покрытия.
             </p>
