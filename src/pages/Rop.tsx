@@ -47,7 +47,7 @@ const Rop = () => {
 
           <div className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold">Что такое РОП</h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
               Расширенная ответственность производителей товаров и упаковки (РОП) — механизм экономического регулирования, согласно которому производители и импортёры обязаны обеспечить утилизацию товаров после утраты ими потребительских свойств.
             </p>
           </div>
