@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
@@ -6,8 +6,15 @@ import { Button } from "@/components/ui/button";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { config } = useSiteConfig();
   const location = useLocation();
+
+  useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 80);
+    window.addEventListener('scroll', fn);
+    return () => window.removeEventListener('scroll', fn);
+  }, []);
 
   const shortLabels: Record<string, string> = {
     "Утилизация РТИ": "Утилизация",
@@ -24,28 +31,34 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled
+        ? 'bg-card/95 backdrop-blur-xl border-b border-border shadow-sm'
+        : 'bg-transparent border-b border-transparent'
+    }`}>
       <div className="max-w-[1280px] mx-auto px-5 flex h-16 items-center">
-        {/* Left: Logo — fixed width */}
+        {/* Left: Logo */}
         <div className="shrink-0 w-[100px]">
-          <Link to="/" className="whitespace-nowrap font-bold text-xl tracking-tight text-primary">
+          <Link to="/" className={`whitespace-nowrap font-bold text-xl tracking-tight transition-colors duration-300 ${
+            scrolled ? 'text-primary' : 'text-white'
+          }`}>
             ДробШин
           </Link>
         </div>
 
-        {/* Center: Nav — takes remaining space, centered */}
+        {/* Center: Nav */}
         <nav className="hidden xl:flex flex-1 items-center justify-center gap-0.5 min-w-0 overflow-hidden">
           {visibleNav.map((item) => (
             <Link
               key={item.id}
               to={item.path}
-              className={`relative whitespace-nowrap px-2 py-2 rounded-lg text-[13px] font-medium transition-all duration-200 ease-out after:absolute after:bottom-1 after:left-2 after:right-2 after:h-[1.5px] after:bg-foreground after:origin-left after:transition-transform after:duration-200 after:ease-out ${
-                location.pathname === item.path
-                  ? "text-foreground after:scale-x-100"
-                  : "text-muted-foreground hover:text-foreground after:scale-x-0 hover:after:scale-x-100"
+              className={`relative whitespace-nowrap px-2 py-2 rounded-lg text-[13px] font-medium transition-all duration-200 ease-out after:absolute after:bottom-1 after:left-2 after:right-2 after:h-[1.5px] after:origin-left after:transition-transform after:duration-200 after:ease-out ${
+                scrolled
+                  ? `after:bg-foreground ${location.pathname === item.path ? 'text-foreground after:scale-x-100' : 'text-muted-foreground hover:text-foreground after:scale-x-0 hover:after:scale-x-100'}`
+                  : `after:bg-white ${location.pathname === item.path ? 'text-white after:scale-x-100' : 'text-white/70 hover:text-white after:scale-x-0 hover:after:scale-x-100'}`
               }`}
             >
-            {shortLabels[item.title] || item.title}
+              {shortLabels[item.title] || item.title}
             </Link>
           ))}
         </nav>
@@ -66,7 +79,7 @@ export function Header() {
               Оставить заявку
             </a>
           </Button>
-          <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button className={`p-2 transition-colors duration-300 ${scrolled ? '' : 'text-white'}`} onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -87,7 +100,7 @@ export function Header() {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-            {shortLabels[item.title] || item.title}
+                {shortLabels[item.title] || item.title}
               </Link>
             ))}
           </nav>
