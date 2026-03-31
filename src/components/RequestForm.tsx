@@ -64,7 +64,10 @@ export function RequestForm({ source = "сайт", prefillMessage = "" }: Reques
                 type="tel"
                 placeholder="+7 (___) ___-__-__"
                 value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                onChange={(e) => {
+                  const val = e.target.value.replace(/[^\d+\s()-]/g, "");
+                  setForm({ ...form, phone: val });
+                }}
               />
             </div>
           </div>
