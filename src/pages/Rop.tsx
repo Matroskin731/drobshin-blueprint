@@ -55,7 +55,7 @@ const Rop = () => {
           {/* Normative base */}
           <div className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold">Нормативная база</h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
               Субъектами РОП являются производители и импортёры товаров, подлежащих утилизации согласно Распоряжению Правительства РФ №2970-р от&nbsp;28.12.2017.
             </p>
           </div>
