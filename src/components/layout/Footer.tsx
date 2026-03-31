@@ -45,7 +45,7 @@ export function Footer() {
             <div className="flex flex-col gap-2.5 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-lime-600" />
-                <span className="opacity-80">{contacts.address}</span>
+                <span className="opacity-90">{contacts.address}</span>
               </div>
               {contacts.phones.map((phone, i) =>
               <div key={i} className="flex items-start gap-2">
