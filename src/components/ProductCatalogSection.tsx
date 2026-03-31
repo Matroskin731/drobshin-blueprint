@@ -133,7 +133,7 @@ export function ProductCatalogSection() {
                             )}
                           </div>
 
-                          <p className="text-sm text-muted-foreground">{item.description}</p>
+                          <p className="text-sm text-foreground/65 leading-relaxed">{item.description}</p>
 
                           <ProductOptions itemId={item.id} categoryId={category.id} />
 
