@@ -14,10 +14,14 @@ import heroFactory from "@/assets/hero-factory.jpg";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 
-function AnimatedStat({ num, suffix, format, inView }: { num: number; suffix: string; format: boolean; inView: boolean }) {
-  const value = useCountUp(num, inView, 1500);
-  const display = format ? value.toLocaleString("ru-RU") : String(value);
-  return <p className="text-3xl lg:text-4xl font-extrabold text-primary leading-none">{display}{suffix}</p>;
+function AnimatedStat({ num, suffix, format }: { num: number; suffix: string; format: boolean }) {
+  const { count, ref } = useCountUp(num, 1500);
+  const display = format ? count.toLocaleString("ru-RU") : String(count);
+  return (
+    <div ref={ref}>
+      <p className="text-3xl lg:text-4xl font-extrabold text-primary leading-none">{display}{suffix}</p>
+    </div>
+  );
 }
 
 const Index = () => {
