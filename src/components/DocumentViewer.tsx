@@ -186,7 +186,7 @@ export const DocumentViewer = ({ doc, onClose }: Props) => {
                   </div>
 
                   {/* Swipe hint on mobile */}
-                  <div className="sm:hidden absolute bottom-12 left-1/2 -translate-x-1/2 text-[10px] text-white/30">
+                  <div className="sm:hidden absolute bottom-12 left-1/2 -translate-x-1/2 text-[10px] text-white/50">
                     Свайп для переключения
                   </div>
                 </>
