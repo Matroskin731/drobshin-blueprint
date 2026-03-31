@@ -184,7 +184,7 @@ const Index = () => {
 
       {/* About preview */}
       {isBlockVisible("about-preview") && (
-        <section className="section-padding section-dark" ref={(el) => { (aboutRef as React.MutableRefObject<HTMLElement | null>).current = el; (aboutRevealRef as React.MutableRefObject<HTMLElement | null>).current = el; }}>
+        <section className="section-dark pt-20 pb-24 md:pb-32" ref={(el) => { (aboutRef as React.MutableRefObject<HTMLElement | null>).current = el; (aboutRevealRef as React.MutableRefObject<HTMLElement | null>).current = el; }}>
           <div className="section-container">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-3">Почему нам доверяют</h2>
