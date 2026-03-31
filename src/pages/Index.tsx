@@ -155,7 +155,7 @@ const Index = () => {
                 initial="hidden" whileInView="visible"
                 viewport={viewport} variants={fadeUp}
                 transition={{ duration: 0.7, delay: 0.1, ease }}
-                className="text-white/60 max-w-xl mx-auto"
+                className="text-white/70 max-w-xl mx-auto"
               >
                 Собственное производство полного цикла с 2007 года
               </motion.p>
