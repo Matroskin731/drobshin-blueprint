@@ -230,7 +230,7 @@ const Index = () => {
                     <item.icon className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="font-bold mb-1">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  <p className="text-sm text-foreground/65 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -315,7 +315,7 @@ const Index = () => {
               {[
                 { icon: FileCheck, title: "Сертификаты", desc: "Вся продукция сертифицирована" },
                 { icon: Shield, title: "Экологичность", desc: "Безопасные материалы, утилизация отходов" },
-                { icon: Award, title: "ТУ", desc: "Продукция соответствует ТУ (ГОСТов на данную продукцию не существует)" },
+                { icon: Award, title: "ТУ", desc: "Продукция соответствует ТУ" },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -324,9 +324,9 @@ const Index = () => {
                   transition={{ duration: 0.7, delay: 0.1 * i, ease }}
                   className="unified-card flex flex-col items-center p-7"
                 >
-                  <item.icon className="h-10 w-10 text-foreground mb-3" />
+                  <item.icon className="h-10 w-10 text-foreground/70 mb-3" />
                   <h3 className="font-bold mb-1">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  <p className="text-sm text-foreground/65 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>

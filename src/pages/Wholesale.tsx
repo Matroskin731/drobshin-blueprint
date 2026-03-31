@@ -69,7 +69,7 @@ const Wholesale = () => {
               return (
                 <div key={category.id}>
                   <h2 className="text-2xl font-bold mb-2">{category.name}</h2>
-                  <p className="text-muted-foreground mb-6">{category.description}</p>
+                  <p className="text-foreground/70 mb-6">{category.description}</p>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {items.map((item) => (
                       <Card key={item.id} className="overflow-hidden card-hover">
@@ -85,8 +85,8 @@ const Wholesale = () => {
                             );
                           })()}
                           <div className="p-6">
-                            <h3 className="font-semibold mb-2">{item.name}</h3>
-                            <p className="text-sm text-muted-foreground">{item.description}</p>
+                            <h3 className="font-bold mb-2">{item.name}</h3>
+                            <p className="text-sm text-foreground/70 leading-relaxed">{item.description}</p>
                             <ProductOptions itemId={item.id} categoryId={category.id} />
                             <div className="mt-3 flex items-center gap-1.5 text-xs" style={{ color: "#43A047" }}>
                               <CheckCircle className="h-3.5 w-3.5" />

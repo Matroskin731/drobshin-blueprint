@@ -22,7 +22,7 @@ const About = () => {
 
       <section className="section-padding">
         <div className="section-container max-w-4xl">
-          <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground">
+          <div className="prose prose-lg max-w-none space-y-6 text-foreground/80 leading-relaxed">
             <p>
               Обработка и утилизация РТИ — сбор, транспортирование, обработка и утилизация автомобильных шин, покрышек, камер и других резинотехнических изделий. Мы производим качественную резиновую крошку различных фракций, а также готовые покрытия: резиновую плитку и бесшовные покрытия.
             </p>
@@ -41,28 +41,28 @@ const About = () => {
               <div key={i} className="unified-card text-center p-6">
                 <item.icon className="h-8 w-8 mx-auto mb-3 text-foreground/50" />
                 <p className="text-2xl font-bold">{item.title}</p>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+                <p className="text-sm text-foreground/65">{item.desc}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-12 space-y-6">
-            <h2 className="text-2xl font-bold">Наши направления</h2>
-            <ul className="space-y-3 text-muted-foreground">
+            <h2 className="text-2xl font-bold mb-4">Наши направления</h2>
+            <ul className="space-y-3 text-foreground/75 leading-relaxed">
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />
+                <Recycle className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                 <span><strong className="text-foreground">Обработка и утилизация РТИ</strong> — сбор, транспортирование, обработка и утилизация автомобильных шин, покрышек, камер и других резинотехнических изделий</span>
               </li>
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />
+                <Recycle className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                 <span><strong className="text-foreground">Резиновая крошка</strong> — производство гранулята различных фракций для покрытий, спортивных площадок и строительства</span>
               </li>
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />
+                <Recycle className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                 <span><strong className="text-foreground">Резиновая плитка</strong> — безопасные покрытия для детских и спортивных площадок</span>
               </li>
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />
+                <Recycle className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                 <span><strong className="text-foreground">Бесшовные покрытия</strong> — монолитные резиновые покрытия для различных назначений</span>
               </li>
             </ul>
@@ -78,8 +78,8 @@ const About = () => {
               <div className="flex items-start gap-3">
                 <ShieldCheck className="h-7 w-7 shrink-0 text-primary mt-0.5" />
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-bold leading-snug">Надёжный партнёр по утилизации РТИ</h2>
-                  <p className="text-sm text-muted-foreground mt-1 leading-relaxed max-w-2xl">
+                  <h2 className="text-xl sm:text-2xl font-bold leading-snug mb-2">Надёжный партнёр по утилизации РТИ</h2>
+                  <p className="text-sm text-foreground/70 leading-relaxed max-w-2xl">
                     ООО «НЗ ППРТИ» осуществляет деятельность на основании лицензии №Л020-00113-52/00043188 от 16.04.2018 г. и включено в реестр утилизаторов. Предоставляем полный пакет документов для экологической отчётности.
                   </p>
                 </div>
@@ -92,7 +92,7 @@ const About = () => {
                   { icon: FileText, text: "Предоставление актов утилизации" },
                   { icon: Building2, text: "Работа с юридическими лицами" },
                 ].map((item, i) => (
-                  <span key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <span key={i} className="flex items-center gap-2 text-sm text-foreground/70">
                     <item.icon className="h-4 w-4 shrink-0 text-primary" />
                     {item.text}
                   </span>

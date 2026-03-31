@@ -47,7 +47,7 @@ const Rop = () => {
 
           <div className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold">Что такое РОП</h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
               Расширенная ответственность производителей товаров и упаковки (РОП) — механизм экономического регулирования, согласно которому производители и импортёры обязаны обеспечить утилизацию товаров после утраты ими потребительских свойств.
             </p>
           </div>
@@ -55,7 +55,7 @@ const Rop = () => {
           {/* Normative base */}
           <div className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold">Нормативная база</h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-foreground/75 leading-relaxed">
               Субъектами РОП являются производители и импортёры товаров, подлежащих утилизации согласно Распоряжению Правительства РФ №2970-р от&nbsp;28.12.2017.
             </p>
           </div>
@@ -81,7 +81,7 @@ const Rop = () => {
               <ShieldCheck className="h-8 w-8 text-primary shrink-0 mt-0.5" />
               <div className="space-y-2">
                 <h2 className="text-lg sm:text-xl font-bold">Лицензированный утилизатор</h2>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-foreground/70 leading-relaxed">
                   ООО «НЗ ППРТИ» осуществляет деятельность по утилизации отходов на основании лицензии №Л020-00113-52/00043188 от&nbsp;16.04.2018&nbsp;г. и включено в реестр утилизаторов.
                 </p>
               </div>
@@ -99,7 +99,7 @@ const Rop = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold mb-0.5">{step.title}</p>
-                    <p className="text-xs text-muted-foreground">{step.desc}</p>
+                    <p className="text-xs text-foreground/65 leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -111,7 +111,7 @@ const Rop = () => {
             <Button size="lg" onClick={scrollToForm}>
               Получить консультацию по РОП
             </Button>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-foreground/60">
               Поможем выполнить нормативы утилизации и избежать штрафов
             </p>
           </div>
