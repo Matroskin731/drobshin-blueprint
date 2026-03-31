@@ -122,7 +122,7 @@ const Index = () => {
                   <a href="#request-form">Оставить заявку</a>
                 </Button>
               </div>
-              <a href="tel:+79877404062" className="hero-t4 inline-flex items-center gap-2 mt-8 text-sm text-white/50 hover:text-white/75 transition-colors">
+              <a href="tel:+79877404062" className="hero-t4 inline-flex items-center gap-2 mt-8 text-sm text-white/60 hover:text-white/80 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>+7 (987) 740-40-62 — ответим в течение 10 минут</span>
               </a>
