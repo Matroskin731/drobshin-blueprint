@@ -202,7 +202,7 @@ const Index = () => {
                 { num: 2, suffix: "", unit: "линии", title: "Производство", desc: "Собственные мощности", format: false },
               ].map((item, i) => (
                 <div key={i} ref={statStagger(i)} className="trust-stat-card text-center p-6 lg:p-8">
-                  <AnimatedStat num={item.num} suffix={item.suffix} format={item.format} inView={aboutInView} />
+                  <AnimatedStat num={item.num} suffix={item.suffix} format={item.format} />
                   {item.unit && <span className="text-sm text-white/50 mt-1 block">{item.unit}</span>}
                   <h3 className="font-bold text-white mt-3 mb-1">{item.title}</h3>
                   <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
