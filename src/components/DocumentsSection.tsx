@@ -141,7 +141,7 @@ export const DocumentsSection = () => {
                   <doc.icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
                 <h3 className="font-bold text-white mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">{doc.title}</h3>
-                <p className="text-[10px] sm:text-xs text-white/50 leading-relaxed mb-3 sm:mb-4 flex-1 hidden sm:block">{doc.desc}</p>
+                <p className="text-[10px] sm:text-xs text-white/60 leading-relaxed mb-3 sm:mb-4 flex-1 hidden sm:block">{doc.desc}</p>
                 <span className="text-[10px] sm:text-xs text-primary/80 group-hover:text-primary transition-colors font-medium">
                   {doc.btn} →
                 </span>
