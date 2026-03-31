@@ -50,7 +50,7 @@ const About = () => {
             <h2 className="text-2xl font-bold mb-4">Наши направления</h2>
             <ul className="space-y-3 text-foreground/75 leading-relaxed">
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />
+                <Recycle className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                 <span><strong className="text-foreground">Обработка и утилизация РТИ</strong> — сбор, транспортирование, обработка и утилизация автомобильных шин, покрышек, камер и других резинотехнических изделий</span>
               </li>
               <li className="flex items-start gap-3">
