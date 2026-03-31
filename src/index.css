@@ -281,3 +281,13 @@ button, a[role="button"], .btn, [class*="Button"] {
   opacity: 0;
   animation: hero-word-up 0.5s ease-out forwards;
 }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-t1 { animation: slideUp 0.7s 0.2s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+.hero-t2 { animation: slideUp 0.7s 0.45s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+.hero-t3 { animation: slideUp 0.7s 0.65s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+.hero-t4 { animation: slideUp 0.7s 0.85s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+.hero-t5 { animation: slideUp 0.7s 1.05s cubic-bezier(0.25,0.46,0.45,0.94) both; }
