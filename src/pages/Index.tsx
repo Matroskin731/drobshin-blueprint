@@ -1,6 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
-import { Phone } from "lucide-react";
+import { Phone, ChevronDown } from "lucide-react";
 import { ArrowRight, Recycle, Shield, Truck, Factory, Award, FileCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
