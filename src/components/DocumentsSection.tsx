@@ -92,7 +92,7 @@ export const DocumentsSection = () => {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3 text-white">Документы и лицензии</h2>
-            <p className="text-white/60 max-w-xl mx-auto">
+            <p className="text-white/70 max-w-xl mx-auto">
               Работаем официально. Все разрешения, лицензии и сертификаты подтверждены.
             </p>
           </div>
