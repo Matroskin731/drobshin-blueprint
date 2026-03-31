@@ -111,7 +111,7 @@ const Index = () => {
                 <br />
                 <span className="text-primary">Резиновая крошка и покрытия.</span>
               </h1>
-              <p className="hero-t2 text-lg md:text-xl text-white/90 max-w-2xl mb-8">
+              <p className="hero-t2 text-lg md:text-xl text-white/95 max-w-2xl mb-8">
                 Производим резиновую крошку, плитку и бесшовные покрытия из утилизированных шин.
               </p>
               <div className="hero-t3 flex flex-col sm:flex-row gap-3">
