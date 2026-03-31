@@ -102,7 +102,7 @@ export function ProductCatalogSection() {
               return (
                 <div key={category.id}>
                   <h3 className="text-2xl font-bold mb-1">{category.name}</h3>
-                  <p className="text-muted-foreground mb-4">{category.description}</p>
+                  <p className="text-foreground/65 mb-4">{category.description}</p>
 
                   {isCrumb && (
                     <div className="flex flex-wrap gap-2 mb-6">
