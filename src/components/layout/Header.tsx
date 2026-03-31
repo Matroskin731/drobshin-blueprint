@@ -24,7 +24,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="max-w-[1280px] mx-auto px-5 flex h-16 items-center">
         {/* Left: Logo — fixed width */}
         <div className="shrink-0 w-[100px]">
