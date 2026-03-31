@@ -101,7 +101,7 @@ export function ProductOptions({ itemId, categoryId }: Props) {
       {/* Seamless: thickness selector */}
       {isSeamless && (
         <div>
-          <p className="text-[11px] text-muted-foreground mb-1.5">Толщина, мм</p>
+          <p className="text-[11px] text-foreground/60 mb-1.5">Толщина, мм</p>
           <div className="flex flex-wrap gap-1.5">
             {SEAMLESS_THICKNESSES.map((t) => {
               const isActive = selectedThickness === t;
