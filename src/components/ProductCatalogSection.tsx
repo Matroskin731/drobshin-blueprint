@@ -140,7 +140,7 @@ export function ProductCatalogSection() {
                           {isCrumb && CRUMB_SPECS[item.id] && (
                             <ul className="space-y-0.5">
                               {CRUMB_SPECS[item.id].map((spec, idx) => (
-                                <li key={idx} className="flex items-start gap-1.5 text-[11px] text-muted-foreground leading-snug">
+                                <li key={idx} className="flex items-start gap-1.5 text-[11px] text-foreground/60 leading-snug">
                                   <CheckCircle className="h-3 w-3 mt-0.5 shrink-0" style={{ color: "#43A047" }} />
                                   <span>{spec}</span>
                                 </li>
