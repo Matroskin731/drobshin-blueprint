@@ -118,11 +118,11 @@ const Index = () => {
                 <Button size="lg" asChild className="text-base h-13 px-10 text-[15px]">
                   <Link to="/wholesale">Продукция и цены</Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild className="text-base border-white/20 text-white/70 bg-white/5 hover:bg-white/10 hover:text-white/90 hover:border-white/30">
+                <Button size="lg" variant="outline" asChild className="text-base border-white/30 text-white/80 bg-white/5 hover:bg-white/10 hover:text-white hover:border-white/60">
                   <a href="#request-form">Оставить заявку</a>
                 </Button>
               </div>
-              <a href="tel:+79877404062" className="hero-t4 inline-flex items-center gap-2 mt-8 text-sm text-white/60 hover:text-white/80 transition-colors">
+              <a href="tel:+79877404062" className="hero-t4 inline-flex items-center gap-2 mt-8 text-sm text-white/60 hover:text-white/90 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>+7 (987) 740-40-62 — ответим в течение 10 минут</span>
               </a>
@@ -175,7 +175,7 @@ const Index = () => {
                   className="trust-stat-card text-center p-6 lg:p-8"
                 >
                   <AnimatedStat num={item.num} suffix={item.suffix} format={item.format} />
-                  {item.unit && <span className="text-sm text-white/60 mt-1 block">{item.unit}</span>}
+                  {item.unit && <span className="text-sm text-white/50 mt-1 block">{item.unit}</span>}
                   <h3 className="font-bold text-white mt-3 mb-1">{item.title}</h3>
                   <p className="text-xs text-white/60 leading-relaxed">{item.desc}</p>
                 </motion.div>
@@ -187,7 +187,7 @@ const Index = () => {
               transition={{ duration: 0.7, delay: 0.5, ease }}
               className="text-center mt-10"
             >
-              <Button variant="outline" asChild className="btn-fill-slide border-white/20 text-white/80 hover:bg-white/5 hover:text-white">
+              <Button variant="outline" asChild className="btn-fill-slide border-white/25 text-white/80 hover:bg-white/5 hover:text-white hover:border-white/50">
                 <Link to="/about">Подробнее о заводе <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </motion.div>
@@ -287,9 +287,9 @@ const Index = () => {
                     transition={{ duration: 0.7, delay: 0.1 * i, ease }}
                     className="relative pl-4 border-l-2 border-primary/40"
                   >
-                    <span className="text-4xl font-extrabold text-white/40 leading-none text-left">{item.step}</span>
+                    <span className="text-5xl font-extrabold text-white/25 leading-none text-left">{item.step}</span>
                     <h3 className="font-bold mt-2 mb-1 text-white">{item.title}</h3>
-                    <p className="text-sm text-white/75">{item.desc}</p>
+                    <p className="text-sm text-white/65">{item.desc}</p>
                   </motion.div>
                 ))}
               </div>
