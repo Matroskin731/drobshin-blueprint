@@ -62,7 +62,7 @@ const About = () => {
                 <span><strong className="text-foreground">Резиновая плитка</strong> — безопасные покрытия для детских и спортивных площадок</span>
               </li>
               <li className="flex items-start gap-3">
-                <Recycle className="h-5 w-5 text-foreground/40 mt-0.5 shrink-0" />
+                <Recycle className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                 <span><strong className="text-foreground">Бесшовные покрытия</strong> — монолитные резиновые покрытия для различных назначений</span>
               </li>
             </ul>
