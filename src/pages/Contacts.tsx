@@ -52,7 +52,7 @@ const Contacts = () => {
                       <Mail className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                       <div>
                         <p className="font-semibold mb-1">Email</p>
-                        <a href={`mailto:${email}`} className="text-sm text-foreground hover:underline">{email}</a>
+                        <a href={`mailto:${email}`} className="text-sm text-primary font-medium hover:underline">{email}</a>
                       </div>
                     </div>
                   ))}
