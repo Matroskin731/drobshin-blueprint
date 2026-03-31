@@ -16,7 +16,7 @@ export function Footer() {
             <h3 className="text-lg font-bold mb-3">
               <span className="text-lime-500">Дроб</span>Шин
             </h3>
-            <p className="text-sm opacity-70 leading-relaxed">
+            <p className="text-sm opacity-80 leading-relaxed">
               ООО «Нижегородский завод по утилизации РТИ»
               <br />
               Основан в 2007 году
