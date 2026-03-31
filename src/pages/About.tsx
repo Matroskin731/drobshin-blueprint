@@ -41,7 +41,7 @@ const About = () => {
               <div key={i} className="unified-card text-center p-6">
                 <item.icon className="h-8 w-8 mx-auto mb-3 text-foreground/50" />
                 <p className="text-2xl font-bold">{item.title}</p>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+                <p className="text-sm text-foreground/65">{item.desc}</p>
               </div>
             ))}
           </div>
