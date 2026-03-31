@@ -82,7 +82,7 @@ export function ProductCatalogSection() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-sm">
                 {["Расчёт за 10 минут", "Подбор фракции под задачу", "Консультация инженера"].map((t) => (
-                  <span key={t} className="flex items-center gap-1.5 text-muted-foreground">
+                  <span key={t} className="flex items-center gap-1.5 text-foreground/65">
                     <CheckCircle className="h-4 w-4 shrink-0" style={{ color: "#43A047" }} />
                     {t}
                   </span>
