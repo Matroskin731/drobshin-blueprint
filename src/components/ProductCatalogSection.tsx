@@ -161,7 +161,7 @@ export function ProductCatalogSection() {
                             <p className="text-sm font-medium text-foreground/60 italic">Цена по запросу</p>
                           )}
 
-                          <p className="text-[11px] text-muted-foreground/70">Производство с 2007 года</p>
+                          <p className="text-[11px] text-foreground/55">Производство с 2007 года</p>
 
                           <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
                             <Button size="sm" variant="outline" className="w-full sm:w-1/2 text-xs truncate" onClick={() => openCalcForItem(item.name)}>
