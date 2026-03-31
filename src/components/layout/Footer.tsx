@@ -31,7 +31,7 @@ export function Footer() {
               <Link
                 key={item.id}
                 to={item.path}
-                className="text-sm opacity-90 hover:opacity-100 transition-opacity">
+                className="text-sm opacity-75 hover:opacity-100 transition-opacity">
 
                   {item.title}
                 </Link>
