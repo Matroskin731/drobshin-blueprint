@@ -126,7 +126,7 @@ export function ProductOptions({ itemId, categoryId }: Props) {
       {/* Tile 40/50: base type */}
       {isTileWithBase && (
         <div>
-          <p className="text-[11px] text-muted-foreground mb-1.5">Тип основания</p>
+          <p className="text-[11px] text-foreground/60 mb-1.5">Тип основания</p>
           <div className="flex flex-col gap-1.5">
             {BASE_OPTIONS.map((opt) => {
               const isActive = selectedBase === opt;
