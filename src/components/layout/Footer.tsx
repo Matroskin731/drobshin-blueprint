@@ -25,7 +25,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-50 text-lime-500">Навигация</h4>
+            <h4 className="font-semibold mb-3 text-sm uppercase tracking-[0.06em] opacity-50 text-lime-500">Навигация</h4>
             <nav className="flex flex-col gap-1.5">
               {visibleNav.map((item) =>
               <Link
