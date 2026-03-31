@@ -81,7 +81,7 @@ const Rop = () => {
               <ShieldCheck className="h-8 w-8 text-primary shrink-0 mt-0.5" />
               <div className="space-y-2">
                 <h2 className="text-lg sm:text-xl font-bold">Лицензированный утилизатор</h2>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-foreground/70 leading-relaxed">
                   ООО «НЗ ППРТИ» осуществляет деятельность по утилизации отходов на основании лицензии №Л020-00113-52/00043188 от&nbsp;16.04.2018&nbsp;г. и включено в реестр утилизаторов.
                 </p>
               </div>
