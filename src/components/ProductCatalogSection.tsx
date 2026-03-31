@@ -172,8 +172,8 @@ export function ProductCatalogSection() {
                               Получить расчёт
                             </Button>
                           </div>
-                          <p className="text-[10px] text-muted-foreground/60 text-center">Ответим в течение рабочего дня</p>
-                          <p className="text-[10px] text-muted-foreground/50 text-center">Работаем с оптовыми заказами от 1 тонны</p>
+                          <p className="text-[10px] text-foreground/50 text-center">Ответим в течение рабочего дня</p>
+                          <p className="text-[10px] text-foreground/45 text-center">Работаем с оптовыми заказами от 1 тонны</p>
                         </CardContent>
                       </Card>
                     ))}

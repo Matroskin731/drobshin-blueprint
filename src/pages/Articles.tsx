@@ -35,7 +35,7 @@ const Articles = () => {
                         {new Date(article.date).toLocaleDateString("ru-RU")}
                       </div>
                       <h2 className="text-xl font-bold mb-2">{article.title}</h2>
-                      <p className="text-muted-foreground mb-3">{article.excerpt}</p>
+                      <p className="text-foreground/70 mb-3 leading-relaxed">{article.excerpt}</p>
                       <span className="text-sm text-primary font-medium inline-flex items-center gap-1">
                         Читать далее <ArrowRight className="h-3.5 w-3.5" />
                       </span>

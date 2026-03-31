@@ -37,7 +37,7 @@ const Recycling = () => {
                 <item.icon className="h-8 w-8 text-foreground/50 shrink-0" />
                 <div>
                   <h3 className="font-semibold mb-1">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  <p className="text-sm text-foreground/65 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
