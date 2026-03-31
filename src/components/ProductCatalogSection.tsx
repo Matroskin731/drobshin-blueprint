@@ -158,7 +158,7 @@ export function ProductCatalogSection() {
                               {item.price}
                             </Badge>
                           ) : (
-                            <p className="text-sm font-medium text-muted-foreground italic">Цена по запросу</p>
+                            <p className="text-sm font-medium text-foreground/60 italic">Цена по запросу</p>
                           )}
 
                           <p className="text-[11px] text-muted-foreground/70">Производство с 2007 года</p>
