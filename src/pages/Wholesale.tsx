@@ -85,8 +85,8 @@ const Wholesale = () => {
                             );
                           })()}
                           <div className="p-6">
-                            <h3 className="font-semibold mb-2">{item.name}</h3>
-                            <p className="text-sm text-muted-foreground">{item.description}</p>
+                            <h3 className="font-bold mb-2">{item.name}</h3>
+                            <p className="text-sm text-foreground/70 leading-relaxed">{item.description}</p>
                             <ProductOptions itemId={item.id} categoryId={category.id} />
                             <div className="mt-3 flex items-center gap-1.5 text-xs" style={{ color: "#43A047" }}>
                               <CheckCircle className="h-3.5 w-3.5" />
