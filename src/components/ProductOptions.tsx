@@ -39,7 +39,7 @@ export function ProductOptions({ itemId, categoryId }: Props) {
       {/* Color picker */}
       {(isCrumbColor || isTile || isSeamless) && (
         <div>
-          <p className="text-[11px] text-muted-foreground mb-1.5">
+          <p className="text-[11px] text-foreground/60 mb-1.5">
             {isSeamless ? "Цвет покрытия" : isTile ? "Цвет верхнего слоя" : "Цвет крошки"}
           </p>
           <div className="flex flex-wrap gap-2">
