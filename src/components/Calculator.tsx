@@ -67,7 +67,7 @@ export function Calculator({ onRequestQuote }: CalculatorProps) {
 
         {result !== null && (
           <div className="rounded-lg bg-foreground/5 border border-border p-4 text-center space-y-3">
-            <p className="text-sm text-muted-foreground">Ориентировочный вес крошки:</p>
+            <p className="text-sm text-foreground/65">Ориентировочный вес крошки:</p>
             <p className="text-3xl font-bold text-foreground">{result} кг</p>
             <Button
               variant="outline"

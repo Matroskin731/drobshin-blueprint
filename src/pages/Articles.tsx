@@ -23,19 +23,19 @@ const Articles = () => {
       <section className="section-padding">
         <div className="section-container max-w-4xl">
           {visibleArticles.length === 0 ? (
-            <p className="text-center text-muted-foreground">Статьи пока не добавлены</p>
+            <p className="text-center text-foreground/60">Статьи пока не добавлены</p>
           ) : (
             <div className="space-y-6">
               {visibleArticles.map((article) => (
                 <Link key={article.id} to={`/articles/${article.id}`} className="block">
                   <Card>
                     <CardContent className="pt-6">
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                      <div className="flex items-center gap-2 text-xs text-foreground/55 mb-2">
                         <CalendarDays className="h-3.5 w-3.5" />
                         {new Date(article.date).toLocaleDateString("ru-RU")}
                       </div>
                       <h2 className="text-xl font-bold mb-2">{article.title}</h2>
-                      <p className="text-muted-foreground mb-3">{article.excerpt}</p>
+                      <p className="text-foreground/70 mb-3 leading-relaxed">{article.excerpt}</p>
                       <span className="text-sm text-primary font-medium inline-flex items-center gap-1">
                         Читать далее <ArrowRight className="h-3.5 w-3.5" />
                       </span>

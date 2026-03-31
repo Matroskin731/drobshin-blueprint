@@ -76,13 +76,13 @@ export function ProductCatalogSection() {
                 <h3 className="text-xl sm:text-2xl font-bold leading-snug mb-1">
                   Подберём фракцию и бесплатно рассчитаем объём под ваш объект
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
+                <p className="text-sm text-foreground/65 leading-relaxed max-w-2xl">
                   Подготовим расчёт и коммерческое предложение в день обращения. Поможем выбрать оптимальную толщину и расход.
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-sm">
                 {["Расчёт за 10 минут", "Подбор фракции под задачу", "Консультация инженера"].map((t) => (
-                  <span key={t} className="flex items-center gap-1.5 text-muted-foreground">
+                  <span key={t} className="flex items-center gap-1.5 text-foreground/65">
                     <CheckCircle className="h-4 w-4 shrink-0" style={{ color: "#43A047" }} />
                     {t}
                   </span>
@@ -102,7 +102,7 @@ export function ProductCatalogSection() {
               return (
                 <div key={category.id}>
                   <h3 className="text-2xl font-bold mb-1">{category.name}</h3>
-                  <p className="text-muted-foreground mb-4">{category.description}</p>
+                  <p className="text-foreground/65 mb-4">{category.description}</p>
 
                   {isCrumb && (
                     <div className="flex flex-wrap gap-2 mb-6">
@@ -125,7 +125,7 @@ export function ProductCatalogSection() {
                       <Card key={item.id} className="card-hover">
                         <CardContent className="p-6 space-y-3">
                           <div className="flex items-start justify-between gap-2">
-                            <h4 className="font-semibold text-lg leading-snug">{item.name}</h4>
+                            <h4 className="font-bold text-lg leading-snug">{item.name}</h4>
                             {isCrumb && item.id === "crumb-1-2" && (
                               <Badge className="text-[10px] border-0 shrink-0" style={{ background: "hsl(30 100% 48%)", color: "#fff" }}>
                                 Хит продаж
@@ -133,14 +133,14 @@ export function ProductCatalogSection() {
                             )}
                           </div>
 
-                          <p className="text-sm text-muted-foreground">{item.description}</p>
+                          <p className="text-sm text-foreground/65 leading-relaxed">{item.description}</p>
 
                           <ProductOptions itemId={item.id} categoryId={category.id} />
 
                           {isCrumb && CRUMB_SPECS[item.id] && (
                             <ul className="space-y-0.5">
                               {CRUMB_SPECS[item.id].map((spec, idx) => (
-                                <li key={idx} className="flex items-start gap-1.5 text-[11px] text-muted-foreground leading-snug">
+                                <li key={idx} className="flex items-start gap-1.5 text-[11px] text-foreground/60 leading-snug">
                                   <CheckCircle className="h-3 w-3 mt-0.5 shrink-0" style={{ color: "#43A047" }} />
                                   <span>{spec}</span>
                                 </li>
@@ -158,10 +158,10 @@ export function ProductCatalogSection() {
                               {item.price}
                             </Badge>
                           ) : (
-                            <p className="text-sm font-medium text-muted-foreground italic">Цена по запросу</p>
+                            <p className="text-sm font-medium text-foreground/60 italic">Цена по запросу</p>
                           )}
 
-                          <p className="text-[11px] text-muted-foreground/70">Производство с 2007 года</p>
+                          <p className="text-[11px] text-foreground/55">Производство с 2007 года</p>
 
                           <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
                             <Button size="sm" variant="outline" className="w-full sm:w-1/2 text-xs truncate" onClick={() => openCalcForItem(item.name)}>
@@ -172,8 +172,8 @@ export function ProductCatalogSection() {
                               Получить расчёт
                             </Button>
                           </div>
-                          <p className="text-[10px] text-muted-foreground/60 text-center">Ответим в течение рабочего дня</p>
-                          <p className="text-[10px] text-muted-foreground/50 text-center">Работаем с оптовыми заказами от 1 тонны</p>
+                          <p className="text-[10px] text-foreground/50 text-center">Ответим в течение рабочего дня</p>
+                          <p className="text-[10px] text-foreground/45 text-center">Работаем с оптовыми заказами от 1 тонны</p>
                         </CardContent>
                       </Card>
                     ))}

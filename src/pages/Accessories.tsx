@@ -59,7 +59,7 @@ const Accessories = () => {
                     <product.icon className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="font-bold text-lg">{product.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-foreground/65 leading-relaxed">
                     {product.description}
                   </p>
                   <Button size="sm" className="w-full" onClick={scrollToForm}>

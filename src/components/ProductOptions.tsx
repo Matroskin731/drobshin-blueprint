@@ -39,7 +39,7 @@ export function ProductOptions({ itemId, categoryId }: Props) {
       {/* Color picker */}
       {(isCrumbColor || isTile || isSeamless) && (
         <div>
-          <p className="text-[11px] text-muted-foreground mb-1.5">
+          <p className="text-[11px] text-foreground/60 mb-1.5">
             {isSeamless ? "Цвет покрытия" : isTile ? "Цвет верхнего слоя" : "Цвет крошки"}
           </p>
           <div className="flex flex-wrap gap-2">
@@ -73,7 +73,7 @@ export function ProductOptions({ itemId, categoryId }: Props) {
       {/* Seamless: color count */}
       {isSeamless && (
         <div>
-          <p className="text-[11px] text-muted-foreground mb-1.5">Количество цветов</p>
+          <p className="text-[11px] text-foreground/60 mb-1.5">Количество цветов</p>
           <div className="flex gap-1.5">
             {[
               { value: "one", label: "Один цвет" },
@@ -101,7 +101,7 @@ export function ProductOptions({ itemId, categoryId }: Props) {
       {/* Seamless: thickness selector */}
       {isSeamless && (
         <div>
-          <p className="text-[11px] text-muted-foreground mb-1.5">Толщина, мм</p>
+          <p className="text-[11px] text-foreground/60 mb-1.5">Толщина, мм</p>
           <div className="flex flex-wrap gap-1.5">
             {SEAMLESS_THICKNESSES.map((t) => {
               const isActive = selectedThickness === t;
@@ -126,7 +126,7 @@ export function ProductOptions({ itemId, categoryId }: Props) {
       {/* Tile 40/50: base type */}
       {isTileWithBase && (
         <div>
-          <p className="text-[11px] text-muted-foreground mb-1.5">Тип основания</p>
+          <p className="text-[11px] text-foreground/60 mb-1.5">Тип основания</p>
           <div className="flex flex-col gap-1.5">
             {BASE_OPTIONS.map((opt) => {
               const isActive = selectedBase === opt;
@@ -150,7 +150,7 @@ export function ProductOptions({ itemId, categoryId }: Props) {
 
       {/* Hint text */}
       {hasSelection && (
-        <p className="text-[10px] text-muted-foreground/70 italic">
+        <p className="text-[10px] text-foreground/55 italic">
           Выбранные параметры будут учтены при расчёте стоимости
         </p>
       )}

@@ -18,7 +18,7 @@ export function QuoteModal({ open, onOpenChange, area, thickness, weight }: Quot
         <DialogHeader>
           <DialogTitle>Запрос точного расчёта</DialogTitle>
         </DialogHeader>
-        <div className="text-sm text-muted-foreground rounded-md bg-muted p-3 mb-2">
+        <div className="text-sm text-foreground/70 rounded-md bg-muted p-3 mb-2">
           <p>Площадь: <strong>{area} м²</strong></p>
           <p>Толщина: <strong>{thickness} мм</strong></p>
           <p>Ориентировочный вес: <strong>{weight} кг</strong></p>

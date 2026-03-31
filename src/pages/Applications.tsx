@@ -55,7 +55,7 @@ const Applications = () => {
             <Card key={i}>
                 <CardContent className="pt-6">
                   <h3 className="text-lg font-bold mb-2">{app.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{app.desc}</p>
+                  <p className="text-sm text-foreground/65 leading-relaxed mb-4">{app.desc}</p>
                   <ul className="space-y-1.5">
                     {app.items.map((item, j) =>
                   <li key={j} className="flex items-center gap-2 text-sm">
