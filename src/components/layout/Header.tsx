@@ -39,11 +39,16 @@ export function Header() {
     }`}>
       <div className="max-w-[1280px] mx-auto px-5 flex h-16 items-center">
         {/* Left: Logo */}
-        <div className="shrink-0 w-[100px]">
-          <Link to="/" className={`whitespace-nowrap font-bold text-xl tracking-tight transition-colors duration-300 ${
-            scrolled ? 'text-primary' : 'text-white'
-          }`}>
-            ДробШин
+        <div className="shrink-0">
+          <Link to="/" className="flex items-center">
+            <img
+              src={logo}
+              alt="ДробШин — утилизация и переработка"
+              className={`h-10 w-auto transition-all duration-300 object-contain ${
+                scrolled ? 'brightness-100' : 'brightness-0 invert'
+              }`}
+              style={{ mixBlendMode: scrolled ? 'normal' : 'screen' }}
+            />
           </Link>
         </div>
 
