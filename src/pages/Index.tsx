@@ -70,17 +70,8 @@ const Index = () => {
       cancelAnimationFrame(rafId);
     };
   }, []);
-  const [aboutInView, setAboutInView] = useState(false);
 
-  useEffect(() => {
-    const el = aboutRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([e]) => {
-      setAboutInView(e.isIntersecting);
-    }, { threshold: 0.05 });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+
   const whyUsRef = useScrollReveal();
   const howRef = useScrollReveal();
   const stepsLineRef = useRef<SVGSVGElement>(null);
