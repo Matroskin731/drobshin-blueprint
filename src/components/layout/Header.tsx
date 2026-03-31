@@ -40,7 +40,7 @@ export function Header() {
       <div className="max-w-[1280px] mx-auto px-5 flex h-16 items-center">
         {/* Left: Logo */}
         <div className="shrink-0 w-[100px]">
-          <Link to="/" className="whitespace-nowrap font-bold text-xl tracking-tight transition-colors duration-300 text-primary">
+          <Link to="/" className={`whitespace-nowrap font-bold text-xl tracking-tight transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-white'}`}>
             ДробШин
           </Link>
         </div>
