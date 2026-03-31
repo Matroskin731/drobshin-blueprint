@@ -13,7 +13,7 @@ const ArticlePage = () => {
     return (
       <div className="section-padding">
         <div className="section-container max-w-3xl text-center">
-          <p className="text-muted-foreground mb-4">Статья не найдена</p>
+          <p className="text-foreground/60 mb-4">Статья не найдена</p>
           <Button variant="outline" asChild>
             <Link to="/articles"><ArrowLeft className="mr-2 h-4 w-4" />Назад к статьям</Link>
           </Button>
