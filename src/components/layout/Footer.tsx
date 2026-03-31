@@ -51,10 +51,10 @@ export function Footer() {
               <div key={i} className="flex items-start gap-2">
                   <Phone className="h-4 w-4 mt-0.5 shrink-0 text-lime-600" />
                   <div>
-                    <a href={`tel:${phone.number.replace(/[^\d+]/g, "")}`} className="opacity-80 hover:opacity-100">
+                    <a href={`tel:${phone.number.replace(/[^\d+]/g, "")}`} className="opacity-90 hover:opacity-100">
                       {phone.number}
                     </a>
-                    <p className="text-xs opacity-50">{phone.name ? `${phone.name} — ${phone.role}` : phone.role}</p>
+                    <p className="text-xs opacity-60">{phone.name ? `${phone.name} — ${phone.role}` : phone.role}</p>
                   </div>
                 </div>
               )}
