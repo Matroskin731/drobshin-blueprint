@@ -91,7 +91,7 @@ export const DocumentsSection = () => {
       <section className="section-padding section-dark" ref={sectionRef}>
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-3 text-white">Документы и лицензии</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Документы и лицензии</h2>
             <p className="text-white/70 max-w-xl mx-auto">
               Работаем официально. Все разрешения, лицензии и сертификаты подтверждены.
             </p>

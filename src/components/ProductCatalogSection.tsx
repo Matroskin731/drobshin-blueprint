@@ -188,7 +188,7 @@ export function ProductCatalogSection() {
       {/* Trust block */}
       <section className="section-padding hero-gradient" ref={trustRef}>
         <div className="section-container">
-          <h2 className="text-2xl font-bold text-center mb-8">Почему нам доверяют подрядчики</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Почему нам доверяют подрядчики</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {trustItems.map((item, i) => (
               <div key={i} ref={trustStagger(i)} className="flex flex-col items-center text-center gap-2">
