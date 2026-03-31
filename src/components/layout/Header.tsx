@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
