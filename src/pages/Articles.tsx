@@ -30,7 +30,7 @@ const Articles = () => {
                 <Link key={article.id} to={`/articles/${article.id}`} className="block">
                   <Card>
                     <CardContent className="pt-6">
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                      <div className="flex items-center gap-2 text-xs text-foreground/55 mb-2">
                         <CalendarDays className="h-3.5 w-3.5" />
                         {new Date(article.date).toLocaleDateString("ru-RU")}
                       </div>
