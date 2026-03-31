@@ -244,6 +244,9 @@ const Index = () => {
       {isBlockVisible("how-we-work") && (
         <section className="section-padding section-dark-alt">
           <div className="section-container">
+            <div className="text-center">
+              <span className="section-num">03</span>
+            </div>
             <motion.h2
               initial="hidden" whileInView="visible"
               viewport={viewport} variants={fadeUp}
