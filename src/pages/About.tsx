@@ -78,8 +78,8 @@ const About = () => {
               <div className="flex items-start gap-3">
                 <ShieldCheck className="h-7 w-7 shrink-0 text-primary mt-0.5" />
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-bold leading-snug">Надёжный партнёр по утилизации РТИ</h2>
-                  <p className="text-sm text-muted-foreground mt-1 leading-relaxed max-w-2xl">
+                  <h2 className="text-xl sm:text-2xl font-bold leading-snug mb-2">Надёжный партнёр по утилизации РТИ</h2>
+                  <p className="text-sm text-foreground/70 leading-relaxed max-w-2xl">
                     ООО «НЗ ППРТИ» осуществляет деятельность на основании лицензии №Л020-00113-52/00043188 от 16.04.2018 г. и включено в реестр утилизаторов. Предоставляем полный пакет документов для экологической отчётности.
                   </p>
                 </div>
