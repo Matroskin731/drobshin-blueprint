@@ -96,7 +96,7 @@ const Index = () => {
   const guaranteesRef = useScrollReveal();
   const formRef = useScrollReveal();
 
-  const statStagger = useStaggerReveal(4, 100, 100);
+  
   const whyStagger = useStaggerReveal(4, 100, 80);
   const stepStagger = useStaggerReveal(4, 100, 100);
   const guaranteeStagger = useStaggerReveal(3, 100, 80);
