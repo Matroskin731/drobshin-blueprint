@@ -81,7 +81,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-primary-foreground/10 text-center text-xs opacity-50">
+        <div className="mt-10 pt-6 border-t border-primary-foreground/10 text-center text-xs opacity-35">
           © {new Date().getFullYear()} ДробШин — ООО «Нижегородский завод по утилизации РТИ»
         </div>
       </div>
