@@ -39,7 +39,7 @@ const Contacts = () => {
                       <Phone className="h-5 w-5 text-foreground/50 mt-0.5 shrink-0" />
                       <div>
                         {phone.name && <p className="font-semibold mb-0.5">{phone.name}</p>}
-                        <p className="text-xs text-muted-foreground mb-1">{phone.role}</p>
+                        <p className="text-xs text-foreground/60 mb-1">{phone.role}</p>
                     <a href={`tel:${phone.number.replace(/[^\d+]/g, "")}`} className="text-sm text-primary font-medium hover:underline">
                       {phone.number}
                         </a>
