@@ -76,7 +76,7 @@ export function ProductCatalogSection() {
                 <h3 className="text-xl sm:text-2xl font-bold leading-snug mb-1">
                   Подберём фракцию и бесплатно рассчитаем объём под ваш объект
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
+                <p className="text-sm text-foreground/65 leading-relaxed max-w-2xl">
                   Подготовим расчёт и коммерческое предложение в день обращения. Поможем выбрать оптимальную толщину и расход.
                 </p>
               </div>
