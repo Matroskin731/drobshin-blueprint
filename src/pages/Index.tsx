@@ -111,7 +111,7 @@ const Index = () => {
                 <br />
                 <span className="text-primary">Резиновая крошка и покрытия.</span>
               </h1>
-              <p className="hero-t2 text-lg md:text-xl text-white/90 max-w-2xl mb-8">
+              <p className="hero-t2 text-lg md:text-xl text-white/95 max-w-2xl mb-8">
                 Производим резиновую крошку, плитку и бесшовные покрытия из утилизированных шин.
               </p>
               <div className="hero-t3 flex flex-col sm:flex-row gap-3">
@@ -122,7 +122,7 @@ const Index = () => {
                   <a href="#request-form">Оставить заявку</a>
                 </Button>
               </div>
-              <a href="tel:+79877404062" className="hero-t4 inline-flex items-center gap-2 mt-8 text-sm text-white/50 hover:text-white/75 transition-colors">
+              <a href="tel:+79877404062" className="hero-t4 inline-flex items-center gap-2 mt-8 text-sm text-white/60 hover:text-white/80 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>+7 (987) 740-40-62 — ответим в течение 10 минут</span>
               </a>
@@ -155,7 +155,7 @@ const Index = () => {
                 initial="hidden" whileInView="visible"
                 viewport={viewport} variants={fadeUp}
                 transition={{ duration: 0.7, delay: 0.1, ease }}
-                className="text-white/60 max-w-xl mx-auto"
+                className="text-white/70 max-w-xl mx-auto"
               >
                 Собственное производство полного цикла с 2007 года
               </motion.p>
@@ -175,9 +175,9 @@ const Index = () => {
                   className="trust-stat-card text-center p-6 lg:p-8"
                 >
                   <AnimatedStat num={item.num} suffix={item.suffix} format={item.format} />
-                  {item.unit && <span className="text-sm text-white/50 mt-1 block">{item.unit}</span>}
+                  {item.unit && <span className="text-sm text-white/60 mt-1 block">{item.unit}</span>}
                   <h3 className="font-bold text-white mt-3 mb-1">{item.title}</h3>
-                  <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
+                  <p className="text-xs text-white/60 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -187,7 +187,7 @@ const Index = () => {
               transition={{ duration: 0.7, delay: 0.5, ease }}
               className="text-center mt-10"
             >
-              <Button variant="outline" asChild className="btn-fill-slide border-white/15 text-white/70 hover:bg-white/5 hover:text-white">
+              <Button variant="outline" asChild className="btn-fill-slide border-white/20 text-white/80 hover:bg-white/5 hover:text-white">
                 <Link to="/about">Подробнее о заводе <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </motion.div>
@@ -287,9 +287,9 @@ const Index = () => {
                     transition={{ duration: 0.7, delay: 0.1 * i, ease }}
                     className="relative pl-4 border-l-2 border-primary/40"
                   >
-                    <span className="text-4xl font-extrabold text-white/30 leading-none text-left">{item.step}</span>
+                    <span className="text-4xl font-extrabold text-white/40 leading-none text-left">{item.step}</span>
                     <h3 className="font-bold mt-2 mb-1 text-white">{item.title}</h3>
-                    <p className="text-sm text-white/70">{item.desc}</p>
+                    <p className="text-sm text-white/75">{item.desc}</p>
                   </motion.div>
                 ))}
               </div>

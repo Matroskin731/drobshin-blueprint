@@ -92,7 +92,7 @@ export const DocumentsSection = () => {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3 text-white">Документы и лицензии</h2>
-            <p className="text-white/60 max-w-xl mx-auto">
+            <p className="text-white/70 max-w-xl mx-auto">
               Работаем официально. Все разрешения, лицензии и сертификаты подтверждены.
             </p>
           </div>
@@ -127,12 +127,12 @@ export const DocumentsSection = () => {
                   ) : doc.viewer.type === "pdf" ? (
                     <div className="flex flex-col items-center gap-1.5">
                       <FileCheck className="h-8 w-8 text-primary/60 group-hover:text-primary transition-colors" />
-                      <span className="text-[10px] text-white/40 uppercase tracking-wider">PDF</span>
+                      <span className="text-[10px] text-white/50 uppercase tracking-wider">PDF</span>
                     </div>
                   ) : (
                     <div className="flex flex-col items-center gap-1.5">
-                      <FileText className="h-8 w-8 text-white/30 group-hover:text-white/50 transition-colors" />
-                      <span className="text-[10px] text-white/40 uppercase tracking-wider">DOCX</span>
+                      <FileText className="h-8 w-8 text-white/40 group-hover:text-white/60 transition-colors" />
+                      <span className="text-[10px] text-white/50 uppercase tracking-wider">DOCX</span>
                     </div>
                   )}
                 </div>
@@ -141,7 +141,7 @@ export const DocumentsSection = () => {
                   <doc.icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
                 <h3 className="font-bold text-white mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">{doc.title}</h3>
-                <p className="text-[10px] sm:text-xs text-white/50 leading-relaxed mb-3 sm:mb-4 flex-1 hidden sm:block">{doc.desc}</p>
+                <p className="text-[10px] sm:text-xs text-white/60 leading-relaxed mb-3 sm:mb-4 flex-1 hidden sm:block">{doc.desc}</p>
                 <span className="text-[10px] sm:text-xs text-primary/80 group-hover:text-primary transition-colors font-medium">
                   {doc.btn} →
                 </span>

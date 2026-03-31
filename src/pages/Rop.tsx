@@ -35,7 +35,7 @@ const Rop = () => {
           <h1 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight">
             Расширенная ответственность производителей и&nbsp;импортёров (РОП)
           </h1>
-          <p className="text-base sm:text-lg opacity-80 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg opacity-85 max-w-3xl mx-auto">
             Помогаем производителям и импортёрам выполнить нормативы утилизации в&nbsp;соответствии с&nbsp;законодательством РФ
           </p>
         </div>

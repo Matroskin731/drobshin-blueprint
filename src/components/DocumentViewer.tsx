@@ -186,7 +186,7 @@ export const DocumentViewer = ({ doc, onClose }: Props) => {
                   </div>
 
                   {/* Swipe hint on mobile */}
-                  <div className="sm:hidden absolute bottom-12 left-1/2 -translate-x-1/2 text-[10px] text-white/30">
+                  <div className="sm:hidden absolute bottom-12 left-1/2 -translate-x-1/2 text-[10px] text-white/50">
                     Свайп для переключения
                   </div>
                 </>
@@ -206,8 +206,8 @@ export const DocumentViewer = ({ doc, onClose }: Props) => {
 
           {doc.type === "docx" && (
             <div className="bg-[#0B0F14] flex flex-col items-center justify-center min-h-[40vh] gap-4 p-6">
-              <FileText className="h-16 w-16 text-white/30" />
-              <p className="text-white/50 text-sm max-w-xs text-center">
+              <FileText className="h-16 w-16 text-white/40" />
+              <p className="text-white/60 text-sm max-w-xs text-center">
                 Предпросмотр недоступен для формата DOCX.
                 <br />
                 Скачайте файл для просмотра.

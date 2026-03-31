@@ -22,7 +22,7 @@
     --secondary-foreground: 0 0% 100%;
 
     --muted: 200 8% 90%;
-    --muted-foreground: 210 6% 45%;
+    --muted-foreground: 210 6% 38%;
 
     --accent: 200 8% 90%;
     --accent-foreground: 210 9% 18%;
@@ -301,13 +301,13 @@ button, a[role="button"], .btn, [class*="Button"] {
   font-family: 'Space Mono', monospace;
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.4);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   display: block;
   margin-bottom: 8px;
 }
-.section-num-dark { color: rgba(26,26,46,0.2); }
+.section-num-dark { color: rgba(26,26,46,0.35); }
 
 /* Button fill slide effect */
 .btn-fill-slide {
