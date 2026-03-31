@@ -41,7 +41,7 @@ export function Footer() {
 
           {/* Contacts */}
           <div>
-            <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-50 text-lime-500">Контакты</h4>
+            <h4 className="font-semibold mb-3 text-sm uppercase tracking-[0.06em] opacity-50 text-lime-500">Контакты</h4>
             <div className="flex flex-col gap-2.5 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-lime-600" />
