@@ -324,7 +324,7 @@ const Index = () => {
                   transition={{ duration: 0.7, delay: 0.1 * i, ease }}
                   className="unified-card flex flex-col items-center p-7"
                 >
-                  <item.icon className="h-10 w-10 text-foreground mb-3" />
+                  <item.icon className="h-10 w-10 text-foreground/70 mb-3" />
                   <h3 className="font-bold mb-1">{item.title}</h3>
                   <p className="text-sm text-foreground/65 leading-relaxed">{item.desc}</p>
                 </motion.div>

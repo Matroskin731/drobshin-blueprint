@@ -62,7 +62,7 @@ const Contacts = () => {
                     <div>
                       <p className="font-semibold mb-1">График работы</p>
                       {contacts.schedule.map((line, i) => (
-                        <p key={i} className="text-sm text-muted-foreground">{line}</p>
+                        <p key={i} className="text-sm text-foreground/70">{line}</p>
                       ))}
                     </div>
                   </div>

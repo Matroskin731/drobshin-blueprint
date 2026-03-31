@@ -92,7 +92,7 @@ const About = () => {
                   { icon: FileText, text: "Предоставление актов утилизации" },
                   { icon: Building2, text: "Работа с юридическими лицами" },
                 ].map((item, i) => (
-                  <span key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <span key={i} className="flex items-center gap-2 text-sm text-foreground/70">
                     <item.icon className="h-4 w-4 shrink-0 text-primary" />
                     {item.text}
                   </span>

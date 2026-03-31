@@ -69,7 +69,7 @@ export function Footer() {
 
           {/* Schedule */}
           <div>
-            <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-50 text-lime-500">График работы</h4>
+            <h4 className="font-semibold mb-3 text-sm uppercase tracking-[0.06em] opacity-50 text-lime-500">График работы</h4>
             <div className="flex flex-col gap-1.5 text-sm">
               {contacts.schedule.map((line, i) =>
               <div key={i} className="flex items-center gap-2">

@@ -17,7 +17,7 @@ const Recycling = () => {
 
       <section className="section-padding">
         <div className="section-container max-w-4xl">
-          <div className="space-y-6 text-muted-foreground mb-12">
+          <div className="space-y-6 text-foreground/80 leading-relaxed mb-12">
             <p>
               Завод «ДробШин» осуществляет приём и утилизацию изношенных автомобильных шин и других резинотехнических изделий. Мы предлагаем экологичное решение проблемы утилизации РТИ.
             </p>

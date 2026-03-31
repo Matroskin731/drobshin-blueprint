@@ -69,7 +69,7 @@ const Wholesale = () => {
               return (
                 <div key={category.id}>
                   <h2 className="text-2xl font-bold mb-2">{category.name}</h2>
-                  <p className="text-muted-foreground mb-6">{category.description}</p>
+                  <p className="text-foreground/70 mb-6">{category.description}</p>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {items.map((item) => (
                       <Card key={item.id} className="overflow-hidden card-hover">

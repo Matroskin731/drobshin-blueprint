@@ -111,7 +111,7 @@ const Rop = () => {
             <Button size="lg" onClick={scrollToForm}>
               Получить консультацию по РОП
             </Button>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-foreground/60">
               Поможем выполнить нормативы утилизации и избежать штрафов
             </p>
           </div>
