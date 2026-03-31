@@ -23,7 +23,7 @@ const Articles = () => {
       <section className="section-padding">
         <div className="section-container max-w-4xl">
           {visibleArticles.length === 0 ? (
-            <p className="text-center text-muted-foreground">Статьи пока не добавлены</p>
+            <p className="text-center text-foreground/60">Статьи пока не добавлены</p>
           ) : (
             <div className="space-y-6">
               {visibleArticles.map((article) => (
