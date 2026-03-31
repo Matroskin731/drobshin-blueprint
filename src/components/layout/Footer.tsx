@@ -74,7 +74,7 @@ export function Footer() {
               {contacts.schedule.map((line, i) =>
               <div key={i} className="flex items-center gap-2">
                   <Clock className="h-4 w-4 shrink-0 text-lime-600" />
-                  <span className="opacity-80">{line}</span>
+                  <span className="opacity-90">{line}</span>
                 </div>
               )}
             </div>
