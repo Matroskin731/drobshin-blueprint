@@ -79,17 +79,29 @@ const Contacts = () => {
               <MapPin className="h-5 w-5 text-primary" />
               Как нас найти
             </h3>
-            <div className="rounded-xl overflow-hidden">
+            <div className="rounded-xl overflow-hidden border border-border" style={{ height: '420px' }}>
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=44.002090%2C56.329882&z=16&pt=44.002090,56.329882,pm2rdm"
+                title="Расположение завода ДробШин"
+                src="https://yandex.ru/map-widget/v1/?ll=43.504734%2C56.119775&z=15&pt=43.504734%2C56.119775%2Cpm2rdm&text=%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%2C%20%D0%9D%D0%B8%D0%B6%D0%B5%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C"
                 width="100%"
-                height="400"
+                height="100%"
                 frameBorder="0"
-                style={{ display: "block" }}
                 allowFullScreen
-                title="Местоположение завода ДробШин на карте"
+                style={{ border: 0, display: 'block' }}
               />
             </div>
+            {/* Запасной вариант — ссылка на карту */}
+            <a
+              href="https://yandex.ru/maps/?text=%D0%9D%D0%B8%D0%B6%D0%B5%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB.+%D0%B3.+%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA+%D1%83%D0%BB.+%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%B0+24%2F5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 mt-4 p-4 rounded-xl border border-border bg-muted/50 hover:bg-muted transition-colors group"
+            >
+              <MapPin className="h-5 w-5 text-primary" />
+              <span className="text-foreground/70 group-hover:text-foreground transition-colors">
+                Открыть завод на Яндекс Картах →
+              </span>
+            </a>
           </div>
         </div>
       </section>
