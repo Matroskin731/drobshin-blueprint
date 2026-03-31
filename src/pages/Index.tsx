@@ -177,7 +177,7 @@ const Index = () => {
                   <AnimatedStat num={item.num} suffix={item.suffix} format={item.format} />
                   {item.unit && <span className="text-sm text-white/60 mt-1 block">{item.unit}</span>}
                   <h3 className="font-bold text-white mt-3 mb-1">{item.title}</h3>
-                  <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
+                  <p className="text-xs text-white/60 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
