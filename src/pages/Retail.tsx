@@ -30,7 +30,7 @@ const Retail = () => {
               <Card key={cat.id} className="text-center">
                 <CardContent className="pt-6">
                   <h3 className="font-semibold">{cat.name}</h3>
-                  <p className="text-sm text-muted-foreground mt-2">Скоро в наличии</p>
+                  <p className="text-sm text-foreground/60 mt-2">Скоро в наличии</p>
                 </CardContent>
               </Card>
             ))}
