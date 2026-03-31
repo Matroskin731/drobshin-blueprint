@@ -289,7 +289,7 @@ const Index = () => {
                   >
                     <span className="text-4xl font-extrabold text-white/40 leading-none text-left">{item.step}</span>
                     <h3 className="font-bold mt-2 mb-1 text-white">{item.title}</h3>
-                    <p className="text-sm text-white/70">{item.desc}</p>
+                    <p className="text-sm text-white/75">{item.desc}</p>
                   </motion.div>
                 ))}
               </div>
