@@ -127,7 +127,7 @@ export const DocumentsSection = () => {
                   ) : doc.viewer.type === "pdf" ? (
                     <div className="flex flex-col items-center gap-1.5">
                       <FileCheck className="h-8 w-8 text-primary/60 group-hover:text-primary transition-colors" />
-                      <span className="text-[10px] text-white/40 uppercase tracking-wider">PDF</span>
+                      <span className="text-[10px] text-white/50 uppercase tracking-wider">PDF</span>
                     </div>
                   ) : (
                     <div className="flex flex-col items-center gap-1.5">
