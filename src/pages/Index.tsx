@@ -187,7 +187,7 @@ const Index = () => {
               transition={{ duration: 0.7, delay: 0.5, ease }}
               className="text-center mt-10"
             >
-              <Button variant="outline" asChild className="btn-fill-slide border-white/15 text-white/70 hover:bg-white/5 hover:text-white">
+              <Button variant="outline" asChild className="btn-fill-slide border-white/20 text-white/80 hover:bg-white/5 hover:text-white">
                 <Link to="/about">Подробнее о заводе <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </motion.div>
