@@ -73,7 +73,7 @@ export function ProductOptions({ itemId, categoryId }: Props) {
       {/* Seamless: color count */}
       {isSeamless && (
         <div>
-          <p className="text-[11px] text-muted-foreground mb-1.5">Количество цветов</p>
+          <p className="text-[11px] text-foreground/60 mb-1.5">Количество цветов</p>
           <div className="flex gap-1.5">
             {[
               { value: "one", label: "Один цвет" },
