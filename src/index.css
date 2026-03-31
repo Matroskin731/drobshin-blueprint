@@ -186,7 +186,7 @@ a[role="button"]:active {
 
 /* Dark section gradient — deeper layered feel */
 .section-dark {
-  background: linear-gradient(180deg, hsl(210 14% 8%) 0%, hsl(210 14% 4%) 100%);
+  background: hsl(210 10% 10%);
   color: hsl(var(--hero-foreground));
 }
 
