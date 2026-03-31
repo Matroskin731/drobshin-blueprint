@@ -142,6 +142,7 @@ const Index = () => {
         <section className="section-dark pt-20 pb-24 md:pb-32" id="about-preview">
           <div className="section-container">
             <div className="text-center mb-12">
+              <span className="section-num">01</span>
               <motion.h2
                 initial="hidden" whileInView="visible"
                 viewport={viewport} variants={fadeUp}
