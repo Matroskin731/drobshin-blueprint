@@ -1,38 +1,48 @@
-import { useEffect, useRef, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
-function easeOutQuart(t: number) {
-  return 1 - Math.pow(1 - t, 4);
-}
-
-/**
- * Animates a number from 0 to `end` over `duration` ms.
- * Re-runs every time `start` flips from false → true.
- */
-export function useCountUp(end: number, start: boolean, duration = 1800) {
-  const [value, setValue] = useState(0);
-  const rafRef = useRef<number>();
+export function useCountUp(target: number, duration = 1500) {
+  const [count, setCount] = useState(0);
+  const [shouldStart, setShouldStart] = useState(false);
+  const hasAnimated = useRef(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!start) {
-      setValue(0);
-      return;
-    }
-    const t0 = performance.now();
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          setShouldStart(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
-    const tick = (now: number) => {
-      const elapsed = now - t0;
-      const progress = Math.min(elapsed / duration, 1);
-      setValue(Math.round(easeOutQuart(progress) * end));
+  useEffect(() => {
+    if (!shouldStart) return;
+    let startTime: number;
+    let rafId: number;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
       if (progress < 1) {
-        rafRef.current = requestAnimationFrame(tick);
+        rafId = requestAnimationFrame(animate);
+      } else {
+        setCount(target);
       }
     };
 
-    rafRef.current = requestAnimationFrame(tick);
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, [start, end, duration]);
+    rafId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafId);
+  }, [shouldStart, target, duration]);
 
-  return value;
+  return { count, ref };
 }
