@@ -61,7 +61,7 @@ export function Footer() {
               {contacts.emails.map((email, i) =>
               <div key={i} className="flex items-center gap-2">
                   <Mail className="h-4 w-4 shrink-0 text-lime-600" />
-                  <a href={`mailto:${email}`} className="opacity-80 hover:opacity-100">{email}</a>
+                  <a href={`mailto:${email}`} className="opacity-90 hover:opacity-100">{email}</a>
                 </div>
               )}
             </div>
