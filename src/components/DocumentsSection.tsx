@@ -131,8 +131,8 @@ export const DocumentsSection = () => {
                     </div>
                   ) : (
                     <div className="flex flex-col items-center gap-1.5">
-                      <FileText className="h-8 w-8 text-white/30 group-hover:text-white/50 transition-colors" />
-                      <span className="text-[10px] text-white/40 uppercase tracking-wider">DOCX</span>
+                      <FileText className="h-8 w-8 text-white/40 group-hover:text-white/60 transition-colors" />
+                      <span className="text-[10px] text-white/50 uppercase tracking-wider">DOCX</span>
                     </div>
                   )}
                 </div>
