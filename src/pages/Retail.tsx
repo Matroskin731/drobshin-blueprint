@@ -8,7 +8,7 @@ const Retail = () => {
   if (!config.retailVisible) {
     return (
       <div className="section-padding text-center">
-        <p className="text-muted-foreground">Раздел временно недоступен</p>
+        <p className="text-foreground/60">Раздел временно недоступен</p>
       </div>
     );
   }
