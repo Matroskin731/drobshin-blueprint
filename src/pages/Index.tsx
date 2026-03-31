@@ -147,7 +147,7 @@ const Index = () => {
                 initial="hidden" whileInView="visible"
                 viewport={viewport} variants={fadeUp}
                 transition={{ duration: 0.7, ease }}
-                className="text-3xl font-bold mb-3"
+                className="text-3xl md:text-4xl font-bold mb-3"
               >
                 Почему нам доверяют
               </motion.h2>
