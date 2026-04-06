@@ -18,10 +18,9 @@ export function Calculator({ onRequestQuote }: CalculatorProps) {
     const a = parseFloat(area);
     const t = parseFloat(thickness);
     if (a > 0 && t > 0) {
-      // Density of rubber crumb ~600 kg/m³
-      const volume = a * (t / 1000); // m³
-      const weight = volume * 600; // kg
-      setResult(Math.round(weight));
+      // 7 кг крошки фр. 2–4 мм на 1 кв.м. при толщине 10 мм
+      const weight = Math.round(a * (t / 10) * 7);
+      setResult(weight);
     }
   };
 
@@ -66,15 +65,33 @@ export function Calculator({ onRequestQuote }: CalculatorProps) {
         </Button>
 
         {result !== null && (
-          <div className="rounded-lg bg-foreground/5 border border-border p-4 text-center space-y-3">
-            <p className="text-sm text-foreground/65">Ориентировочный вес крошки:</p>
-            <p className="text-3xl font-bold text-foreground">{result} кг</p>
+          <div className="rounded-xl border border-primary/30 bg-primary/10 p-4 space-y-3">
+            <div className="space-y-1 text-sm">
+              <p className="text-white/70">Площадь: <strong className="text-white font-semibold">{parseFloat(area)} кв.м.</strong></p>
+              <p className="text-white/70">Толщина: <strong className="text-white font-semibold">{parseFloat(thickness)} мм</strong></p>
+              <p className="text-white/70">Фракция: <strong className="text-white font-semibold">2–4 мм</strong></p>
+            </div>
+            <div>
+              <p className="text-sm text-primary font-medium">Необходимо крошки фр. 2–4 мм:</p>
+              <p className="text-3xl font-extrabold text-primary mt-1">
+                {result.toLocaleString("ru-RU")} кг
+              </p>
+              {result >= 1000 && (
+                <p className="text-sm text-primary/70 mt-1">
+                  ≈ {(result / 1000).toFixed(2)} тонны
+                </p>
+              )}
+            </div>
+            <p className="text-xs text-white/50">
+              Расчёт на основе: 7 кг крошки фр. 2–4 мм на 1 кв.м. при толщине 10 мм
+            </p>
             <Button
               variant="outline"
               size="sm"
+              className="w-full"
               onClick={() => onRequestQuote?.(parseFloat(area), parseFloat(thickness), result)}
             >
-              Получить точный расчёт
+              Получить коммерческое предложение
             </Button>
           </div>
         )}
