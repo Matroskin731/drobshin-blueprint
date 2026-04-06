@@ -2,10 +2,16 @@ import { Factory, Recycle, Award, Users, ShieldCheck, FileText, Building2, Check
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SEO } from "@/components/SEO";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
+
   const scrollToForm = () => {
-    document.getElementById("request-form")?.scrollIntoView({ behavior: "smooth" });
+    navigate("/#request-form");
+    setTimeout(() => {
+      document.getElementById("request-form")?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
   };
 
   return (
