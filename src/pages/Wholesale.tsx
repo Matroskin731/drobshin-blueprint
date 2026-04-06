@@ -7,8 +7,9 @@ import { CheckCircle } from "lucide-react";
 import { ProductOptions } from "@/components/ProductOptions";
 import { RequestForm } from "@/components/RequestForm";
 import { Calculator } from "@/components/Calculator";
+import { SeamlessCard } from "@/components/SeamlessCard";
 import { useState } from "react";
-import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 import crumb063Img from "@/assets/products/crumb-063.jpg";
 import crumb12Img from "@/assets/products/crumb-1-2.jpg";
@@ -29,7 +30,6 @@ const PRODUCT_IMAGES: Record<string, string> = {
   "tile-30": tile30Img,
   "tile-40": tile40Img,
   "tile-50": tile50Img,
-  "seamless-cover": seamless20Img,
 };
 
 const Wholesale = () => {
