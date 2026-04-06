@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { Calculator } from "@/components/Calculator";
 import { QuoteModal } from "@/components/QuoteModal";
+import { SeamlessCard } from "@/components/SeamlessCard";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 const FRACTION_FILTERS = [
