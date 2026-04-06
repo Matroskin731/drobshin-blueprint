@@ -18,10 +18,7 @@ import tile20Img from "@/assets/products/tile-20.jpg";
 import tile30Img from "@/assets/products/tile-30.jpg";
 import tile40Img from "@/assets/products/tile-40.jpg";
 import tile50Img from "@/assets/products/tile-50.jpg";
-import seamless10Img from "@/assets/products/seamless-10.jpg";
 import seamless20Img from "@/assets/products/seamless-20.jpg";
-import seamless40Img from "@/assets/products/seamless-40.jpg";
-import seamless50Img from "@/assets/products/seamless-50.jpg";
 
 const PRODUCT_IMAGES: Record<string, string> = {
   "crumb-063": crumb063Img,
@@ -32,10 +29,7 @@ const PRODUCT_IMAGES: Record<string, string> = {
   "tile-30": tile30Img,
   "tile-40": tile40Img,
   "tile-50": tile50Img,
-  "seamless-10": seamless10Img,
-  "seamless-20": seamless20Img,
-  "seamless-40": seamless40Img,
-  "seamless-50": seamless50Img,
+  "seamless-cover": seamless20Img,
 };
 
 const Wholesale = () => {
