@@ -7,8 +7,9 @@ import { CheckCircle } from "lucide-react";
 import { ProductOptions } from "@/components/ProductOptions";
 import { RequestForm } from "@/components/RequestForm";
 import { Calculator } from "@/components/Calculator";
+import { SeamlessCard } from "@/components/SeamlessCard";
 import { useState } from "react";
-import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 import crumb063Img from "@/assets/products/crumb-063.jpg";
 import crumb12Img from "@/assets/products/crumb-1-2.jpg";
@@ -29,7 +30,6 @@ const PRODUCT_IMAGES: Record<string, string> = {
   "tile-30": tile30Img,
   "tile-40": tile40Img,
   "tile-50": tile50Img,
-  "seamless-cover": seamless20Img,
 };
 
 const Wholesale = () => {
@@ -59,6 +59,27 @@ const Wholesale = () => {
         <div className="section-container">
           <div className="space-y-12">
             {config.products.filter((c) => c.visible).map((category) => {
+              const isSeamless = category.id === "seamless";
+
+              if (isSeamless) {
+                return (
+                  <div key={category.id}>
+                    <h2 className="text-2xl font-bold mb-2">{category.name}</h2>
+                    <p className="text-foreground/70 mb-6">{category.description}</p>
+                    <div className="max-w-sm">
+                      <SeamlessCard
+                        image={seamless20Img}
+                        onCalculate={(thickness) => {
+                          setCalcMessage(`Бесшовное покрытие ${thickness} мм`);
+                          document.getElementById("wholesale-form")?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        onRequestQuote={scrollToForm}
+                      />
+                    </div>
+                  </div>
+                );
+              }
+
               const items = category.items.filter((i) => i.visible);
               return (
                 <div key={category.id}>

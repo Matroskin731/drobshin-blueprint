@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { Calculator } from "@/components/Calculator";
 import { QuoteModal } from "@/components/QuoteModal";
+import { SeamlessCard } from "@/components/SeamlessCard";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 const FRACTION_FILTERS = [
@@ -95,6 +96,26 @@ export function ProductCatalogSection() {
           <div className="space-y-12">
             {config.products.filter((c) => c.visible).map((category) => {
               const isCrumb = category.id === "crumb";
+              const isSeamless = category.id === "seamless";
+
+              if (isSeamless) {
+                return (
+                  <div key={category.id}>
+                    <h3 className="text-2xl font-bold mb-1">{category.name}</h3>
+                    <p className="text-foreground/65 mb-4">{category.description}</p>
+                    <div className="max-w-sm">
+                      <SeamlessCard
+                        onCalculate={(thickness) => {
+                          setCalcFraction(`Бесшовное покрытие ${thickness} мм`);
+                          setCalcOpen(true);
+                        }}
+                        onRequestQuote={scrollToForm}
+                      />
+                    </div>
+                  </div>
+                );
+              }
+
               const filteredItems = category.items
                 .filter((i) => i.visible)
                 .filter((i) => (isCrumb ? matchesFraction(i.name, fractionFilter) : true));
