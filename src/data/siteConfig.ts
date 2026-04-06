@@ -134,10 +134,7 @@ export const defaultConfig: SiteConfig = {
       description: "Монолитное резиновое покрытие различной толщины",
       visible: true,
       items: [
-        { id: "seamless-10", name: "Бесшовное покрытие 10 мм", description: "Тонкое декоративное покрытие", visible: true },
-        { id: "seamless-20", name: "Бесшовное покрытие 20 мм", description: "Стандартное покрытие для дорожек", visible: true },
-        { id: "seamless-40", name: "Бесшовное покрытие 40 мм", description: "Для детских площадок и зон отдыха", visible: true },
-        { id: "seamless-50", name: "Бесшовное покрытие 50 мм", description: "Максимальная амортизация для спорта", visible: true },
+        { id: "seamless-cover", name: "Бесшовное покрытие", description: "Монолитное резиновое покрытие толщиной от 10 до 50 мм для дорожек, детских и спортивных площадок", visible: true },
       ],
     },
   ],
