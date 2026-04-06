@@ -1,28 +1,36 @@
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Droplets, Palette, PaintBucket } from "lucide-react";
+import { CheckCircle, Cable, CircleDot, Grip } from "lucide-react";
 import { RequestForm } from "@/components/RequestForm";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 const PRODUCTS = [
   {
-    icon: Droplets,
-    title: "Полиуретановый клей",
+    icon: Cable,
+    title: "Текстильный корд",
     description:
-      "Используется для укладки бесшовных покрытий и производства резиновой плитки. Обеспечивает прочное сцепление и долговечность покрытия.",
+      "Доступный и качественный аналог ЭкоВаты с небольшим вкраплением резиновой крошки.",
+    applications: [
+      "При тампонировании скважин в качестве компонента смеси",
+      "Для изготовления сорбента для сбора нефти и нефтепродуктов",
+      "В перерабатывающей промышленности",
+      "В качестве утеплителя, связующего, армирующего компонента",
+      "Специальная добавка для эластичности строительных материалов",
+      "Для изготовления фибробетона",
+    ],
   },
   {
-    icon: Palette,
-    title: "Пигменты для окрашивания",
+    icon: Grip,
+    title: "Металлический корд",
     description:
-      "Добавляются в крошку для получения цветных покрытий. Устойчивы к ультрафиолету и выцветанию.",
+      "Продукт переработки шин, представляющий собой высоколегированную сталь.",
   },
   {
-    icon: PaintBucket,
-    title: "Грунтовка",
+    icon: CircleDot,
+    title: "Бортовое кольцо",
     description:
-      "Применяется для подготовки основания перед укладкой покрытия. Улучшает адгезию и увеличивает срок службы.",
+      "Бортовое кольцо от шин и покрышек после переработки.",
   },
 ];
 
@@ -37,14 +45,12 @@ const Accessories = () => {
 
   return (
     <div>
-      <SEO title="Сопутствующие товары для резиновых покрытий — ДробШин" description="Клей, краска и расходные материалы для монтажа резиновых покрытий от производителя." />
+      <SEO title="Сопутствующие товары — ДробШин" description="Текстильный корд, металлокорд и бортовое кольцо — продукты утилизации шин и покрышек от производителя." />
       <section className="hero-gradient py-16" ref={heroRef}>
         <div className="section-container text-center">
-          <h1 className="text-4xl font-bold mb-4">
-            Сопутствующие материалы для резиновых покрытий
-          </h1>
+          <h1 className="text-4xl font-bold mb-4">Сопутствующие товары</h1>
           <p className="text-lg opacity-80 max-w-2xl mx-auto">
-            Поставляем все необходимые материалы для укладки покрытий под ключ
+            В результате утилизации шин и покрышек образуются следующие товары: текстильный корд, металлокорд, бортовое кольцо.
           </p>
         </div>
       </section>
@@ -62,8 +68,22 @@ const Accessories = () => {
                   <p className="text-sm text-foreground/65 leading-relaxed">
                     {product.description}
                   </p>
+                  {product.applications && (
+                    <div>
+                      <p className="text-sm font-semibold mb-2">Применение:</p>
+                      <ul className="space-y-1">
+                        {product.applications.map((app, idx) => (
+                          <li key={idx} className="flex items-start gap-1.5 text-xs text-foreground/65 leading-snug">
+                            <CheckCircle className="h-3 w-3 mt-0.5 shrink-0" style={{ color: "#43A047" }} />
+                            <span>{app}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  <p className="text-sm font-medium text-foreground/60 italic">Цена за кг — по запросу</p>
                   <Button size="sm" className="w-full" onClick={scrollToForm}>
-                    Запросить цену
+                    Получить расчёт
                   </Button>
                 </CardContent>
               </Card>
