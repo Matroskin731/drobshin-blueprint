@@ -10,19 +10,38 @@ interface QuoteModalProps {
 }
 
 export function QuoteModal({ open, onOpenChange, area, thickness, weight }: QuoteModalProps) {
-  const prefill = `Расчёт с калькулятора:\n• Площадь: ${area} м²\n• Толщина: ${thickness} мм\n• Ориентировочный вес крошки: ${weight} кг`;
+  const tonnes = weight >= 1000 ? ` (≈ ${(weight / 1000).toFixed(2)} т)` : "";
+  const prefill = `Расчёт с калькулятора:\n• Площадь: ${area} м²\n• Толщина: ${thickness} мм\n• Фракция: 2–4 мм\n• Необходимо крошки: ${weight.toLocaleString("ru-RU")} кг${tonnes}`;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg">
+      <DialogContent className="sm:max-w-lg bg-background text-foreground">
         <DialogHeader>
-          <DialogTitle>Запрос точного расчёта</DialogTitle>
+          <DialogTitle className="text-foreground font-bold text-lg">Запрос коммерческого предложения</DialogTitle>
         </DialogHeader>
-        <div className="text-sm text-foreground/70 rounded-md bg-muted p-3 mb-2">
-          <p>Площадь: <strong>{area} м²</strong></p>
-          <p>Толщина: <strong>{thickness} мм</strong></p>
-          <p>Ориентировочный вес: <strong>{weight} кг</strong></p>
+
+        <div className="rounded-xl border border-primary/30 bg-primary/10 p-4 mb-2 space-y-2">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+            <span className="text-muted-foreground">Площадь:</span>
+            <span className="text-foreground font-semibold">{area} кв.м.</span>
+            <span className="text-muted-foreground">Толщина:</span>
+            <span className="text-foreground font-semibold">{thickness} мм</span>
+            <span className="text-muted-foreground">Фракция:</span>
+            <span className="text-foreground font-semibold">2–4 мм</span>
+          </div>
+          <div className="pt-2 border-t border-primary/20">
+            <p className="text-sm text-primary font-medium">Необходимо крошки:</p>
+            <p className="text-2xl font-extrabold text-primary mt-0.5">
+              {weight.toLocaleString("ru-RU")} кг
+            </p>
+            {weight >= 1000 && (
+              <p className="text-sm text-primary/70">
+                ≈ {(weight / 1000).toFixed(2)} тонны
+              </p>
+            )}
+          </div>
         </div>
+
         <RequestForm source="калькулятор" prefillMessage={prefill} />
       </DialogContent>
     </Dialog>
