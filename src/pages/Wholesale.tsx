@@ -59,6 +59,27 @@ const Wholesale = () => {
         <div className="section-container">
           <div className="space-y-12">
             {config.products.filter((c) => c.visible).map((category) => {
+              const isSeamless = category.id === "seamless";
+
+              if (isSeamless) {
+                return (
+                  <div key={category.id}>
+                    <h2 className="text-2xl font-bold mb-2">{category.name}</h2>
+                    <p className="text-foreground/70 mb-6">{category.description}</p>
+                    <div className="max-w-sm">
+                      <SeamlessCard
+                        image={seamless20Img}
+                        onCalculate={(thickness) => {
+                          setCalcMessage(`Бесшовное покрытие ${thickness} мм`);
+                          document.getElementById("wholesale-form")?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        onRequestQuote={scrollToForm}
+                      />
+                    </div>
+                  </div>
+                );
+              }
+
               const items = category.items.filter((i) => i.visible);
               return (
                 <div key={category.id}>
