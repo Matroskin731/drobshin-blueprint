@@ -29,10 +29,7 @@ const PRODUCT_IMAGES: Record<string, string> = {
   "tile-30": tile30Img,
   "tile-40": tile40Img,
   "tile-50": tile50Img,
-  "seamless-10": seamless10Img,
-  "seamless-20": seamless20Img,
-  "seamless-40": seamless40Img,
-  "seamless-50": seamless50Img,
+  "seamless-cover": seamless20Img,
 };
 
 const Wholesale = () => {
