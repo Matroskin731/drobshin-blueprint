@@ -296,18 +296,7 @@ button, a[role="button"], .btn, [class*="Button"] {
 .hero-t4 { animation: slideUp 0.7s 0.85s cubic-bezier(0.25,0.46,0.45,0.94) both; }
 .hero-t5 { animation: slideUp 0.7s 1.05s cubic-bezier(0.25,0.46,0.45,0.94) both; }
 
-/* Section numbers */
-.section-num {
-  font-family: 'Space Mono', monospace;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 8px;
-}
-.section-num-dark { color: rgba(26,26,46,0.35); }
+
 
 /* Button fill slide effect */
 .btn-fill-slide {

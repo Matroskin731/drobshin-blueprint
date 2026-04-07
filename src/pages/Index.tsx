@@ -142,7 +142,6 @@ const Index = () => {
         <section className="section-dark pt-20 pb-24 md:pb-32" id="about-preview">
           <div className="section-container">
             <div className="text-center mb-12">
-              <span className="section-num">01</span>
               <motion.h2
                 initial="hidden" whileInView="visible"
                 viewport={viewport} variants={fadeUp}
@@ -201,9 +200,6 @@ const Index = () => {
       {isBlockVisible("why-us") && (
         <section className="section-padding bg-[hsl(210_10%_96%)]">
           <div className="section-container">
-            <div className="text-center">
-              <span className="section-num-dark">02</span>
-            </div>
             <motion.h2
               initial="hidden" whileInView="visible"
               viewport={viewport} variants={fadeUp}
@@ -244,9 +240,6 @@ const Index = () => {
       {isBlockVisible("how-we-work") && (
         <section className="section-padding section-dark-alt">
           <div className="section-container">
-            <div className="text-center">
-              <span className="section-num">03</span>
-            </div>
             <motion.h2
               initial="hidden" whileInView="visible"
               viewport={viewport} variants={fadeUp}
@@ -302,7 +295,6 @@ const Index = () => {
       {isBlockVisible("guarantees") && (
         <section className="section-padding bg-[hsl(210_10%_96%)]">
           <div className="section-container text-center">
-            <span className="section-num-dark">04</span>
             <motion.h2
               initial="hidden" whileInView="visible"
               viewport={viewport} variants={fadeUp}
@@ -338,9 +330,6 @@ const Index = () => {
       {isBlockVisible("request-form") && (
         <section id="request-form" className="section-padding section-dark">
           <div className="section-container">
-            <div className="text-center">
-              <span className="section-num">05</span>
-            </div>
             <motion.h2
               initial="hidden" whileInView="visible"
               viewport={viewport} variants={fadeUp}
