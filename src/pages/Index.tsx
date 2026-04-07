@@ -20,7 +20,7 @@ function AnimatedStat({ num, suffix, format }: { num: number; suffix: string; fo
   const display = format ? count.toLocaleString("ru-RU") : String(count);
   return (
     <div ref={ref}>
-      <p className="text-3xl lg:text-4xl font-extrabold text-primary leading-none">{display}{suffix}</p>
+      <p className="text-3xl lg:text-4xl font-extrabold leading-none bg-primary-foreground text-[#2f7f33]">{display}{suffix}</p>
     </div>
   );
 }
@@ -262,7 +262,7 @@ const Index = () => {
                   transition={{ duration: 0.7, delay: 0.1 * i, ease }}
                   className="text-center"
                 >
-                  <span className="text-5xl font-extrabold text-white/25 leading-none">{item.step}</span>
+                  <span className="text-5xl font-extrabold leading-none text-[#2f7f33]">{item.step}</span>
                   <h3 className="font-bold mt-2 mb-1 text-white">{item.title}</h3>
                   <p className="text-sm text-white/65">{item.desc}</p>
                 </motion.div>
@@ -298,7 +298,7 @@ const Index = () => {
                   className="unified-card flex flex-col items-center p-7"
                 >
                   <item.icon className="h-10 w-10 text-foreground/70 mb-3" />
-                  <h3 className="font-bold mb-1">{item.title}</h3>
+                  <h3 className="font-bold mb-1 text-black">{item.title}</h3>
                   <p className="text-sm text-foreground/65 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
