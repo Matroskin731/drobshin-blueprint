@@ -64,8 +64,8 @@ const Wholesale = () => {
               if (isSeamless) {
                 return (
                   <div key={category.id}>
-                    <h2 className="text-2xl font-bold mb-2">{category.name}</h2>
-                    <p className="text-foreground/70 mb-6">{category.description}</p>
+                    <h2 className="text-2xl font-bold mb-2 text-white">{category.name}</h2>
+                    <p className="text-white/65 mb-6">{category.description}</p>
                     <div className="max-w-sm">
                       <SeamlessCard
                         image={seamless20Img}
@@ -83,8 +83,8 @@ const Wholesale = () => {
               const items = category.items.filter((i) => i.visible);
               return (
                 <div key={category.id}>
-                  <h2 className="text-2xl font-bold mb-2">{category.name}</h2>
-                  <p className="text-foreground/70 mb-6">{category.description}</p>
+                  <h2 className="text-2xl font-bold mb-2 text-white">{category.name}</h2>
+                  <p className="text-white/65 mb-6">{category.description}</p>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {items.map((item) => (
                       <Card key={item.id} className="overflow-hidden card-hover">
