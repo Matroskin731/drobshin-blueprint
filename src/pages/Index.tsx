@@ -20,7 +20,7 @@ function AnimatedStat({ num, suffix, format }: { num: number; suffix: string; fo
   const display = format ? count.toLocaleString("ru-RU") : String(count);
   return (
     <div ref={ref}>
-      <p className="text-3xl lg:text-4xl font-extrabold leading-none bg-primary-foreground text-[#2f7f33]">{display}{suffix}</p>
+      <p className="text-3xl lg:text-4xl font-extrabold leading-none text-[#2f7f33] bg-secondary">{display}{suffix}</p>
     </div>
   );
 }
